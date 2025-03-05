@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting to Gardening Platform</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8f0;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            max-width: 600px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #2e7d32;
+        }
+        p {
+            margin: 20px 0;
+            line-height: 1.6;
+        }
+        .loader {
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #2e7d32;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .button {
+            display: inline-block;
+            background-color: #2e7d32;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #1b5e20;
+        }
+    </style>
+    <!-- Replace YOUR_VERCEL_URL with your actual Vercel deployment URL -->
+    <meta http-equiv="refresh" content="5;url=https://gardening-platform.vercel.app">
+</head>
+<body>
+    <div class="container">
+        <h1>Gardening Platform</h1>
+        <p>Welcome to our gardening platform! You are being redirected to our application.</p>
+        <div class="loader"></div>
+        <p>If you are not redirected automatically, please click the button below:</p>
+        <!-- Replace YOUR_VERCEL_URL with your actual Vercel deployment URL -->
+        <a href="https://gardening-platform.vercel.app" class="button">Go to Gardening Platform</a>
+    </div>
+
+    <script>
+        // You can add any additional JavaScript here if needed
+        // For example, analytics tracking before redirect
+    </script>
+</body>
+</html>
