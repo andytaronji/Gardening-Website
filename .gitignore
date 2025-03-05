@@ -5,6 +5,9 @@ node_modules/
 .next/
 out/
 
+# Exclude clean version
+gardening-platform-clean/
+
 # Environment variables
 .env
 .env.local
