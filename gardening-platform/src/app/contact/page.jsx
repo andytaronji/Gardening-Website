@@ -17,7 +17,7 @@ export default function ContactPage() {
             <div className="mt-6">
               <h3 className="text-xl font-semibold text-green-700 mb-2">Contact Information</h3>
               <p className="text-gray-700 mb-2">
-                <strong>Email:</strong> info@gardeningthyme.com
+                <strong>Email:</strong> services@gardeningthyme.com
               </p>
               <p className="text-gray-700 mb-2">
                 <strong>Phone:</strong> (555) 123-4567
