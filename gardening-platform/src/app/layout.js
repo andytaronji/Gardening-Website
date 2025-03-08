@@ -1,5 +1,5 @@
 import './globals.css';
-import Navigation from './components/Navigation';
+import Navigation from '../components/Navigation';
 import { metadata } from './metadata';
 
 export default function RootLayout({ children }) {
