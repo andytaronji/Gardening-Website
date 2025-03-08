@@ -5,103 +5,103 @@ const path = require('path');
 const images = [
   // Main service images
   {
-    url: 'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae',
+    url: 'https://images.unsplash.com/photo-1599685315640-9ceec9fb3896',
     name: 'garden-cleanup.jpg'
   },
   {
-    url: 'https://images.unsplash.com/photo-1511382091779-4dedcc34e19b',
+    url: 'https://images.unsplash.com/photo-1444392061186-9fc38f84f726',
     name: 'leaf-removal.jpg'
   },
   {
-    url: 'https://images.unsplash.com/photo-1558904541-efa843a96f01',
+    url: 'https://images.unsplash.com/photo-1600240644455-3edc55c375fe',
     name: 'landscape-design.jpg'
   },
   {
-    url: 'https://images.unsplash.com/photo-1598902108854-10e335adac99',
+    url: 'https://images.unsplash.com/photo-1586280268958-9483002d016a',
     name: 'maintenance.jpg'
   },
   {
-    url: 'https://images.unsplash.com/photo-1542810634-71277d95dcbb',
+    url: 'https://images.unsplash.com/photo-1584479898061-15742e14f50d',
     name: 'renovation.jpg'
   },
   {
-    url: 'https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e',
+    url: 'https://images.unsplash.com/photo-1523348837708-15d4a09cfac2',
     name: 'deweeding.jpg'
   },
   // Additional garden and landscape images
   {
-    url: 'https://images.unsplash.com/photo-1501685532562-aa6846b14a0e',
+    url: 'https://images.unsplash.com/photo-1499002238440-d264edd596ec',
     name: 'roses-garden.jpg'
   },
   {
-    url: 'https://images.unsplash.com/photo-1558350315-8aa00e8e4590',
+    url: 'https://images.unsplash.com/photo-1470755008296-2939845775eb',
     name: 'cottage-garden.jpg'
   },
   {
-    url: 'https://images.unsplash.com/photo-1624397640148-949b1732bb0a',
+    url: 'https://images.unsplash.com/photo-1465919292275-c60ba49da6ae',
     name: 'spring-flowers.jpg'
   },
   {
-    url: 'https://images.unsplash.com/photo-1558693168-c370615b54e0',
+    url: 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688',
     name: 'garden-path.jpg'
   },
   {
-    url: 'https://images.unsplash.com/photo-1523348837708-15d4a09cfac2',
+    url: 'https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e',
     name: 'herb-garden.jpg'
   },
   {
-    url: 'https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e',
+    url: 'https://images.unsplash.com/photo-1622383563227-04401ab4e5ea',
     name: 'vegetable-garden.jpg'
   },
   {
-    url: 'https://images.unsplash.com/photo-1598902108854-10e335adac99',
+    url: 'https://images.unsplash.com/photo-1599685315640-9ceec9fb3896',
     name: 'garden-design.jpg'
   },
   {
-    url: 'https://images.unsplash.com/photo-1534710961216-75c88202f43e',
+    url: 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b',
     name: 'garden-tools.jpg'
   },
   {
-    url: 'https://images.unsplash.com/photo-1557429287-b2e26467fc2b',
+    url: 'https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e',
     name: 'seasonal-planting.jpg'
   },
   {
-    url: 'https://images.unsplash.com/photo-1580600301354-0ce8faef576c',
+    url: 'https://images.unsplash.com/photo-1584479898061-15742e14f50d',
     name: 'irrigation.jpg'
   },
   {
-    url: 'https://images.unsplash.com/photo-1611735341450-74d61e660ad2',
+    url: 'https://images.unsplash.com/photo-1598902108854-10e335adac99',
     name: 'hardscaping.jpg'
   },
   {
-    url: 'https://images.unsplash.com/photo-1584479898061-15742e14f50d',
+    url: 'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae',
     name: 'garden-bed.jpg'
   },
   {
-    url: 'https://images.unsplash.com/photo-1632571401005-458e9d244591',
+    url: 'https://images.unsplash.com/photo-1600240644455-3edc55c375fe',
     name: 'planting-design.jpg'
   },
   {
-    url: 'https://images.unsplash.com/photo-1598902108854-10e335adac99',
+    url: 'https://images.unsplash.com/photo-1599685315640-9ceec9fb3896',
     name: 'garden-consultation.jpg'
   }
 ];
 
 const consultationImages = [
   {
-    url: 'https://images.unsplash.com/photo-1501685532562-aa6846b14a0e',
+    url: 'https://images.unsplash.com/photo-1600240644455-3edc55c375fe',
     filename: 'garden-design-1.jpg'
   },
   {
-    url: 'https://images.unsplash.com/photo-1558693168-c370615b54e0',
+    url: 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688',
     filename: 'garden-design-2.jpg'
   },
   {
-    url: 'https://images.unsplash.com/photo-1624397640148-949b1732bb0a',
+    url: 'https://images.unsplash.com/photo-1470755008296-2939845775eb',
     filename: 'garden-design-3.jpg'
   },
   {
-    url: 'https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e',
+    url: 'https://images.unsplash.com/photo-1605059910420-ed7a7c1788f8',
     filename: 'video-consultation.jpg'
   }
 ];
