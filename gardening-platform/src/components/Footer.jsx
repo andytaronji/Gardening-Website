@@ -12,8 +12,8 @@ export default function Footer() {
           {/* Company Info */}
           <div>
             <h3 className="text-2xl font-cursive mb-4">Gardening Thyme</h3>
-            <p className="mb-4">Professional garden design and maintenance services in Massachusetts.</p>
-            <p>Serving: Framingham, Natick, Wellesley, Wayland, Sudbury, and surrounding areas</p>
+            <p className="mb-4">Professional garden design and maintenance services in Georgia.</p>
+            <p>Service Areas: Marietta, Roswell, Alpharetta, Woodstock, Smyrna / Vinings, and more surrounding areas!</p>
           </div>
 
           {/* Quick Links */}
