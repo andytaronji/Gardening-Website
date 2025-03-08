@@ -20,7 +20,7 @@ export default function ContactPage() {
                 <strong>Email:</strong> services@gardeningthyme.com
               </p>
               <p className="text-gray-700 mb-2">
-                <strong>Phone:</strong> (555) 123-4567
+                <strong>Phone:</strong> 508-932-4056
               </p>
               <p className="text-gray-700 mb-2">
                 <strong>Address:</strong> 123 Garden Street, Plantville, GP 12345

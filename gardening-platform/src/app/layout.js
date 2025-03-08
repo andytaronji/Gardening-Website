@@ -47,7 +47,7 @@ export default function RootLayout({ children }) {
               <div>
                 <h3 className="text-xl font-semibold mb-4">Contact Us</h3>
                 <p>Email: services@gardeningthyme.com</p>
-                <p>Phone: (555) 123-4567</p>
+                <p>Phone: 508-932-4056</p>
               </div>
             </div>
             <div className="mt-8 pt-6 border-t border-green-600 text-center">
