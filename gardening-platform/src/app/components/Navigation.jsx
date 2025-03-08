@@ -41,6 +41,7 @@ export default function Navigation() {
                 <ul className="flex flex-col items-center py-4">
                   <li className="my-2"><Link href="/" onClick={() => setIsOpen(false)}>Home</Link></li>
                   <li className="my-2"><Link href="/portfolio" onClick={() => setIsOpen(false)}>Portfolio</Link></li>
+                  <li className="my-2"><Link href="/blog" onClick={() => setIsOpen(false)}>Blog</Link></li>
                   <li className="my-2"><Link href="/contact" onClick={() => setIsOpen(false)}>Contact</Link></li>
                 </ul>
               </div>
@@ -50,6 +51,7 @@ export default function Navigation() {
           <ul className="hidden md:flex space-x-6">
             <li><Link href="/">Home</Link></li>
             <li><Link href="/portfolio">Portfolio</Link></li>
+            <li><Link href="/blog">Blog</Link></li>
             <li><Link href="/contact">Contact</Link></li>
           </ul>
         )}
