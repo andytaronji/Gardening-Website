@@ -8,7 +8,7 @@ const images = [
     name: 'garden-cleanup.jpg'
   },
   {
-    url: 'https://images.unsplash.com/photo-1510595989956-84c64748a5f4',
+    url: 'https://images.unsplash.com/photo-1636197061911-64764db9bb34',
     name: 'leaf-removal.jpg'
   },
   {
@@ -45,14 +45,33 @@ const images = [
   }
 ];
 
-const downloadImage = (url, filename) => {
-  const dir = path.join(process.cwd(), 'public', 'images', 'portfolio');
+const consultationImages = [
+  {
+    url: 'https://images.unsplash.com/photo-1558904541-efa843a96f01',
+    filename: 'images/consultations/garden-design-1.jpg'
+  },
+  {
+    url: 'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae',
+    filename: 'images/consultations/garden-design-2.jpg'
+  },
+  {
+    url: 'https://images.unsplash.com/photo-1636197061911-64764db9bb34',
+    filename: 'images/consultations/garden-design-3.jpg'
+  },
+  {
+    url: 'https://images.unsplash.com/photo-1542478080-8c03409bbf22',
+    filename: 'images/consultations/video-consultation.jpg'
+  }
+];
+
+const downloadImage = (url, filename, baseDir = 'portfolio') => {
+  const dir = path.join(process.cwd(), 'public', 'images', baseDir);
   
   if (!fs.existsSync(dir)){
     fs.mkdirSync(dir, { recursive: true });
   }
 
-  const filepath = path.join(dir, filename);
+  const filepath = path.join(dir, path.basename(filename));
   
   https.get(`${url}?w=800&q=80`, (response) => {
     const fileStream = fs.createWriteStream(filepath);
@@ -69,4 +88,8 @@ const downloadImage = (url, filename) => {
 
 images.forEach(img => {
   downloadImage(img.url, img.name);
-}); 
+});
+
+for (const image of consultationImages) {
+  downloadImage(image.url, path.basename(image.filename), 'consultations');
+} 
