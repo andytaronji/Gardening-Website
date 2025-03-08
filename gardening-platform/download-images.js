@@ -93,7 +93,7 @@ const consultationImages = [
     filename: 'garden-design-1.jpg'
   },
   {
-    url: 'https://images.unsplash.com/photo-1558350315-8aa00e8e4590',
+    url: 'https://images.unsplash.com/photo-1542224566-6e85f2e6772f',
     filename: 'garden-design-2.jpg'
   },
   {
