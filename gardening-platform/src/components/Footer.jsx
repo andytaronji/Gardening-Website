@@ -13,7 +13,7 @@ export default function Footer() {
           <div>
             <h3 className="text-2xl font-cursive mb-4">Gardening Thyme</h3>
             <p className="mb-4">Professional garden design and maintenance services in Georgia.</p>
-            <p>Service Areas: Marietta, Roswell, Alpharetta, Woodstock, Smyrna / Vinings, and more surrounding areas!</p>
+            <p>Service Areas: Marietta, Roswell, Alpharetta, Woodstock, Smyrna, Vinings, and more surrounding areas!</p>
           </div>
 
           {/* Quick Links */}
