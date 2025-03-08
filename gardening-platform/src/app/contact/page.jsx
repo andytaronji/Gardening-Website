@@ -23,7 +23,7 @@ export default function ContactPage() {
                 <strong>Phone:</strong> 508-932-4056
               </p>
               <p className="text-gray-700 mb-2">
-                <strong>Address:</strong> 123 Garden Street, Plantville, GP 12345
+                <strong>Service Areas:</strong> Marietta, Roswell, Alpharetta, Woodstock, Smyrna / Vinings, and more surrounding areas!
               </p>
               <p className="text-gray-700 mb-2">
                 <strong>Hours:</strong> Monday - Friday: 9am - 5pm
