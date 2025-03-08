@@ -8,11 +8,11 @@ const images = [
     name: 'garden-cleanup.jpg'
   },
   {
-    url: 'https://images.unsplash.com/photo-1513009673845-a826fb5f4c02',
+    url: 'https://images.unsplash.com/photo-1525498128493-380d1990a112',
     name: 'leaf-removal.jpg'
   },
   {
-    url: 'https://images.unsplash.com/photo-1558904541-c6c7003a3b2d',
+    url: 'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae',
     name: 'landscape-design.jpg'
   },
   {
@@ -20,12 +20,12 @@ const images = [
     name: 'maintenance.jpg'
   },
   {
-    url: 'https://images.unsplash.com/photo-1558904541-0e45b01d9f89',
+    url: 'https://images.unsplash.com/photo-1605059279835-1febdf27a4e7',
     name: 'renovation.jpg'
   },
   {
-    url: 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688',
-    name: 'tree-service.jpg'
+    url: 'https://images.unsplash.com/photo-1635179490824-2304d895f5a3',
+    name: 'deweeding.jpg'
   }
 ];
 

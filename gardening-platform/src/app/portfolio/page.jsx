@@ -42,10 +42,10 @@ const projects = [
   },
   {
     id: 6,
-    title: "Tree Service",
-    category: "Tree Care",
-    image: "/images/portfolio/tree-service.jpg",
-    description: "Professional tree trimming and maintenance service."
+    title: "Deweeding",
+    category: "Maintenance",
+    image: "/images/portfolio/deweeding.jpg",
+    description: "Professional weed removal and prevention services for gardens and landscapes."
   }
 ];
 
