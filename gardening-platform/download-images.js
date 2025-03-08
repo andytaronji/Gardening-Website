@@ -12,7 +12,7 @@ const images = [
     name: 'leaf-removal.jpg'
   },
   {
-    url: 'https://images.unsplash.com/photo-1598902108854-10e335adac99',
+    url: 'https://images.unsplash.com/photo-1562690868-60bbe7293e94',
     name: 'landscape-design.jpg'
   },
   {
