@@ -4,11 +4,11 @@ const path = require('path');
 
 const images = [
   {
-    url: 'https://images.unsplash.com/photo-1601579112934-35d37c9b0da3',
+    url: 'https://images.unsplash.com/photo-1558904541-efa843a96f01',
     name: 'garden-cleanup.jpg'
   },
   {
-    url: 'https://images.unsplash.com/photo-1507484467459-0c01be16726e',
+    url: 'https://images.unsplash.com/photo-1510595989956-84c64748a5f4',
     name: 'leaf-removal.jpg'
   },
   {
@@ -16,16 +16,32 @@ const images = [
     name: 'landscape-design.jpg'
   },
   {
-    url: 'https://images.unsplash.com/photo-1557429287-b2e26467fc2b',
+    url: 'https://images.unsplash.com/photo-1584479898061-15742e14f50d',
     name: 'maintenance.jpg'
   },
   {
-    url: 'https://images.unsplash.com/photo-1534710961216-75c88202f43e',
+    url: 'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae',
     name: 'renovation.jpg'
   },
   {
-    url: 'https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e',
+    url: 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b',
     name: 'deweeding.jpg'
+  },
+  {
+    url: 'https://images.unsplash.com/photo-1542478080-8c03409bbf22',
+    name: 'backup-1.jpg'
+  },
+  {
+    url: 'https://images.unsplash.com/photo-1605197788044-b8aef4bffd4b',
+    name: 'backup-2.jpg'
+  },
+  {
+    url: 'https://images.unsplash.com/photo-1523348837708-15d4a09cfac2',
+    name: 'backup-3.jpg'
+  },
+  {
+    url: 'https://images.unsplash.com/photo-1558350315-8aa00e8e4590',
+    name: 'backup-4.jpg'
   }
 ];
 
