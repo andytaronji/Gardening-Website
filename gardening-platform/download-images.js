@@ -5,7 +5,7 @@ const path = require('path');
 const images = [
   // Main service images
   {
-    url: 'https://images.unsplash.com/photo-1599685315640-9ceec9fb3896',
+    url: 'https://images.unsplash.com/photo-1557429287-b2e26467fc2b',
     name: 'garden-cleanup.jpg'
   },
   {
@@ -46,7 +46,7 @@ const images = [
     name: 'garden-path.jpg'
   },
   {
-    url: 'https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e',
+    url: 'https://images.unsplash.com/photo-1558293842-c0fd3db86157',
     name: 'herb-garden.jpg'
   },
   {
@@ -54,7 +54,7 @@ const images = [
     name: 'vegetable-garden.jpg'
   },
   {
-    url: 'https://images.unsplash.com/photo-1599685315640-9ceec9fb3896',
+    url: 'https://images.unsplash.com/photo-1530076886461-ce58ea8abe24',
     name: 'garden-design.jpg'
   },
   {
@@ -62,11 +62,11 @@ const images = [
     name: 'garden-tools.jpg'
   },
   {
-    url: 'https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e',
+    url: 'https://images.unsplash.com/photo-1557429287-b2e26467fc2b',
     name: 'seasonal-planting.jpg'
   },
   {
-    url: 'https://images.unsplash.com/photo-1584479898061-15742e14f50d',
+    url: 'https://images.unsplash.com/photo-1580983218765-f663bec07b37',
     name: 'irrigation.jpg'
   },
   {
@@ -78,18 +78,18 @@ const images = [
     name: 'garden-bed.jpg'
   },
   {
-    url: 'https://images.unsplash.com/photo-1600240644455-3edc55c375fe',
+    url: 'https://images.unsplash.com/photo-1534710961216-75c88202f43e',
     name: 'planting-design.jpg'
   },
   {
-    url: 'https://images.unsplash.com/photo-1599685315640-9ceec9fb3896',
+    url: 'https://images.unsplash.com/photo-1621905252507-b35492cc74b4',
     name: 'garden-consultation.jpg'
   }
 ];
 
 const consultationImages = [
   {
-    url: 'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae',
+    url: 'https://images.unsplash.com/photo-1558293842-c0fd3db86157',
     filename: 'garden-design-1.jpg'
   },
   {
@@ -101,7 +101,7 @@ const consultationImages = [
     filename: 'garden-design-3.jpg'
   },
   {
-    url: 'https://images.unsplash.com/photo-1605059910420-ed7a7c1788f8',
+    url: 'https://images.unsplash.com/photo-1628102491629-778571d893a3',
     filename: 'video-consultation.jpg'
   }
 ];
