@@ -4,27 +4,27 @@ const path = require('path');
 
 const images = [
   {
-    url: 'https://images.unsplash.com/photo-1558293842-c0fd3db86157',
+    url: 'https://images.unsplash.com/photo-1601579112934-35d37c9b0da3',
     name: 'garden-cleanup.jpg'
   },
   {
-    url: 'https://images.unsplash.com/photo-1542320260-f8f651de8c12',
+    url: 'https://images.unsplash.com/photo-1507484467459-0c01be16726e',
     name: 'leaf-removal.jpg'
   },
   {
-    url: 'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae',
+    url: 'https://images.unsplash.com/photo-1598902108854-10e335adac99',
     name: 'landscape-design.jpg'
   },
   {
-    url: 'https://images.unsplash.com/photo-1584479898061-15742e14f50d',
+    url: 'https://images.unsplash.com/photo-1557429287-b2e26467fc2b',
     name: 'maintenance.jpg'
   },
   {
-    url: 'https://images.unsplash.com/photo-1530126483408-aa533e55bdb2',
+    url: 'https://images.unsplash.com/photo-1534710961216-75c88202f43e',
     name: 'renovation.jpg'
   },
   {
-    url: 'https://images.unsplash.com/photo-1588880331179-bc9b93a8cb5e',
+    url: 'https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e',
     name: 'deweeding.jpg'
   }
 ];
