@@ -16,11 +16,15 @@ export async function POST(req) {
       },
     });
 
+    // Test the connection
+    await transporter.verify();
+    console.log('SMTP connection verified');
+
     // Email content
     const mailOptions = {
-      from: `"Gardening Thyme Website" <${process.env.EMAIL_USER}>`, // This ensures proper "From" formatting
-      replyTo: email, // This allows you to reply directly to the sender
-      to: process.env.EMAIL_USER, // Send to your services email
+      from: `"Gardening Thyme Website" <${process.env.EMAIL_USER}>`,
+      replyTo: email,
+      to: process.env.EMAIL_USER,
       subject: `New Contact Form Message: ${subject}`,
       text: `
 Name: ${name}
@@ -41,7 +45,8 @@ ${message}
     };
 
     // Send email
-    await transporter.sendMail(mailOptions);
+    const info = await transporter.sendMail(mailOptions);
+    console.log('Message sent: %s', info.messageId);
 
     return new Response(JSON.stringify({ message: 'Email sent successfully' }), {
       status: 200,
@@ -51,7 +56,7 @@ ${message}
     });
   } catch (error) {
     console.error('Error sending email:', error);
-    return new Response(JSON.stringify({ error: 'Failed to send email' }), {
+    return new Response(JSON.stringify({ error: error.message || 'Failed to send email' }), {
       status: 500,
       headers: {
         'Content-Type': 'application/json',
