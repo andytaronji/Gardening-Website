@@ -9,7 +9,7 @@ const images = [
     name: 'garden-cleanup.jpg'
   },
   {
-    url: 'https://images.unsplash.com/photo-1636978862412-f5c9a1fcf614',
+    url: 'https://images.unsplash.com/photo-1511382091779-4dedcc34e19b',
     name: 'leaf-removal.jpg'
   },
   {
@@ -21,7 +21,7 @@ const images = [
     name: 'maintenance.jpg'
   },
   {
-    url: 'https://images.unsplash.com/photo-1530379769497-883c410c01c2',
+    url: 'https://images.unsplash.com/photo-1542810634-71277d95dcbb',
     name: 'renovation.jpg'
   },
   {
