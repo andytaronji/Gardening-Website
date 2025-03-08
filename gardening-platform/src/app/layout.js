@@ -20,6 +20,7 @@ export default function RootLayout({ children }) {
             <nav>
               <ul className="flex space-x-6">
                 <li><a href="/" className="font-sans text-lg font-medium hover:text-green-200 transition duration-300">Home</a></li>
+                <li><a href="/portfolio" className="font-sans text-lg font-medium hover:text-green-200 transition duration-300">Portfolio</a></li>
                 <li><a href="/consultations" className="font-sans text-lg font-medium hover:text-green-200 transition duration-300">Consultations</a></li>
                 <li><a href="/blog" className="font-sans text-lg font-medium hover:text-green-200 transition duration-300">Blog</a></li>
                 <li><a href="/contact" className="font-sans text-lg font-medium hover:text-green-200 transition duration-300">Contact</a></li>
