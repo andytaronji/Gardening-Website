@@ -89,11 +89,11 @@ const images = [
 
 const consultationImages = [
   {
-    url: 'https://images.unsplash.com/photo-1600240644455-3edc55c375fe',
+    url: 'https://images.unsplash.com/photo-1534245037860-7367bfcb1098',
     filename: 'garden-design-1.jpg'
   },
   {
-    url: 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688',
+    url: 'https://images.unsplash.com/photo-1558350315-8aa00e8e4590',
     filename: 'garden-design-2.jpg'
   },
   {
