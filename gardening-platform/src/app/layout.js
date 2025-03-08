@@ -1,10 +1,6 @@
 import './globals.css';
 import Navigation from './components/Navigation';
-
-export const metadata = {
-  title: 'Gardening Thyme',
-  description: 'Professional garden design and maintenance services',
-};
+import { metadata } from './metadata';
 
 export default function RootLayout({ children }) {
   return (
