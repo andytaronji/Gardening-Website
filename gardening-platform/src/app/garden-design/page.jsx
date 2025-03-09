@@ -73,33 +73,27 @@ export default function GardenDesignPage() {
             {[
               {
                 title: "Initial Consultation",
-                description: "We begin with a thorough consultation to understand your vision, preferences, and the unique characteristics of your space.",
-                icon: "🎯"
+                description: "We begin with a thorough consultation to understand your vision, preferences, and the unique characteristics of your space."
               },
               {
                 title: "Custom Design Creation",
-                description: "Our expert designers create detailed plans that blend aesthetics with functionality, considering factors like climate and maintenance.",
-                icon: "✏️"
+                description: "Our expert designers create detailed plans that blend aesthetics with functionality, considering factors like climate and maintenance."
               },
               {
                 title: "Material Selection",
-                description: "We carefully select high-quality materials and plants that complement your design and thrive in your specific environment.",
-                icon: "🎨"
+                description: "We carefully select high-quality materials and plants that complement your design and thrive in your specific environment."
               },
               {
-                title: "3D Visualization",
-                description: "Experience your garden before it's built with our advanced 3D visualization technology.",
-                icon: "💻"
+                title: "2D Visualization",
+                description: "Experience your garden before it's built with our advanced 2D visualization technology."
               },
               {
                 title: "Expert Implementation",
-                description: "Our skilled team brings your design to life with precision and attention to detail.",
-                icon: "🌱"
+                description: "Our skilled team brings your design to life with precision and attention to detail."
               },
               {
                 title: "Ongoing Support",
-                description: "We provide maintenance guidance and support to ensure your garden continues to flourish.",
-                icon: "🌿"
+                description: "We provide maintenance guidance and support to ensure your garden continues to flourish."
               }
             ].map((feature, index) => (
               <motion.div
@@ -107,7 +101,6 @@ export default function GardenDesignPage() {
                 variants={fadeIn}
                 className="bg-white rounded-lg shadow-lg p-8 transform hover:scale-105 transition-transform duration-300"
               >
-                <div className="text-4xl mb-4">{feature.icon}</div>
                 <h3 className="text-xl font-semibold text-green-800 mb-4">{feature.title}</h3>
                 <p className="text-gray-600">{feature.description}</p>
               </motion.div>
