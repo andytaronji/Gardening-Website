@@ -26,7 +26,7 @@ export default function Navigation() {
 
   return (
     <nav className="bg-green-800 text-white p-4">
-      <div className="container mx-auto flex justify-between items-center">
+      <div className="container mx-auto flex justify-between items-center overflow-visible">
         <Link href="/" className="text-xl font-cursive">
           Gardening Thyme
         </Link>
@@ -83,31 +83,30 @@ export default function Navigation() {
             <li><Link href="/portfolio">Portfolio</Link></li>
             <li><Link href="/blog">Blog</Link></li>
             <li><Link href="/contact">Contact</Link></li>
-            <li 
-              className="relative group"
-              onMouseEnter={() => setShowServices(true)}
-              onMouseLeave={() => setShowServices(false)}
-            >
+            <li className="relative">
               <button
-                className="flex items-center"
+                className="flex items-center peer"
                 aria-expanded={showServices}
                 aria-haspopup="true"
               >
                 Services
-                <svg className={`ml-1 h-4 w-4 transform ${showServices ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="ml-1 h-4 w-4 transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
               <div
-                className={`absolute left-0 mt-2 w-48 ${showServices ? 'block' : 'hidden'}`}
+                className="absolute left-0 mt-2 w-48 opacity-0 invisible peer-hover:opacity-100 peer-hover:visible hover:opacity-100 hover:visible transition-all duration-200"
                 role="menu"
                 aria-orientation="vertical"
                 aria-labelledby="services-menu"
               >
                 <ul className="bg-green-700 rounded-md shadow-lg py-2">
                   {services.map((service) => (
-                    <li key={service.path} className="px-4 py-2 hover:bg-green-600">
-                      <Link href={service.path} className="block w-full">
+                    <li key={service.path}>
+                      <Link 
+                        href={service.path} 
+                        className="block w-full px-4 py-2 hover:bg-green-600 whitespace-nowrap"
+                      >
                         {service.name}
                       </Link>
                     </li>
