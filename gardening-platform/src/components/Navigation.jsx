@@ -109,14 +109,14 @@ export default function Navigation() {
                     {showServices && (
                       <div
                         onMouseLeave={() => setShowServices(false)}
-                        className={`absolute left-0 mt-0 w-56 transition-all duration-300 z-[100]
-                          ${showServices ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'}`}
+                        className={`absolute left-0 w-56 transition-all duration-300 z-[100]
+                          ${showServices ? 'opacity-100 visible translate-y-2' : 'opacity-0 invisible translate-y-0'}`}
                         role="menu"
                         aria-orientation="vertical"
                         aria-labelledby="services-menu"
                       >
-                        <div className="py-2 mt-2">
-                          <ul className="bg-green-800/95 backdrop-blur-sm rounded-lg py-1 shadow-xl divide-y divide-white/5 border border-white/10">
+                        <div className="py-1 mt-1">
+                          <ul className="bg-green-800/95 backdrop-blur-sm rounded-lg shadow-xl divide-y divide-white/5 border border-white/10">
                             {services.map((service) => (
                               <li key={service.path}>
                                 <Link 
@@ -188,14 +188,14 @@ export default function Navigation() {
               </button>
               <div
                 onMouseLeave={() => setShowServices(false)}
-                className={`absolute left-0 mt-0 w-56 transition-all duration-300 z-[100]
-                  ${showServices ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'}`}
+                className={`absolute left-0 w-56 transition-all duration-300 z-[100]
+                  ${showServices ? 'opacity-100 visible translate-y-2' : 'opacity-0 invisible translate-y-0'}`}
                 role="menu"
                 aria-orientation="vertical"
                 aria-labelledby="services-menu"
               >
-                <div className="py-2 mt-2">
-                  <ul className="bg-green-800/95 backdrop-blur-sm rounded-lg py-1 shadow-xl divide-y divide-white/5 border border-white/10">
+                <div className="py-1 mt-1">
+                  <ul className="bg-green-800/95 backdrop-blur-sm rounded-lg shadow-xl divide-y divide-white/5 border border-white/10">
                     {services.map((service) => (
                       <li key={service.path}>
                         <Link 

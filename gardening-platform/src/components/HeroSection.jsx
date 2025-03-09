@@ -11,7 +11,7 @@ export default function HeroSection() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
-      className="relative h-screen flex items-center justify-center"
+      className="relative h-[100vh] w-full flex items-center justify-center"
     >
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-black opacity-30 z-10"></div>
@@ -22,7 +22,7 @@ export default function HeroSection() {
             fill
             sizes="100vw"
             priority
-            style={{ objectFit: 'cover' }}
+            style={{ objectFit: 'cover', objectPosition: 'center' }}
             className="z-0"
           />
         </div>

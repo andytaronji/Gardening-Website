@@ -106,6 +106,7 @@ const Modal = ({ project, onClose }) => {
 
 export default function PortfolioPage() {
   const [selectedProject, setSelectedProject] = useState(null);
+  const [filter, setFilter] = useState('All');
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -127,24 +128,31 @@ export default function PortfolioPage() {
   };
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <motion.h1 
+    <div className="container mx-auto px-4 py-12">
+      <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="text-4xl font-bold text-center mb-8 text-green-800"
+        className="text-center mb-12"
       >
-        Our Portfolio
-      </motion.h1>
-      
-      <motion.p 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.3, duration: 0.8 }}
-        className="text-xl text-gray-600 text-center mb-12 max-w-3xl mx-auto"
-      >
-        Explore our collection of successful projects and transformations. Each project showcases our commitment to quality and attention to detail.
-      </motion.p>
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-4xl font-bold text-center text-green-800 mb-8"
+        >
+          Our Portfolio
+        </motion.h1>
+        
+        <motion.p 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.3, duration: 0.8 }}
+          className="text-xl text-gray-600 text-center mb-12 max-w-3xl mx-auto"
+        >
+          Explore our collection of successful projects and transformations. Each project showcases our commitment to quality and attention to detail.
+        </motion.p>
+      </motion.div>
 
       <motion.div 
         variants={containerVariants}

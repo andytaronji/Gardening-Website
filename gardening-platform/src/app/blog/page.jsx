@@ -67,23 +67,17 @@ export default function BlogPage() {
 
   return (
     <div className="container mx-auto px-4 py-12">
-      <motion.h1 
+      <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="text-4xl font-bold text-center mb-8 text-green-800"
+        className="text-center mb-12"
       >
-        Gardening Thyme Blog
-      </motion.h1>
-      
-      <motion.p 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.3, duration: 0.8 }}
-        className="text-xl text-gray-600 text-center mb-12 max-w-3xl mx-auto"
-      >
-        Explore our collection of gardening tips, tricks, and insights. Stay up to date with the latest trends and expert advice.
-      </motion.p>
+        <h1 className="text-4xl font-bold text-green-800 mb-6">Our Garden Blog</h1>
+        <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+          Discover gardening tips, seasonal advice, and expert insights to help your garden thrive.
+        </p>
+      </motion.div>
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}

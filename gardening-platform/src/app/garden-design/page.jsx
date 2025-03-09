@@ -25,9 +25,9 @@ const staggerContainer = {
 
 export default function GardenDesignPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white -mt-24">
       {/* Hero Section */}
-      <section className="relative h-[80vh] w-full overflow-hidden">
+      <section className="relative h-screen w-full overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="/images/portfolio/landscape-design.jpg"

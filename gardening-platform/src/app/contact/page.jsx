@@ -82,13 +82,13 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center">
-      <div className="container mx-auto px-4 py-8">
+    <div className="min-h-screen bg-gray-50">
+      <div className="container mx-auto px-4 -mt-24 pt-32 pb-16">
         <motion.h1 
-          initial={{ opacity: 0, y: -20 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-4xl font-bold text-center mt-4 mb-6 text-green-800"
+          className="text-4xl md:text-5xl font-bold text-center mb-12 text-green-800"
         >
           Contact Gardening Thyme
         </motion.h1>
@@ -97,57 +97,57 @@ export default function ContactPage() {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="max-w-3xl mx-auto bg-white rounded-lg shadow-md p-6"
+          className="max-w-6xl mx-auto bg-white rounded-lg shadow-lg p-8 mb-16"
         >
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8 place-items-center">
-            <motion.div variants={itemVariants} className="w-full max-w-md">
-              <h2 className="text-2xl font-semibold text-green-700 mb-4 text-center">Get in Touch</h2>
-              <p className="text-gray-700 mb-4 text-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <motion.div variants={itemVariants} className="w-full">
+              <h2 className="text-2xl md:text-3xl font-semibold text-green-700 mb-6 text-center">Get in Touch</h2>
+              <p className="text-gray-700 mb-8 text-center text-lg">
                 Have questions about our services or need gardening advice? We're here to help!
                 Fill out the form or use our contact information to reach out to us.
               </p>
               
-              <div className="mt-6">
-                <h3 className="text-xl font-semibold text-green-700 mb-2 text-center">Contact Information</h3>
+              <div className="mt-8">
+                <h3 className="text-xl md:text-2xl font-semibold text-green-700 mb-6 text-center">Contact Information</h3>
                 <motion.p 
                   variants={itemVariants}
-                  className="text-gray-700 mb-2 text-center"
+                  className="text-gray-700 mb-4 text-center text-lg"
                 >
                   <strong>Email:</strong> services@gardeningthyme.com
                 </motion.p>
                 <motion.p 
                   variants={itemVariants}
-                  className="text-gray-700 mb-2 text-center"
+                  className="text-gray-700 mb-4 text-center text-lg"
                 >
                   <strong>Phone:</strong> 508-932-4056
                 </motion.p>
                 <motion.p 
                   variants={itemVariants}
-                  className="text-gray-700 mb-2 text-center"
+                  className="text-gray-700 mb-4 text-center text-lg"
                 >
                   <strong>Service Areas:</strong> Marietta, Roswell, Alpharetta, Woodstock, Smyrna / Vinings, and more surrounding areas!
                 </motion.p>
                 <motion.p 
                   variants={itemVariants}
-                  className="text-gray-700 mb-2 text-center"
+                  className="text-gray-700 mb-4 text-center text-lg"
                 >
                   <strong>Hours:</strong> Monday - Friday: 9am - 5pm
                 </motion.p>
               </div>
             </motion.div>
             
-            <motion.div variants={itemVariants}>
-              <h2 className="text-2xl font-semibold text-green-700 mb-4">Send Us a Message</h2>
+            <motion.div variants={itemVariants} className="w-full">
+              <h2 className="text-2xl md:text-3xl font-semibold text-green-700 mb-6">Send Us a Message</h2>
               {status.message && (
                 <motion.div 
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  className={`p-4 rounded-md mb-4 ${status.isError ? 'bg-red-50 text-red-800' : 'bg-green-50 text-green-800'}`}
+                  className={`p-4 rounded-md mb-6 ${status.isError ? 'bg-red-50 text-red-800' : 'bg-green-50 text-green-800'}`}
                 >
                   {status.message}
                 </motion.div>
               )}
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <motion.div variants={itemVariants}>
                   <label htmlFor="name" className="block text-gray-700 mb-1">Name</label>
                   <input 

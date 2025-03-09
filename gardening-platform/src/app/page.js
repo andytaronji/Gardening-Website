@@ -10,7 +10,7 @@ import CTASection from '../components/CTASection';
 
 export default function HomePage() {
   return (
-    <div className="overflow-hidden">
+    <div className="overflow-hidden -mt-24">
       <HeroSection />
       <AboutSection />
       <ServicesSection />
