@@ -20,16 +20,18 @@ export default function Navigation() {
   const services = [
     { name: 'Groundskeeping', path: '/services/groundskeeping' },
     { name: 'Quarterly Cleanup', path: '/services/quarterly-cleanup' },
-    { name: 'Property Enhancement', path: '/services/property-enhancement' },
-    { name: 'Vegetable Garden', path: '/services/vegetable-garden' }
+    { name: 'Vegetable Garden', path: '/services/vegetable-garden' },
+    { name: 'Property Enhancement', path: '/services/property-enhancement' }
   ];
 
   return (
     <nav className="bg-green-800 text-white p-4 w-full">
-      <div className="max-w-7xl mx-auto flex justify-between items-center overflow-visible px-4">
-        <Link href="/" className="text-xl font-cursive">
-          Gardening Thyme
-        </Link>
+      <div className="max-w-7xl mx-auto flex justify-between items-center overflow-visible px-4 md:px-8">
+        <div className="flex-shrink-0 -ml-4">
+          <Link href="/" className="text-xl font-cursive">
+            Gardening Thyme
+          </Link>
+        </div>
         
         {isMobile ? (
           <>
@@ -48,9 +50,9 @@ export default function Navigation() {
               <div className="absolute top-16 left-0 right-0 bg-green-800 z-50">
                 <ul className="flex flex-col items-center py-4">
                   <li className="my-2"><Link href="/" onClick={() => setIsOpen(false)}>Home</Link></li>
+                  <li className="my-2"><Link href="/garden-design" onClick={() => setIsOpen(false)}>Garden Design</Link></li>
                   <li className="my-2"><Link href="/portfolio" onClick={() => setIsOpen(false)}>Portfolio</Link></li>
                   <li className="my-2"><Link href="/blog" onClick={() => setIsOpen(false)}>Blog</Link></li>
-                  <li className="my-2"><Link href="/contact" onClick={() => setIsOpen(false)}>Contact</Link></li>
                   <li className="my-2 relative">
                     <button
                       onClick={() => setShowServices(!showServices)}
@@ -73,16 +75,17 @@ export default function Navigation() {
                       </ul>
                     )}
                   </li>
+                  <li className="my-2"><Link href="/contact" onClick={() => setIsOpen(false)}>Contact</Link></li>
                 </ul>
               </div>
             )}
           </>
         ) : (
-          <ul className="hidden md:flex space-x-6 items-center">
+          <ul className="hidden md:flex space-x-8 items-center ml-auto">
             <li><Link href="/">Home</Link></li>
+            <li><Link href="/garden-design">Garden Design</Link></li>
             <li><Link href="/portfolio">Portfolio</Link></li>
             <li><Link href="/blog">Blog</Link></li>
-            <li><Link href="/contact">Contact</Link></li>
             <li className="relative">
               <button
                 className="flex items-center peer"
@@ -114,6 +117,7 @@ export default function Navigation() {
                 </ul>
               </div>
             </li>
+            <li><Link href="/contact">Contact</Link></li>
           </ul>
         )}
       </div>
