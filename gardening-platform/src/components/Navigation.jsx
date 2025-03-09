@@ -25,8 +25,8 @@ export default function Navigation() {
   ];
 
   return (
-    <nav className="bg-green-800 text-white p-4">
-      <div className="container mx-auto flex justify-between items-center overflow-visible">
+    <nav className="bg-green-800 text-white p-4 w-full">
+      <div className="max-w-7xl mx-auto flex justify-between items-center overflow-visible px-4">
         <Link href="/" className="text-xl font-cursive">
           Gardening Thyme
         </Link>
@@ -95,7 +95,7 @@ export default function Navigation() {
                 </svg>
               </button>
               <div
-                className="absolute left-0 mt-2 w-48 opacity-0 invisible peer-hover:opacity-100 peer-hover:visible hover:opacity-100 hover:visible transition-all duration-200"
+                className="absolute left-0 mt-2 w-48 opacity-0 invisible peer-hover:opacity-100 peer-hover:visible hover:opacity-100 hover:visible transition-all duration-200 z-50"
                 role="menu"
                 aria-orientation="vertical"
                 aria-labelledby="services-menu"
