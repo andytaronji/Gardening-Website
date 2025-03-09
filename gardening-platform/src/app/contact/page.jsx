@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -61,110 +62,161 @@ export default function ContactPage() {
     }
   };
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5 }
+    }
+  };
+
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-4xl font-bold text-center mb-8 text-green-800">Contact Gardening Thyme</h1>
-      
-      <div className="max-w-3xl mx-auto bg-white rounded-lg shadow-md p-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-          <div>
-            <h2 className="text-2xl font-semibold text-green-700 mb-4">Get in Touch</h2>
-            <p className="text-gray-700 mb-4">
-              Have questions about our services or need gardening advice? We're here to help!
-              Fill out the form or use our contact information to reach out to us.
-            </p>
+    <div className="min-h-screen flex items-center">
+      <div className="container mx-auto px-4 py-8">
+        <motion.h1 
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-4xl font-bold text-center mt-4 mb-6 text-green-800"
+        >
+          Contact Gardening Thyme
+        </motion.h1>
+        
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          className="max-w-3xl mx-auto bg-white rounded-lg shadow-md p-6"
+        >
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8 place-items-center">
+            <motion.div variants={itemVariants} className="w-full max-w-md">
+              <h2 className="text-2xl font-semibold text-green-700 mb-4 text-center">Get in Touch</h2>
+              <p className="text-gray-700 mb-4 text-center">
+                Have questions about our services or need gardening advice? We're here to help!
+                Fill out the form or use our contact information to reach out to us.
+              </p>
+              
+              <div className="mt-6">
+                <h3 className="text-xl font-semibold text-green-700 mb-2 text-center">Contact Information</h3>
+                <motion.p 
+                  variants={itemVariants}
+                  className="text-gray-700 mb-2 text-center"
+                >
+                  <strong>Email:</strong> services@gardeningthyme.com
+                </motion.p>
+                <motion.p 
+                  variants={itemVariants}
+                  className="text-gray-700 mb-2 text-center"
+                >
+                  <strong>Phone:</strong> 508-932-4056
+                </motion.p>
+                <motion.p 
+                  variants={itemVariants}
+                  className="text-gray-700 mb-2 text-center"
+                >
+                  <strong>Service Areas:</strong> Marietta, Roswell, Alpharetta, Woodstock, Smyrna / Vinings, and more surrounding areas!
+                </motion.p>
+                <motion.p 
+                  variants={itemVariants}
+                  className="text-gray-700 mb-2 text-center"
+                >
+                  <strong>Hours:</strong> Monday - Friday: 9am - 5pm
+                </motion.p>
+              </div>
+            </motion.div>
             
-            <div className="mt-6">
-              <h3 className="text-xl font-semibold text-green-700 mb-2">Contact Information</h3>
-              <p className="text-gray-700 mb-2">
-                <strong>Email:</strong> services@gardeningthyme.com
-              </p>
-              <p className="text-gray-700 mb-2">
-                <strong>Phone:</strong> 508-932-4056
-              </p>
-              <p className="text-gray-700 mb-2">
-                <strong>Service Areas:</strong> Marietta, Roswell, Alpharetta, Woodstock, Smyrna / Vinings, and more surrounding areas!
-              </p>
-              <p className="text-gray-700 mb-2">
-                <strong>Hours:</strong> Monday - Friday: 9am - 5pm
-              </p>
-            </div>
+            <motion.div variants={itemVariants}>
+              <h2 className="text-2xl font-semibold text-green-700 mb-4">Send Us a Message</h2>
+              {status.message && (
+                <motion.div 
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  className={`p-4 rounded-md mb-4 ${status.isError ? 'bg-red-50 text-red-800' : 'bg-green-50 text-green-800'}`}
+                >
+                  {status.message}
+                </motion.div>
+              )}
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <motion.div variants={itemVariants}>
+                  <label htmlFor="name" className="block text-gray-700 mb-1">Name</label>
+                  <input 
+                    type="text" 
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 transition-all duration-300"
+                    placeholder="Your name"
+                    required
+                  />
+                </motion.div>
+                
+                <motion.div variants={itemVariants}>
+                  <label htmlFor="email" className="block text-gray-700 mb-1">Email</label>
+                  <input 
+                    type="email" 
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 transition-all duration-300"
+                    placeholder="Your email"
+                    required
+                  />
+                </motion.div>
+                
+                <motion.div variants={itemVariants}>
+                  <label htmlFor="subject" className="block text-gray-700 mb-1">Subject</label>
+                  <input 
+                    type="text" 
+                    id="subject"
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 transition-all duration-300"
+                    placeholder="Subject"
+                    required
+                  />
+                </motion.div>
+                
+                <motion.div variants={itemVariants}>
+                  <label htmlFor="message" className="block text-gray-700 mb-1">Message</label>
+                  <textarea 
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    rows="4" 
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 transition-all duration-300"
+                    placeholder="Your message"
+                    required
+                  ></textarea>
+                </motion.div>
+                
+                <motion.button 
+                  type="submit" 
+                  disabled={status.isSubmitting}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className={`w-full bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-6 rounded-md transition duration-300 ${status.isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`}
+                >
+                  {status.isSubmitting ? 'Sending...' : 'Send Message'}
+                </motion.button>
+              </form>
+            </motion.div>
           </div>
-          
-          <div>
-            <h2 className="text-2xl font-semibold text-green-700 mb-4">Send Us a Message</h2>
-            {status.message && (
-              <div className={`p-4 rounded-md mb-4 ${status.isError ? 'bg-red-50 text-red-800' : 'bg-green-50 text-green-800'}`}>
-                {status.message}
-              </div>
-            )}
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div>
-                <label htmlFor="name" className="block text-gray-700 mb-1">Name</label>
-                <input 
-                  type="text" 
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
-                  placeholder="Your name"
-                  required
-                />
-              </div>
-              
-              <div>
-                <label htmlFor="email" className="block text-gray-700 mb-1">Email</label>
-                <input 
-                  type="email" 
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
-                  placeholder="Your email"
-                  required
-                />
-              </div>
-              
-              <div>
-                <label htmlFor="subject" className="block text-gray-700 mb-1">Subject</label>
-                <input 
-                  type="text" 
-                  id="subject"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
-                  placeholder="Subject"
-                  required
-                />
-              </div>
-              
-              <div>
-                <label htmlFor="message" className="block text-gray-700 mb-1">Message</label>
-                <textarea 
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  rows="4" 
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
-                  placeholder="Your message"
-                  required
-                ></textarea>
-              </div>
-              
-              <button 
-                type="submit" 
-                disabled={status.isSubmitting}
-                className={`w-full bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-6 rounded-md transition duration-300 ${status.isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`}
-              >
-                {status.isSubmitting ? 'Sending...' : 'Send Message'}
-              </button>
-            </form>
-          </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

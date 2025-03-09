@@ -13,18 +13,19 @@ export default function BlogCard({ post, onClick }) {
 
   return (
     <motion.div 
-      className="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer"
+      className="bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:shadow-xl cursor-pointer h-full"
       whileHover={{ scale: 1.02 }}
       whileTap={{ scale: 0.98 }}
       onClick={onClick}
     >
-      <div className="relative h-48">
+      <div className="relative h-48 overflow-hidden">
         <Image 
           src={post.image} 
           alt={post.title} 
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           style={{ objectFit: 'cover' }}
+          className="transition-transform duration-300 hover:scale-105"
         />
       </div>
       <div className="p-6">
@@ -32,7 +33,7 @@ export default function BlogCard({ post, onClick }) {
           <span className="text-sm text-gray-500">{formatDate(post.date)}</span>
           <span className="text-sm text-green-600">{post.author}</span>
         </div>
-        <h3 className="text-xl font-semibold text-green-700 mb-2">{post.title}</h3>
+        <h3 className="text-xl font-semibold text-green-700 mb-2 group-hover:text-green-800 transition-colors">{post.title}</h3>
         <p className="text-gray-600 mb-4 line-clamp-3">{post.excerpt}</p>
         <div className="flex flex-wrap gap-2 mb-4">
           {post.tags.map((tag, index) => (
@@ -44,9 +45,9 @@ export default function BlogCard({ post, onClick }) {
             </span>
           ))}
         </div>
-        <div className="text-green-600 hover:text-green-800 font-semibold inline-flex items-center">
+        <div className="text-green-600 hover:text-green-800 font-semibold inline-flex items-center transition-colors">
           Read more 
-          <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <svg className="w-4 h-4 ml-1 transform transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
           </svg>
         </div>

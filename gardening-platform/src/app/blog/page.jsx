@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { blogPosts } from './data/posts';
 import BlogCard from '../../components/BlogCard';
 import BlogModal from '../../components/BlogModal';
@@ -46,6 +46,25 @@ export default function BlogPage() {
     document.body.style.overflow = 'auto';
   };
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5 }
+    }
+  };
+
   return (
     <div className="container mx-auto px-4 py-12">
       <motion.h1 
@@ -57,6 +76,15 @@ export default function BlogPage() {
         Gardening Thyme Blog
       </motion.h1>
       
+      <motion.p 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.3, duration: 0.8 }}
+        className="text-xl text-gray-600 text-center mb-12 max-w-3xl mx-auto"
+      >
+        Explore our collection of gardening tips, tricks, and insights. Stay up to date with the latest trends and expert advice.
+      </motion.p>
+
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -76,28 +104,35 @@ export default function BlogPage() {
         </motion.p>
       ) : (
         <motion.div 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
           {filteredPosts.map((post) => (
-            <BlogCard 
-              key={post.id} 
-              post={post} 
-              onClick={() => openModal(post)} 
-            />
+            <motion.div
+              key={post.id}
+              variants={itemVariants}
+              className="h-full"
+            >
+              <BlogCard 
+                post={post} 
+                onClick={() => openModal(post)} 
+              />
+            </motion.div>
           ))}
         </motion.div>
       )}
 
-      {isModalOpen && selectedPost && (
-        <BlogModal 
-          post={selectedPost} 
-          isOpen={isModalOpen} 
-          onClose={closeModal} 
-        />
-      )}
+      <AnimatePresence>
+        {isModalOpen && selectedPost && (
+          <BlogModal 
+            post={selectedPost} 
+            isOpen={isModalOpen} 
+            onClose={closeModal} 
+          />
+        )}
+      </AnimatePresence>
     </div>
   );
 }
