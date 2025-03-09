@@ -59,7 +59,7 @@ export default function ServicesSection() {
               <p className="text-gray-600 mb-4">
                 Professional garden design consultations to transform your outdoor space into a beautiful oasis that reflects your personal style and meets your practical needs.
               </p>
-              <Link href="/consultations" className="text-green-600 hover:text-green-800 font-semibold inline-flex items-center">
+              <Link href="/garden-design" className="text-green-600 hover:text-green-800 font-semibold inline-flex items-center">
                 Learn more 
                 <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -86,7 +86,7 @@ export default function ServicesSection() {
               <p className="text-gray-600 mb-4">
                 Expert advice on plant selection, care, maintenance, and troubleshooting to ensure your garden thrives year-round with minimal effort.
               </p>
-              <Link href="/consultations" className="text-green-600 hover:text-green-800 font-semibold inline-flex items-center">
+              <Link href="/services/groundskeeping" className="text-green-600 hover:text-green-800 font-semibold inline-flex items-center">
                 Learn more 
                 <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -113,7 +113,7 @@ export default function ServicesSection() {
               <p className="text-gray-600 mb-4">
                 Comprehensive seasonal maintenance services to keep your garden looking its best throughout the year, from spring planting to winter protection.
               </p>
-              <Link href="/consultations" className="text-green-600 hover:text-green-800 font-semibold inline-flex items-center">
+              <Link href="/services/quarterly-cleanup" className="text-green-600 hover:text-green-800 font-semibold inline-flex items-center">
                 Learn more 
                 <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
