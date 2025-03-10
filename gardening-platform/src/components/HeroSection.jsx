@@ -50,7 +50,7 @@ export default function HeroSection() {
           transition={{ delay: 1, duration: 0.6 }}
         >
           <Link href="/consultations" className="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300 text-lg">
-            Explore Our Services
+            All Consultations
           </Link>
         </motion.div>
       </div>

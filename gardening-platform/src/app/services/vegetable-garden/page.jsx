@@ -8,20 +8,20 @@ const images = [
   {
     id: 1,
     src: '/images/portfolio/placeholder1.jpg',
-    alt: 'Garden Planning',
-    description: 'Our expert garden planning services help you create the perfect vegetable garden layout. We consider sunlight, soil conditions, and your specific preferences to maximize your garden\'s potential.'
+    alt: 'Raised Beds',
+    description: 'Custom-built raised garden beds designed for optimal growing conditions. Our raised bed solutions maximize space utilization, improve soil quality, and make gardening more accessible while adding aesthetic value to your outdoor space.'
   },
   {
     id: 2,
     src: '/images/portfolio/placeholder2.jpg',
-    alt: 'Soil Preparation',
-    description: 'Proper soil preparation is crucial for a successful vegetable garden. We test and amend your soil to create the optimal growing environment for your chosen vegetables.'
+    alt: 'Vegetable Planting and Designs',
+    description: 'Expert planning and design of your vegetable garden layout to maximize yield and beauty. We consider companion planting, seasonal rotations, and your specific preferences to create a productive and visually appealing vegetable garden.'
   },
   {
     id: 3,
     src: '/images/portfolio/placeholder3.jpg',
-    alt: 'Planting & Maintenance',
-    description: 'From seed to harvest, we provide comprehensive planting and maintenance services. Our team ensures your vegetable garden receives the care it needs to thrive throughout the growing season.'
+    alt: 'Drip Irrigation',
+    description: 'Professional installation of efficient drip irrigation systems. Our water-smart solutions deliver precise amounts of water directly to your plants\' roots, saving water while ensuring optimal growth and reducing weed problems.'
   },
   {
     id: 4,

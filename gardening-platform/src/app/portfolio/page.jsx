@@ -128,75 +128,64 @@ export default function PortfolioPage() {
   };
 
   return (
-    <div className="container mx-auto px-4 py-12">
-      <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="text-center mb-12"
-      >
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
+    <div className="min-h-screen bg-gray-50">
+      <div className="container mx-auto px-4 -mt-24 pt-32 pb-16">
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-4xl font-bold text-center text-green-800 mb-8"
+          className="text-center mb-12"
         >
-          Our Portfolio
-        </motion.h1>
-        
-        <motion.p 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.3, duration: 0.8 }}
-          className="text-xl text-gray-600 text-center mb-12 max-w-3xl mx-auto"
-        >
-          Explore our collection of successful projects and transformations. Each project showcases our commitment to quality and attention to detail.
-        </motion.p>
-      </motion.div>
+          <h1 className="text-4xl md:text-5xl font-bold text-green-800 mb-6">Our Portfolio</h1>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Explore our collection of successful projects and transformations. Each project showcases our commitment to quality and attention to detail.
+          </p>
+        </motion.div>
 
-      <motion.div 
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-      >
-        {projects.map((project) => (
-          <motion.div 
-            key={project.id}
-            variants={itemVariants}
-            className="bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer transform transition-transform hover:scale-105"
-            onClick={() => setSelectedProject(project)}
-          >
-            <div className="relative h-64">
-              <Image
-                src={project.image}
-                alt={project.title}
-                fill
-                style={{ objectFit: 'cover' }}
-                className="transition-transform duration-300 hover:scale-105"
-              />
-            </div>
-            <div className="p-6">
-              <h3 className="text-xl font-semibold text-green-800 mb-2">{project.title}</h3>
-              <div className="mb-3">
-                <span className="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold">
-                  {project.category}
-                </span>
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
+          {projects.map((project) => (
+            <motion.div 
+              key={project.id}
+              variants={itemVariants}
+              className="bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer transform transition-transform hover:scale-105"
+              onClick={() => setSelectedProject(project)}
+            >
+              <div className="relative h-64">
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  style={{ objectFit: 'cover' }}
+                  className="transition-transform duration-300 hover:scale-105"
+                />
               </div>
-              <p className="text-gray-600">{project.description}</p>
-            </div>
-          </motion.div>
-        ))}
-      </motion.div>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold text-green-800 mb-2">{project.title}</h3>
+                <div className="mb-3">
+                  <span className="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold">
+                    {project.category}
+                  </span>
+                </div>
+                <p className="text-gray-600">{project.description}</p>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
 
-      <AnimatePresence>
-        {selectedProject && (
-          <Modal
-            project={selectedProject}
-            onClose={() => setSelectedProject(null)}
-          />
-        )}
-      </AnimatePresence>
+        <AnimatePresence>
+          {selectedProject && (
+            <Modal
+              project={selectedProject}
+              onClose={() => setSelectedProject(null)}
+            />
+          )}
+        </AnimatePresence>
+      </div>
     </div>
   );
 } 

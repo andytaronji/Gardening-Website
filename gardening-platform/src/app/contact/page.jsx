@@ -84,14 +84,17 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="container mx-auto px-4 -mt-24 pt-32 pb-16">
-        <motion.h1 
-          initial={{ opacity: 0, y: 20 }}
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-4xl md:text-5xl font-bold text-center mb-12 text-green-800"
+          className="text-center mb-12"
         >
-          Contact Gardening Thyme
-        </motion.h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-green-800 mb-6">Get in Touch</h1>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Connect with our expert gardeners for personalized advice, service inquiries, or to schedule a consultation. We're dedicated to helping your garden thrive.
+          </p>
+        </motion.div>
         
         <motion.div 
           variants={containerVariants}
@@ -100,39 +103,40 @@ export default function ContactPage() {
           className="max-w-6xl mx-auto bg-white rounded-lg shadow-lg p-8 mb-16"
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <motion.div variants={itemVariants} className="w-full">
-              <h2 className="text-2xl md:text-3xl font-semibold text-green-700 mb-6 text-center">Get in Touch</h2>
-              <p className="text-gray-700 mb-8 text-center text-lg">
-                Have questions about our services or need gardening advice? We're here to help!
-                Fill out the form or use our contact information to reach out to us.
-              </p>
-              
-              <div className="mt-8">
-                <h3 className="text-xl md:text-2xl font-semibold text-green-700 mb-6 text-center">Contact Information</h3>
-                <motion.p 
-                  variants={itemVariants}
-                  className="text-gray-700 mb-4 text-center text-lg"
-                >
-                  <strong>Email:</strong> services@gardeningthyme.com
-                </motion.p>
-                <motion.p 
-                  variants={itemVariants}
-                  className="text-gray-700 mb-4 text-center text-lg"
-                >
-                  <strong>Phone:</strong> 508-932-4056
-                </motion.p>
-                <motion.p 
-                  variants={itemVariants}
-                  className="text-gray-700 mb-4 text-center text-lg"
-                >
-                  <strong>Service Areas:</strong> Marietta, Roswell, Alpharetta, Woodstock, Smyrna / Vinings, and more surrounding areas!
-                </motion.p>
-                <motion.p 
-                  variants={itemVariants}
-                  className="text-gray-700 mb-4 text-center text-lg"
-                >
-                  <strong>Hours:</strong> Monday - Friday: 9am - 5pm
-                </motion.p>
+            <motion.div variants={itemVariants} className="w-full flex flex-col justify-center">
+              <div>
+                <h2 className="text-2xl md:text-3xl font-semibold text-green-700 mb-6 text-center">Get in Touch</h2>
+                <p className="text-gray-700 mb-8 text-center text-lg">
+                  Fill out the form or use our contact information to reach out to us.
+                </p>
+                
+                <div className="mt-8">
+                  <h3 className="text-xl md:text-2xl font-semibold text-green-700 mb-6 text-center">Contact Information</h3>
+                  <motion.p 
+                    variants={itemVariants}
+                    className="text-gray-700 mb-4 text-center text-lg"
+                  >
+                    <strong>Email:</strong> services@gardeningthyme.com
+                  </motion.p>
+                  <motion.p 
+                    variants={itemVariants}
+                    className="text-gray-700 mb-4 text-center text-lg"
+                  >
+                    <strong>Phone:</strong> 508-932-4056
+                  </motion.p>
+                  <motion.p 
+                    variants={itemVariants}
+                    className="text-gray-700 mb-4 text-center text-lg"
+                  >
+                    <strong>Service Areas:</strong> Marietta, Roswell, Alpharetta, Woodstock, Smyrna / Vinings, and more surrounding areas!
+                  </motion.p>
+                  <motion.p 
+                    variants={itemVariants}
+                    className="text-gray-700 mb-4 text-center text-lg"
+                  >
+                    <strong>Hours:</strong> Monday - Friday: 9am - 5pm
+                  </motion.p>
+                </div>
               </div>
             </motion.div>
             

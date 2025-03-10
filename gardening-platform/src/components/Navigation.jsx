@@ -88,6 +88,12 @@ export default function Navigation() {
                     </Link>
                   </li>
                   <li className="my-2 w-48 text-center">
+                    <Link href="/consultations" onClick={() => setIsOpen(false)} className={navLinkClasses('/consultations')}>
+                      <span className="relative z-10">Consultations</span>
+                      <span className={highlightClasses('/consultations')}></span>
+                    </Link>
+                  </li>
+                  <li className="my-2 w-48 text-center">
                     <Link href="/blog" onClick={() => setIsOpen(false)} className={navLinkClasses('/blog')}>
                       <span className="relative z-10">Blog</span>
                       <span className={highlightClasses('/blog')}></span>
@@ -135,6 +141,12 @@ export default function Navigation() {
                     )}
                   </li>
                   <li className="my-2 w-48 text-center">
+                    <Link href="/blog" onClick={() => setIsOpen(false)} className={navLinkClasses('/blog')}>
+                      <span className="relative z-10">Blog</span>
+                      <span className={highlightClasses('/blog')}></span>
+                    </Link>
+                  </li>
+                  <li className="my-2 w-48 text-center">
                     <Link href="/contact" onClick={() => setIsOpen(false)} className={navLinkClasses('/contact')}>
                       <span className="relative z-10">Contact</span>
                       <span className={highlightClasses('/contact')}></span>
@@ -165,9 +177,9 @@ export default function Navigation() {
               </Link>
             </li>
             <li>
-              <Link href="/blog" className={navLinkClasses('/blog')}>
-                <span className="relative z-10">Blog</span>
-                <span className={highlightClasses('/blog')}></span>
+              <Link href="/consultations" className={navLinkClasses('/consultations')}>
+                <span className="relative z-10">Consultations</span>
+                <span className={highlightClasses('/consultations')}></span>
               </Link>
             </li>
             <li className="relative group">
@@ -211,6 +223,12 @@ export default function Navigation() {
                   </ul>
                 </div>
               </div>
+            </li>
+            <li>
+              <Link href="/blog" className={navLinkClasses('/blog')}>
+                <span className="relative z-10">Blog</span>
+                <span className={highlightClasses('/blog')}></span>
+              </Link>
             </li>
             <li>
               <Link href="/contact" className={navLinkClasses('/contact')}>
