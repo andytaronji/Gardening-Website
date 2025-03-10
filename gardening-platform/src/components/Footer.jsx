@@ -18,14 +18,33 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-xl font-semibold mb-4">Quick Links</h4>
+            <h3 className="text-lg font-semibold text-white mb-4">Quick Links</h3>
             <ul className="space-y-2">
-              <li><Link href="/" className="hover:text-green-300 transition-colors">Home</Link></li>
-              <li><Link href="/garden-design" className="hover:text-green-300 transition-colors">Garden Design</Link></li>
-              <li><Link href="/portfolio" className="hover:text-green-300 transition-colors">Portfolio</Link></li>
-              <li><Link href="/consultations" className="hover:text-green-300 transition-colors">Consultations</Link></li>
-              <li><Link href="/blog" className="hover:text-green-300 transition-colors">Blog</Link></li>
-              <li><Link href="/contact" className="hover:text-green-300 transition-colors">Contact</Link></li>
+              <li>
+                <Link href="/" className="text-gray-300 hover:text-white transition-colors">
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link href="/garden-design" className="text-gray-300 hover:text-white transition-colors">
+                  Garden Design
+                </Link>
+              </li>
+              <li>
+                <Link href="/portfolio" className="text-gray-300 hover:text-white transition-colors">
+                  Portfolio
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog" className="text-gray-300 hover:text-white transition-colors">
+                  Blog
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="text-gray-300 hover:text-white transition-colors">
+                  Contact
+                </Link>
+              </li>
             </ul>
           </div>
 
