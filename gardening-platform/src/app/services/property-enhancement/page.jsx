@@ -14,8 +14,8 @@ const jsonLd = {
     'name': 'Gardening Thyme',
     'areaServed': ['Marietta', 'Roswell', 'Alpharetta', 'Woodstock', 'Smyrna', 'Vinings']
   },
-  'description': 'Comprehensive property enhancement services including landscape design, hardscaping, garden beds, and outdoor lighting solutions. Transform your outdoor space into a beautiful, functional environment.',
-  'serviceType': 'Landscape Design',
+  'description': 'Comprehensive property enhancement services including landscape design, pressure washing, garden beds, and window cleaning solutions. Transform your property into a beautiful, well-maintained environment.',
+  'serviceType': 'Property Enhancement',
   'offers': {
     '@type': 'Offer',
     'priceSpecification': {
@@ -40,14 +40,6 @@ const jsonLd = {
         '@type': 'Offer',
         'itemOffered': {
           '@type': 'Service',
-          'name': 'Hardscaping Features',
-          'description': 'Custom patios, walkways, retaining walls, and water features'
-        }
-      },
-      {
-        '@type': 'Offer',
-        'itemOffered': {
-          '@type': 'Service',
           'name': 'Garden Beds & Borders',
           'description': 'Professionally designed and installed garden beds with year-round interest'
         }
@@ -56,8 +48,16 @@ const jsonLd = {
         '@type': 'Offer',
         'itemOffered': {
           '@type': 'Service',
-          'name': 'Lighting & Irrigation',
-          'description': 'Professional outdoor lighting and efficient irrigation systems'
+          'name': 'Pressure Washing',
+          'description': 'Professional pressure washing services to restore and maintain your property\'s exterior surfaces'
+        }
+      },
+      {
+        '@type': 'Offer',
+        'itemOffered': {
+          '@type': 'Service',
+          'name': 'Window Cleaning',
+          'description': 'Expert window cleaning services to enhance your property\'s curb appeal and maintain crystal-clear views'
         }
       }
     ]
@@ -73,21 +73,21 @@ const images = [
   },
   {
     id: 2,
-    src: '/images/portfolio/placeholder2.jpg',
-    alt: 'Hardscaping Features',
-    description: 'Add character to your property with our custom hardscaping solutions. From patios and walkways to retaining walls and water features, we bring your vision to life.'
-  },
-  {
-    id: 3,
     src: '/images/portfolio/placeholder3.jpg',
     alt: 'Garden Beds & Borders',
     description: 'Enhance your property with professionally designed and installed garden beds and borders. We select plants that thrive in your specific environment and create year-round interest.'
   },
   {
+    id: 3,
+    src: '/images/portfolio/placeholder2.jpg',
+    alt: 'Pressure Washing',
+    description: 'Restore your property\'s exterior to its original beauty with our professional pressure washing services. We safely and effectively clean driveways, sidewalks, decks, and siding.'
+  },
+  {
     id: 4,
     src: '/images/portfolio/placeholder4.jpg',
-    alt: 'Lighting & Irrigation',
-    description: 'Complete your landscape with professional lighting and irrigation systems. We design and install efficient solutions that highlight your property\'s beauty while ensuring proper plant care.'
+    alt: 'Window Cleaning',
+    description: 'Maintain crystal-clear views and enhance your property\'s curb appeal with our professional window cleaning services. We ensure streak-free results and proper safety measures.'
   }
 ];
 
