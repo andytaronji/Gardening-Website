@@ -4,6 +4,66 @@ import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 
+// Add JSON-LD structured data for service
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  'name': 'Property Enhancement Services',
+  'provider': {
+    '@type': 'LocalBusiness',
+    'name': 'Gardening Thyme',
+    'areaServed': ['Marietta', 'Roswell', 'Alpharetta', 'Woodstock', 'Smyrna', 'Vinings']
+  },
+  'description': 'Comprehensive property enhancement services including landscape design, hardscaping, garden beds, and outdoor lighting solutions. Transform your outdoor space into a beautiful, functional environment.',
+  'serviceType': 'Landscape Design',
+  'offers': {
+    '@type': 'Offer',
+    'priceSpecification': {
+      '@type': 'PriceSpecification',
+      'priceCurrency': 'USD',
+      'price': '2000-50000'
+    }
+  },
+  'hasOfferCatalog': {
+    '@type': 'OfferCatalog',
+    'name': 'Property Enhancement Services',
+    'itemListElement': [
+      {
+        '@type': 'Offer',
+        'itemOffered': {
+          '@type': 'Service',
+          'name': 'Landscape Design',
+          'description': 'Transform your outdoor space with expert landscape design services'
+        }
+      },
+      {
+        '@type': 'Offer',
+        'itemOffered': {
+          '@type': 'Service',
+          'name': 'Hardscaping Features',
+          'description': 'Custom patios, walkways, retaining walls, and water features'
+        }
+      },
+      {
+        '@type': 'Offer',
+        'itemOffered': {
+          '@type': 'Service',
+          'name': 'Garden Beds & Borders',
+          'description': 'Professionally designed and installed garden beds with year-round interest'
+        }
+      },
+      {
+        '@type': 'Offer',
+        'itemOffered': {
+          '@type': 'Service',
+          'name': 'Lighting & Irrigation',
+          'description': 'Professional outdoor lighting and efficient irrigation systems'
+        }
+      }
+    ]
+  }
+}
+
 const images = [
   {
     id: 1,
@@ -52,65 +112,71 @@ const itemVariants = {
 
 export default function PropertyEnhancementPage() {
   return (
-    <div className="container mx-auto px-4 py-12">
-      <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="text-center mb-12"
-      >
-        <h1 className="text-4xl font-bold text-green-800 mb-6">Property Enhancement Services</h1>
-        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-          Elevate your property\'s beauty and functionality with our comprehensive enhancement services. We combine artistic design with practical solutions to create outdoor spaces you\'ll love.
-        </p>
-      </motion.div>
-
-      <motion.div
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-        className="grid grid-cols-1 md:grid-cols-2 gap-12"
-      >
-        {images.map((image) => (
-          <motion.div
-            key={image.id}
-            variants={itemVariants}
-            className="bg-white rounded-lg shadow-lg overflow-hidden"
-          >
-            <div className="relative h-64">
-              <Image
-                src={image.src}
-                alt={image.alt}
-                fill
-                style={{ objectFit: 'cover' }}
-                className="transition-transform duration-300 hover:scale-105"
-              />
-            </div>
-            <div className="p-6">
-              <h3 className="text-xl font-semibold text-green-800 mb-4">{image.alt}</h3>
-              <p className="text-gray-600 leading-relaxed">{image.description}</p>
-            </div>
-          </motion.div>
-        ))}
-      </motion.div>
-
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.5, duration: 0.8 }}
-        className="mt-16 text-center"
-      >
-        <h2 className="text-3xl font-bold text-green-800 mb-6">Ready to Enhance Your Property?</h2>
-        <p className="text-xl text-gray-600 mb-8">
-          Contact us today to discuss your property enhancement project and receive a personalized consultation.
-        </p>
-        <a
-          href="/contact"
-          className="inline-block bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors"
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <div className="container mx-auto px-4 py-12">
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-12"
         >
-          Start Your Project
-        </a>
-      </motion.div>
-    </div>
+          <h1 className="text-4xl font-bold text-green-800 mb-6">Property Enhancement Services</h1>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Elevate your property\'s beauty and functionality with our comprehensive enhancement services. We combine artistic design with practical solutions to create outdoor spaces you\'ll love.
+          </p>
+        </motion.div>
+
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          className="grid grid-cols-1 md:grid-cols-2 gap-12"
+        >
+          {images.map((image) => (
+            <motion.div
+              key={image.id}
+              variants={itemVariants}
+              className="bg-white rounded-lg shadow-lg overflow-hidden"
+            >
+              <div className="relative h-64">
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  fill
+                  style={{ objectFit: 'cover' }}
+                  className="transition-transform duration-300 hover:scale-105"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold text-green-800 mb-4">{image.alt}</h3>
+                <p className="text-gray-600 leading-relaxed">{image.description}</p>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5, duration: 0.8 }}
+          className="mt-16 text-center"
+        >
+          <h2 className="text-3xl font-bold text-green-800 mb-6">Ready to Enhance Your Property?</h2>
+          <p className="text-xl text-gray-600 mb-8">
+            Contact us today to discuss your property enhancement project and receive a personalized consultation.
+          </p>
+          <a
+            href="/contact"
+            className="inline-block bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors"
+          >
+            Start Your Project
+          </a>
+        </motion.div>
+      </div>
+    </>
   );
 } 

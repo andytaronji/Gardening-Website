@@ -4,7 +4,8 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const projects = [
+// First define the projects data
+const portfolioProjects = [
   {
     id: 1,
     title: "Spring Garden Cleanup",
@@ -54,6 +55,40 @@ const projects = [
     fullDescription: "Our thorough deweeding service eliminated invasive plants while preserving desired vegetation. We implemented preventive measures including proper mulching and selective herbicide application to maintain a weed-free environment."
   }
 ];
+
+// Add JSON-LD structured data for portfolio AFTER projects definition
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  'name': 'Landscape & Garden Portfolio',
+  'description': 'A showcase of our successful landscape and garden projects, demonstrating our expertise in property cleanup, landscape design, and maintenance services.',
+  'provider': {
+    '@type': 'LocalBusiness',
+    'name': 'Gardening Thyme',
+    'areaServed': ['Marietta', 'Roswell', 'Alpharetta', 'Woodstock', 'Smyrna', 'Vinings']
+  },
+  'about': {
+    '@type': 'Thing',
+    'name': 'Landscape and Garden Services',
+    'description': 'Professional landscaping and garden services including property cleanup, landscape design, and maintenance.'
+  },
+  'hasPart': [
+    {
+      '@type': 'ImageGallery',
+      'name': 'Project Gallery',
+      'image': portfolioProjects.map(project => ({
+        '@type': 'ImageObject',
+        'name': project.title,
+        'description': project.description,
+        'contentUrl': project.image,
+        'about': {
+          '@type': 'Thing',
+          'name': project.category
+        }
+      }))
+    }
+  ]
+};
 
 const Modal = ({ project, onClose }) => {
   return (
@@ -128,64 +163,70 @@ export default function PortfolioPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <div className="container mx-auto px-4 -mt-24 pt-32 pb-16">
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-12"
-        >
-          <h1 className="text-4xl md:text-5xl font-bold text-green-800 mb-6">Our Portfolio</h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Explore our collection of successful projects and transformations. Each project showcases our commitment to quality and attention to detail.
-          </p>
-        </motion.div>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <div className="min-h-screen bg-gray-50">
+        <div className="container mx-auto px-4 -mt-24 pt-32 pb-16">
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-12"
+          >
+            <h1 className="text-4xl md:text-5xl font-bold text-green-800 mb-6">Our Portfolio</h1>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Explore our collection of successful projects and transformations. Each project showcases our commitment to quality and attention to detail.
+            </p>
+          </motion.div>
 
-        <motion.div 
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-        >
-          {projects.map((project) => (
-            <motion.div 
-              key={project.id}
-              variants={itemVariants}
-              className="bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer transform transition-transform hover:scale-105"
-              onClick={() => setSelectedProject(project)}
-            >
-              <div className="relative h-64">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  style={{ objectFit: 'cover' }}
-                  className="transition-transform duration-300 hover:scale-105"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-green-800 mb-2">{project.title}</h3>
-                <div className="mb-3">
-                  <span className="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold">
-                    {project.category}
-                  </span>
+          <motion.div 
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          >
+            {portfolioProjects.map((project) => (
+              <motion.div 
+                key={project.id}
+                variants={itemVariants}
+                className="bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer transform transition-transform hover:scale-105"
+                onClick={() => setSelectedProject(project)}
+              >
+                <div className="relative h-64">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    style={{ objectFit: 'cover' }}
+                    className="transition-transform duration-300 hover:scale-105"
+                  />
                 </div>
-                <p className="text-gray-600">{project.description}</p>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-green-800 mb-2">{project.title}</h3>
+                  <div className="mb-3">
+                    <span className="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold">
+                      {project.category}
+                    </span>
+                  </div>
+                  <p className="text-gray-600">{project.description}</p>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
 
-        <AnimatePresence>
-          {selectedProject && (
-            <Modal
-              project={selectedProject}
-              onClose={() => setSelectedProject(null)}
-            />
-          )}
-        </AnimatePresence>
+          <AnimatePresence>
+            {selectedProject && (
+              <Modal
+                project={selectedProject}
+                onClose={() => setSelectedProject(null)}
+              />
+            )}
+          </AnimatePresence>
+        </div>
       </div>
-    </div>
+    </>
   );
 } 

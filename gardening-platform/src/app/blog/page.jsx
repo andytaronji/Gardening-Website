@@ -7,6 +7,35 @@ import BlogCard from '../../components/BlogCard';
 import BlogModal from '../../components/BlogModal';
 import SearchBar from '../../components/SearchBar';
 
+// Add JSON-LD structured data for blog
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Blog',
+  'name': 'Gardening Thyme Blog',
+  'description': 'Expert gardening tips, seasonal advice, and sustainable practices to help your garden thrive.',
+  'publisher': {
+    '@type': 'Organization',
+    'name': 'Gardening Thyme',
+    'logo': {
+      '@type': 'ImageObject',
+      'url': '/images/logo.png'
+    }
+  },
+  'blogPost': blogPosts.map(post => ({
+    '@type': 'BlogPosting',
+    'headline': post.title,
+    'description': post.excerpt,
+    'image': post.image,
+    'datePublished': post.date,
+    'author': {
+      '@type': 'Person',
+      'name': post.author
+    },
+    'keywords': post.tags.join(', '),
+    'url': `/blog/${post.slug}`
+  }))
+}
+
 export default function BlogPage() {
   const [searchQuery, setSearchQuery] = useState('');
   const [filteredPosts, setFilteredPosts] = useState(blogPosts);
@@ -66,67 +95,73 @@ export default function BlogPage() {
   };
 
   return (
-    <div className="container mx-auto px-4 py-12">
-      <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="text-center mb-12"
-      >
-        <h1 className="text-4xl font-bold text-green-800 mb-6">Our Garden Blog</h1>
-        <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-          Discover gardening tips, seasonal advice, and expert insights to help your garden thrive.
-        </p>
-      </motion.div>
-
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.2 }}
-        className="mb-10"
-      >
-        <SearchBar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
-      </motion.div>
-
-      {filteredPosts.length === 0 ? (
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          className="text-center text-lg text-gray-600 my-12"
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <div className="container mx-auto px-4 py-12">
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-12"
         >
-          No blog posts found matching your search criteria.
-        </motion.p>
-      ) : (
-        <motion.div 
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-        >
-          {filteredPosts.map((post) => (
-            <motion.div
-              key={post.id}
-              variants={itemVariants}
-              className="h-full"
-            >
-              <BlogCard 
-                post={post} 
-                onClick={() => openModal(post)} 
-              />
-            </motion.div>
-          ))}
+          <h1 className="text-4xl font-bold text-green-800 mb-6">Our Garden Blog</h1>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+            Discover gardening tips, seasonal advice, and expert insights to help your garden thrive.
+          </p>
         </motion.div>
-      )}
 
-      <AnimatePresence>
-        {isModalOpen && selectedPost && (
-          <BlogModal 
-            post={selectedPost} 
-            isOpen={isModalOpen} 
-            onClose={closeModal} 
-          />
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="mb-10"
+        >
+          <SearchBar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+        </motion.div>
+
+        {filteredPosts.length === 0 ? (
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="text-center text-lg text-gray-600 my-12"
+          >
+            No blog posts found matching your search criteria.
+          </motion.p>
+        ) : (
+          <motion.div 
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          >
+            {filteredPosts.map((post) => (
+              <motion.div
+                key={post.id}
+                variants={itemVariants}
+                className="h-full"
+              >
+                <BlogCard 
+                  post={post} 
+                  onClick={() => openModal(post)} 
+                />
+              </motion.div>
+            ))}
+          </motion.div>
         )}
-      </AnimatePresence>
-    </div>
+
+        <AnimatePresence>
+          {isModalOpen && selectedPost && (
+            <BlogModal 
+              post={selectedPost} 
+              isOpen={isModalOpen} 
+              onClose={closeModal} 
+            />
+          )}
+        </AnimatePresence>
+      </div>
+    </>
   );
 }
