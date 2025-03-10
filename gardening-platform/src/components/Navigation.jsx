@@ -110,7 +110,6 @@ export default function Navigation() {
             </li>
             <li className="relative group">
               <button
-                onClick={() => setShowServices(!showServices)}
                 onMouseEnter={() => setShowServices(true)}
                 className={`relative px-3 py-2 group transition-colors duration-300 ${pathname.startsWith('/services') ? 'text-white' : 'text-white/90 hover:text-white'}`}
                 aria-expanded={showServices}
@@ -125,9 +124,7 @@ export default function Navigation() {
                 <span className={`absolute inset-0 bg-white/10 rounded-md transform origin-left transition-transform duration-300 ease-out ${pathname.startsWith('/services') ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}></span>
               </button>
               <div
-                onMouseLeave={() => setShowServices(false)}
-                className={`absolute left-0 w-56 transition-all duration-300 z-[100]
-                  ${showServices ? 'opacity-100 visible translate-y-2' : 'opacity-0 invisible translate-y-0'}`}
+                className={`absolute left-0 w-56 transition-all duration-200 z-[100] opacity-0 invisible translate-y-0 group-hover:opacity-100 group-hover:visible group-hover:translate-y-2`}
                 role="menu"
                 aria-orientation="vertical"
                 aria-labelledby="services-menu"
