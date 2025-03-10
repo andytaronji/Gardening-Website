@@ -83,8 +83,9 @@ export default function Navigation() {
                   {showServices && (
                     <div className="pl-4 space-y-1">
                       <Link href="/services/groundskeeping" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-green-600 hover:bg-gray-50">Groundskeeping</Link>
+                      <Link href="/services/quarterly-cleanup" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-green-600 hover:bg-gray-50">Quarterly Cleanup</Link>
+                      <Link href="/services/property-enhancement" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-green-600 hover:bg-gray-50">Property Enhancement</Link>
                       <Link href="/services/vegetable-garden" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-green-600 hover:bg-gray-50">Vegetable Gardens</Link>
-                      <Link href="/services/lawn-care" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-green-600 hover:bg-gray-50">Lawn Care</Link>
                     </div>
                   )}
                   <Link href="/portfolio" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-green-600 hover:bg-gray-50">Portfolio</Link>
