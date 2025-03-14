@@ -68,7 +68,7 @@ export default function ServicesSection() {
           >
             <div className="relative h-64">
               <ImageComponent
-                src="/images/new/maintenance-4.jpg"
+                src="/images/new/maintenance-5.jpg"
                 alt="Groundskeeping Service"
                 priority={true}
                 quality={90}
@@ -102,7 +102,7 @@ export default function ServicesSection() {
           >
             <div className="relative h-64">
               <ImageComponent
-                src="/images/new/maintenance-5.jpg"
+                src="/images/new/maintenance-4.jpg"
                 alt="Quarterly Cleanups Service"
                 priority={true}
                 quality={90}
