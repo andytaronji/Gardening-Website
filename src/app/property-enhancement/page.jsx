@@ -28,8 +28,8 @@ export default function PropertyEnhancementPage() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <Image
-              src="/images/downloaded/pressure-washing.jpg"
-              alt="Pressure washing service"
+              src="/images/downloaded/new-pressure-washing.jpg"
+              alt="Property maintenance and pressure washing"
               width={800}
               height={600}
               className="rounded-lg shadow-lg object-cover w-full h-full"
