@@ -29,11 +29,8 @@ export default function QuarterlyCleanupPage() {
             className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-lg"
           >
             <ImageComponent
-              src="/images/portfolio/cleanup.jpg"
+              src="/images/new/maintenance-3.jpg"
               alt="Quarterly garden cleanup"
-              useRandomImage={true}
-              category="cleanup"
-              componentId="quarterly-cleanup-hero"
               priority={true}
               quality={75}
               objectFit="cover"
@@ -173,4 +170,4 @@ export default function QuarterlyCleanupPage() {
       </div>
     </div>
   );
-} 
+}

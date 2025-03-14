@@ -27,13 +27,13 @@ export default function VegetableGardenPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <Image
-              src="/images/portfolio/vegetable-garden.jpg"
-              alt="Vegetable garden design"
-              width={800}
-              height={600}
-              className="rounded-lg shadow-lg object-cover w-full h-full"
-              priority
+              <Image
+                src="/images/new/vegetable-garden-1.jpg"
+                alt="Vegetable garden design"
+                width={800}
+                height={600}
+                className="rounded-lg shadow-lg object-cover w-full h-full"
+                priority
               quality={75}
               loading="eager"
               onError={(e) => {
@@ -161,4 +161,4 @@ export default function VegetableGardenPage() {
       </div>
     </div>
   );
-} 
+}
