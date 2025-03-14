@@ -29,7 +29,7 @@ export default function QuarterlyCleanupPage() {
             className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-lg"
           >
             <ImageComponent
-              src="/images/new/maintenance-3.jpg"
+              src="/images/downloaded/new-cleanup.jpg"
               alt="Quarterly garden cleanup"
               priority={true}
               quality={75}

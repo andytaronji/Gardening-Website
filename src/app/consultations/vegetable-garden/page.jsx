@@ -28,7 +28,7 @@ export default function VegetableGardenPage() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
               <Image
-                src="/images/new/vegetable-garden-1.jpg"
+                src="/images/downloaded/new-vegetable-garden.jpg"
                 alt="Vegetable garden design"
                 width={800}
                 height={600}
