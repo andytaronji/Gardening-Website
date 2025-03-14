@@ -25,6 +25,7 @@ export default function Footer() {
               <li><Link href="/groundskeeping" className="hover:text-green-300 transition-colors">Groundskeeping</Link></li>
               <li><Link href="/quarterly-cleanups" className="hover:text-green-300 transition-colors">Quarterly Cleanups</Link></li>
               <li><Link href="/property-enhancement" className="hover:text-green-300 transition-colors">Property Enhancement</Link></li>
+              <li><Link href="/consultations/vegetable-garden" className="hover:text-green-300 transition-colors">Vegetable Garden</Link></li>
               <li><Link href="/portfolio" className="hover:text-green-300 transition-colors">Portfolio</Link></li>
               <li><Link href="/blog" className="hover:text-green-300 transition-colors">Blog</Link></li>
               <li><Link href="/contact" className="hover:text-green-300 transition-colors">Contact</Link></li>
@@ -58,4 +59,4 @@ export default function Footer() {
       </div>
     </footer>
   );
-} 
+}

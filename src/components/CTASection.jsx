@@ -41,7 +41,7 @@ export default function CTASection() {
             variants={variants}
           >
             <Link href="/contact" className="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105">
-              Schedule a Consultation
+              Contact Us Today!
             </Link>
           </motion.div>
         </div>

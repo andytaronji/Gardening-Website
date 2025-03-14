@@ -29,11 +29,8 @@ export default function GroundskeepingPage() {
             className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-lg"
           >
             <ImageComponent
-              src="/images/portfolio/maintenance.jpg"
+              src="/images/new/landscape-2.jpg"
               alt="Professional groundskeeping services"
-              useRandomImage={true}
-              category="cleanup"
-              componentId="groundskeeping-hero"
               priority={true}
               quality={75}
               objectFit="cover"
@@ -160,4 +157,4 @@ export default function GroundskeepingPage() {
       </div>
     </div>
   );
-} 
+}
