@@ -1,0 +1,80 @@
+'use client';
+
+import React, { useState } from 'react';
+import Link from 'next/link';
+import { motion } from 'framer-motion';
+import { blogPosts } from './data/posts';
+import BlogCard from '@/components/BlogCard';
+import BlogModal from '@/components/BlogModal';
+
+export default function BlogPage() {
+  const [selectedPost, setSelectedPost] = useState(null);
+
+  const handlePostClick = (post) => {
+    setSelectedPost(post);
+    // Prevent scrolling when modal is open
+    document.body.style.overflow = 'hidden';
+  };
+
+  const handleCloseModal = () => {
+    setSelectedPost(null);
+    // Restore scrolling when modal is closed
+    document.body.style.overflow = 'unset';
+  };
+
+  return (
+    <div className="min-h-screen bg-white">
+      <div className="container mx-auto px-4 py-16">
+        <motion.div
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="max-w-4xl mx-auto text-center mb-16"
+        >
+          <h1 className="text-5xl font-playfair text-green-900 mb-6">Our Garden Blog</h1>
+          <p className="text-xl text-gray-700 leading-relaxed">
+            Discover expert tips, seasonal guides, and inspiring ideas for your garden
+          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {blogPosts.map((post, index) => (
+            <motion.div
+              key={post.id}
+              initial={{ opacity: 0, y: -30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+            >
+              <BlogCard 
+                post={post} 
+                onClick={handlePostClick}
+              />
+            </motion.div>
+          ))}
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: -30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.8 }}
+          className="text-center mt-16"
+        >
+          <Link
+            href="/contact"
+            className="inline-block bg-green-600 text-white font-semibold px-8 py-4 rounded-lg hover:bg-green-700 transition-colors duration-300"
+          >
+            Subscribe to Our Newsletter
+          </Link>
+        </motion.div>
+      </div>
+
+      {/* Blog Modal */}
+      {selectedPost && (
+        <BlogModal 
+          post={selectedPost} 
+          onClose={handleCloseModal}
+        />
+      )}
+    </div>
+  );
+}
