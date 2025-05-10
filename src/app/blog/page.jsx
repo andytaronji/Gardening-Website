@@ -1,26 +1,12 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { blogPosts } from './data/posts';
 import BlogCard from '@/components/BlogCard';
-import BlogModal from '@/components/BlogModal';
 
 export default function BlogPage() {
-  const [selectedPost, setSelectedPost] = useState(null);
-
-  const handlePostClick = (post) => {
-    setSelectedPost(post);
-    // Prevent scrolling when modal is open
-    document.body.style.overflow = 'hidden';
-  };
-
-  const handleCloseModal = () => {
-    setSelectedPost(null);
-    // Restore scrolling when modal is closed
-    document.body.style.overflow = 'unset';
-  };
 
   return (
     <div className="min-h-screen bg-white">
@@ -45,10 +31,7 @@ export default function BlogPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
             >
-              <BlogCard 
-                post={post} 
-                onClick={handlePostClick}
-              />
+              <BlogCard post={post} />
             </motion.div>
           ))}
         </div>
@@ -68,13 +51,6 @@ export default function BlogPage() {
         </motion.div>
       </div>
 
-      {/* Blog Modal */}
-      {selectedPost && (
-        <BlogModal 
-          post={selectedPost} 
-          onClose={handleCloseModal}
-        />
-      )}
     </div>
   );
 }

@@ -50,7 +50,7 @@ export const blogPosts = [
     `,
     image: '/images/new/garden-design-1.jpg',
     date: '2025-03-01',
-    author: 'Emma Green',
+    author: 'Najet Hamdoun',
     tags: ['spring', 'planting', 'soil preparation']
   },
   {
@@ -118,7 +118,7 @@ export const blogPosts = [
     `,
     image: '/images/new/landscape-2.jpg',
     date: '2025-02-15',
-    author: 'Michael Rivers',
+    author: 'Najet Hamdoun',
     tags: ['sustainability', 'eco-friendly', 'native plants']
   },
   {
@@ -198,7 +198,7 @@ export const blogPosts = [
     `,
     image: '/images/new/vegetable-garden-1.jpg',
     date: '2025-01-20',
-    author: 'Sophia Chen',
+    author: 'Najet Hamdoun',
     tags: ['container gardening', 'small spaces', 'urban gardening']
   },
   {
@@ -282,7 +282,7 @@ export const blogPosts = [
     `,
     image: '/images/new/garden-design-2.jpg',
     date: '2024-12-10',
-    author: 'James Peterson',
+    author: 'Najet Hamdoun',
     tags: ['seasonal maintenance', 'garden care', 'year-round gardening']
   }
 ];
