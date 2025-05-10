@@ -32,16 +32,23 @@ export default function ServicesSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="bg-white rounded-lg shadow-lg overflow-hidden"
           >
-            <div className="relative h-64">
-              <ImageComponent
-                src="/images/new/garden-design-5.jpg"
-                alt="Garden Design Service"
-                priority={true}
-                quality={90}
-                sizes="(max-width: 768px) 100vw, 33vw"
-                objectFit="cover"
-                className="h-full"
-              />
+            <div className="relative h-80 overflow-hidden group">
+              <a 
+                href="https://res.cloudinary.com/di4phdven/image/upload/f_auto,q_auto/v1746893644/IMG_2465_ik43b7" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="block h-full w-full"
+              >
+                <ImageComponent
+                  src="https://res.cloudinary.com/di4phdven/image/upload/f_auto,q_auto/v1746893644/IMG_2465_ik43b7"
+                  alt="Garden Design Service"
+                  priority={true}
+                  quality={90}
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  objectFit="cover"
+                  className="h-full transition-transform duration-300 group-hover:scale-110"
+                />
+              </a>
             </div>
             <div className="p-6">
               <h3 className="text-2xl font-semibold text-gray-800 mb-3">Garden Design</h3>
@@ -66,16 +73,23 @@ export default function ServicesSection() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="bg-white rounded-lg shadow-lg overflow-hidden"
           >
-            <div className="relative h-64">
-              <ImageComponent
-                src="/images/new/maintenance-5.jpg"
-                alt="Groundskeeping Service"
-                priority={true}
-                quality={90}
-                sizes="(max-width: 768px) 100vw, 33vw"
-                objectFit="cover"
-                className="h-full"
-              />
+            <div className="relative h-80 overflow-hidden group">
+              <a 
+                href="https://res.cloudinary.com/di4phdven/image/upload/f_auto,q_auto/v1746894206/Garden_Design_CreepingJenny_gsgu3z" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="block h-full w-full"
+              >
+                <ImageComponent
+                  src="https://res.cloudinary.com/di4phdven/image/upload/f_auto,q_auto/v1746894206/Garden_Design_CreepingJenny_gsgu3z"
+                  alt="Groundskeeping Service"
+                  priority={true}
+                  quality={90}
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  objectFit="cover"
+                  className="h-full transition-transform duration-300 group-hover:scale-110"
+                />
+              </a>
             </div>
             <div className="p-6">
               <h3 className="text-2xl font-semibold text-gray-800 mb-3">Groundskeeping</h3>
@@ -100,16 +114,23 @@ export default function ServicesSection() {
             transition={{ duration: 0.6, delay: 0.6 }}
             className="bg-white rounded-lg shadow-lg overflow-hidden"
           >
-            <div className="relative h-64">
-              <ImageComponent
-                src="/images/new/maintenance-4.jpg"
-                alt="Quarterly Cleanups Service"
-                priority={true}
-                quality={90}
-                sizes="(max-width: 768px) 100vw, 33vw"
-                objectFit="cover"
-                className="h-full"
-              />
+            <div className="relative h-80 overflow-hidden group">
+              <a 
+                href="https://res.cloudinary.com/di4phdven/image/upload/f_auto,q_auto/v1746894176/Sandra_Cleanup_After_3_sa4bn9" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="block h-full w-full"
+              >
+                <ImageComponent
+                  src="https://res.cloudinary.com/di4phdven/image/upload/f_auto,q_auto/v1746894176/Sandra_Cleanup_After_3_sa4bn9"
+                  alt="Quarterly Cleanups Service"
+                  priority={true}
+                  quality={90}
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  objectFit="cover"
+                  className="h-full transition-transform duration-300 group-hover:scale-110"
+                />
+              </a>
             </div>
             <div className="p-6">
               <h3 className="text-2xl font-semibold text-gray-800 mb-3">Quarterly Cleanups</h3>

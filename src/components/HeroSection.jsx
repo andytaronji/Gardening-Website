@@ -11,7 +11,7 @@ export default function HeroSection() {
     <section className="relative h-screen min-h-[600px] bg-gray-900">
       <div className="absolute inset-0 z-0">
         <ImageComponent
-          src="/images/new/garden-design-4.jpg"
+          src="https://res.cloudinary.com/di4phdven/image/upload/f_auto,q_auto/v1746893645/front_Page_wm3lfv"
           alt="Beautiful garden landscape"
           priority={true}
           quality={100}
