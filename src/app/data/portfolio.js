@@ -33,7 +33,7 @@ export const portfolioItems = [
   },
   {
     id: 5,
-    title: "Roy's Garden After",
+    title: "Garden Design After",
     category: "Garden Transformation",
     description: "Complete garden transformation with new plantings and design elements.",
     image: "/images/new/landscape-3.jpg",
@@ -41,7 +41,7 @@ export const portfolioItems = [
   },
   {
     id: 6,
-    title: "Mark's Garden Design",
+    title: "Japanese Garden Design",
     category: "Landscape Design",
     description: "Comprehensive landscape design with mixed perennials and shrubs.",
     image: "/images/new/garden-design-4.jpg",

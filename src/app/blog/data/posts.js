@@ -1,5 +1,128 @@
 export const blogPosts = [
   {
+    id: 5,
+    slug: 'georgia-groundskeeping-guide',
+    title: 'Georgia Groundskeeping Guide: Alpharetta, Milton, and Vinings',
+    excerpt: 'Expert tips for maintaining beautiful landscapes in North Fulton and Cobb County\'s unique Georgia climate.',
+    content: `
+      <h2>Georgia Groundskeeping Guide: Maintaining Beautiful Landscapes in Alpharetta, Milton, and Vinings</h2>
+      
+      <p>Georgia\'s unique climate presents both opportunities and challenges for property owners in Alpharetta, Milton, and Vinings. With hot, humid summers, mild winters, and clay-heavy soils, maintaining a beautiful landscape requires specialized knowledge and techniques tailored to our region.</p>
+      
+      <h3>Understanding Georgia\'s Climate Zones</h3>
+      
+      <p>Alpharetta, Milton, and Vinings all fall within USDA Hardiness Zones 7b to 8a, which influences plant selection and maintenance schedules:</p>
+      <ul>
+        <li>Last frost dates typically occur in early April</li>
+        <li>First frost dates usually arrive in early November</li>
+        <li>Summer temperatures regularly exceed 90°F with high humidity</li>
+        <li>Winter temperatures occasionally dip below freezing</li>
+        <li>Annual rainfall averages 50-54 inches, though summer droughts are common</li>
+      </ul>
+      
+      <h3>Alpharetta: Managing Clay Soils and Suburban Landscapes</h3>
+      
+      <p>Alpharetta properties often contend with Georgia\'s notorious red clay soil, which can be both a blessing and a challenge:</p>
+      <ul>
+        <li>Clay soil retains nutrients well but drains poorly</li>
+        <li>Amend soil with organic matter to improve drainage and aeration</li>
+        <li>Consider raised beds for vegetable gardens to overcome clay soil limitations</li>
+        <li>Many Alpharetta neighborhoods have HOA requirements for landscape maintenance</li>
+        <li>Drought-resistant native plants like Georgia aster, oakleaf hydrangea, and muhly grass thrive in Alpharetta landscapes</li>
+      </ul>
+      
+      <p>For Alpharetta properties, we recommend a groundskeeping schedule that includes:</p>
+      <ul>
+        <li>Weekly mowing during peak growing season (April-October)</li>
+        <li>Monthly bed maintenance to control weeds and refresh mulch</li>
+        <li>Quarterly pruning and shaping of ornamental shrubs</li>
+        <li>Bi-annual core aeration to combat soil compaction</li>
+      </ul>
+      
+      <h3>Milton: Large Property Management in Georgia\'s Horse Country</h3>
+      
+      <p>Milton\'s larger estates and rural properties present unique groundskeeping considerations:</p>
+      <ul>
+        <li>Extensive lawn areas require efficient mowing strategies</li>
+        <li>Natural area management to control invasive species common in Georgia</li>
+        <li>Wildlife considerations, as Milton properties often border natural habitats</li>
+        <li>Water management for properties with ponds, streams, or wetland areas</li>
+        <li>Integration of native Georgia meadow plants for sustainable, low-maintenance areas</li>
+      </ul>
+      
+      <p>For Milton properties, we recommend:</p>
+      <ul>
+        <li>Zone-based maintenance plans that prioritize high-visibility areas</li>
+        <li>Establishment of native plant buffers around water features</li>
+        <li>Implementation of Georgia-friendly IPM (Integrated Pest Management) strategies</li>
+        <li>Seasonal attention to pasture edges and fence lines</li>
+      </ul>
+      
+      <h3>Vinings: Sophisticated Landscapes in Atlanta\'s Premier Community</h3>
+      
+      <p>Vinings combines urban sophistication with lush Georgia greenery:</p>
+      <ul>
+        <li>Smaller lot sizes require thoughtful design and maintenance</li>
+        <li>Emphasis on curb appeal and polished landscape appearances</li>
+        <li>Shade gardening solutions for properties with mature tree canopies</li>
+        <li>Strategic plant selection for year-round interest in Georgia\'s long growing season</li>
+        <li>Attention to drainage issues common in Vinings\' hilly terrain</li>
+      </ul>
+      
+      <p>For Vinings properties, our groundskeeping approach includes:</p>
+      <ul>
+        <li>Detail-oriented maintenance with emphasis on manicured edges and clean lines</li>
+        <li>Seasonal color rotations to maximize visual impact year-round</li>
+        <li>Careful tree and shrub management to maintain views and architectural features</li>
+        <li>Proactive pest monitoring to protect valuable landscape investments</li>
+      </ul>
+      
+      <h3>Year-Round Groundskeeping Calendar for North Georgia</h3>
+      
+      <p><strong>Spring (March-May):</strong></p>
+      <ul>
+        <li>Apply pre-emergent herbicides in early March to prevent warm-season weeds</li>
+        <li>Begin regular mowing as temperatures consistently reach 65°F</li>
+        <li>Prune spring-flowering shrubs after blooming</li>
+        <li>Apply slow-release fertilizer to lawns in late April</li>
+        <li>Install summer annuals after last frost (typically mid-April)</li>
+      </ul>
+      
+      <p><strong>Summer (June-August):</strong></p>
+      <ul>
+        <li>Raise mowing heights to reduce stress during Georgia\'s hot summers</li>
+        <li>Water deeply but infrequently to encourage deep root growth</li>
+        <li>Monitor for fungal diseases common in Georgia\'s humidity</li>
+        <li>Prune to remove storm damage promptly</li>
+        <li>Deadhead flowering plants to encourage continued blooming</li>
+      </ul>
+      
+      <p><strong>Fall (September-November):</strong></p>
+      <ul>
+        <li>Overseed fescue lawns in late September/early October</li>
+        <li>Plant trees and shrubs to establish roots before summer heat</li>
+        <li>Apply post-emergent herbicides for winter weed control</li>
+        <li>Install cool-season annuals like pansies and violas</li>
+        <li>Manage leaf removal to prevent lawn damage</li>
+      </ul>
+      
+      <p><strong>Winter (December-February):</strong></p>
+      <ul>
+        <li>Prune deciduous trees and summer-flowering shrubs</li>
+        <li>Apply dormant oil to control overwintering insects</li>
+        <li>Cut back ornamental grasses in late February</li>
+        <li>Plan landscape improvements for spring implementation</li>
+        <li>Monitor for winter desiccation during dry periods</li>
+      </ul>
+      
+      <p>At Gardening Thyme, we understand the unique groundskeeping needs of Alpharetta, Milton, and Vinings properties. Our Georgia-specific approach ensures your landscape thrives in our local conditions while meeting the aesthetic standards of these premier communities.</p>
+    `,
+    image: 'https://res.cloudinary.com/di4phdven/image/upload/f_jpg/v1746893645/front_Page_wm3lfv.heic',
+    date: '2025-04-15',
+    author: 'Najet Hamdoun',
+    tags: ['groundskeeping', 'Georgia', 'Alpharetta', 'Milton', 'Vinings', 'landscape maintenance']
+  },
+  {
     id: 1,
     slug: 'spring-planting-guide',
     title: 'Spring Planting Guide',

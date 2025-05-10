@@ -46,7 +46,7 @@ export default function BlogPage() {
             href="/contact"
             className="inline-block bg-green-600 text-white font-semibold px-8 py-4 rounded-lg hover:bg-green-700 transition-colors duration-300"
           >
-            Subscribe to Our Newsletter
+            Reach out today to learn about our Gardening Lessons!
           </Link>
         </motion.div>
       </div>

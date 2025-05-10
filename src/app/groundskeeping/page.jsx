@@ -4,8 +4,12 @@ import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import ImageComponent from '@/components/ImageComponent';
+import Head from 'next/head';
 
 export default function GroundskeepingPage() {
+  // Custom metadata for this page
+  const pageTitle = "Professional Groundskeeping Services in Alpharetta, Milton & Vinings, GA | Gardening Thyme";
+  const pageDescription = "Expert groundskeeping and landscape maintenance services for properties in Alpharetta, Milton, and Vinings, Georgia. Keep your Georgia landscape beautiful year-round.";
   return (
     <div className="min-h-screen bg-white">
       <div className="container mx-auto px-4 py-16">
@@ -140,13 +144,194 @@ export default function GroundskeepingPage() {
           </div>
         </motion.div>
 
+        {/* Location-specific sections */}
+        <div className="mb-20">
+          <motion.h2 
+            initial={{ opacity: 0, y: -30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            className="text-3xl font-playfair text-green-800 mb-12 text-center"
+          >
+            Serving Your Georgia Community
+          </motion.h2>
+
+          {/* Alpharetta Section */}
+          <motion.div 
+            initial={{ opacity: 0, y: -30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.7 }}
+            className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-16"
+          >
+            <div className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-lg">
+              <ImageComponent
+                src="/images/new/landscape-1.jpg"
+                alt="Alpharetta, GA groundskeeping services"
+                quality={75}
+                objectFit="cover"
+              />
+            </div>
+            <div className="space-y-4">
+              <h3 className="text-2xl font-playfair text-green-800">Alpharetta, GA Groundskeeping</h3>
+              <p className="text-gray-700">
+                Alpharetta properties face unique challenges with Georgia's clay-heavy soil and hot, humid summers. 
+                Our specialized groundskeeping services for Alpharetta homes include proper drainage solutions, 
+                drought-resistant plantings, and maintenance schedules tailored to North Fulton County's 
+                specific climate conditions.
+              </p>
+              <ul className="space-y-2">
+                <li className="flex items-center space-x-2 text-gray-700">
+                  <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>Clay soil management specific to Alpharetta properties</span>
+                </li>
+                <li className="flex items-center space-x-2 text-gray-700">
+                  <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>HOA-compliant maintenance for Alpharetta neighborhoods</span>
+                </li>
+              </ul>
+            </div>
+          </motion.div>
+
+          {/* Milton Section */}
+          <motion.div 
+            initial={{ opacity: 0, y: -30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.8 }}
+            className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-16"
+          >
+            <div className="md:order-2 relative aspect-[4/3] rounded-lg overflow-hidden shadow-lg">
+              <ImageComponent
+                src="/images/new/landscape-3.jpg"
+                alt="Milton, GA estate groundskeeping"
+                quality={75}
+                objectFit="cover"
+              />
+            </div>
+            <div className="md:order-1 space-y-4">
+              <h3 className="text-2xl font-playfair text-green-800">Milton, GA Estate Maintenance</h3>
+              <p className="text-gray-700">
+                Milton's larger properties and estates require specialized groundskeeping approaches. 
+                Our Milton groundskeeping services are designed for extensive landscapes, 
+                managing everything from pasture edges to formal gardens with the attention to detail 
+                that Georgia's premier properties deserve.
+              </p>
+              <ul className="space-y-2">
+                <li className="flex items-center space-x-2 text-gray-700">
+                  <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>Large property management solutions</span>
+                </li>
+                <li className="flex items-center space-x-2 text-gray-700">
+                  <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>Native Georgia plant integration for sustainable landscapes</span>
+                </li>
+              </ul>
+            </div>
+          </motion.div>
+
+          {/* Vinings Section */}
+          <motion.div 
+            initial={{ opacity: 0, y: -30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.9 }}
+            className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center"
+          >
+            <div className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-lg">
+              <ImageComponent
+                src="/images/new/landscape-4.jpg"
+                alt="Vinings, GA landscape maintenance"
+                quality={75}
+                objectFit="cover"
+              />
+            </div>
+            <div className="space-y-4">
+              <h3 className="text-2xl font-playfair text-green-800">Vinings, GA Landscape Maintenance</h3>
+              <p className="text-gray-700">
+                Vinings properties combine Atlanta's urban sophistication with lush Georgia landscapes. 
+                Our groundskeeping services for Vinings focus on maintaining polished, manicured appearances 
+                while implementing sustainable practices that work with Georgia's unique growing conditions.
+              </p>
+              <ul className="space-y-2">
+                <li className="flex items-center space-x-2 text-gray-700">
+                  <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>Upscale property maintenance for Vinings homes</span>
+                </li>
+                <li className="flex items-center space-x-2 text-gray-700">
+                  <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>Seasonal color rotations suited to Georgia's climate</span>
+                </li>
+              </ul>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Testimonials Section */}
         <motion.div
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
+          transition={{ duration: 0.6, delay: 1.0 }}
+          className="bg-green-50 rounded-2xl p-8 md:p-12 mb-20"
+        >
+          <h2 className="text-3xl font-playfair text-green-800 mb-8 text-center">What Our Clients Say</h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <div className="flex items-center mb-4">
+                <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
+                  <span className="text-green-700 font-bold text-xl">A</span>
+                </div>
+                <div>
+                  <h4 className="font-semibold">Amanda R.</h4>
+                  <p className="text-sm text-gray-500">Alpharetta, GA</p>
+                </div>
+              </div>
+              <p className="text-gray-700 italic">
+                "Gardening Thyme transformed our Alpharetta backyard, creating a drought-resistant landscape 
+                that thrives in Georgia's summer heat. Their groundskeeping team is professional, 
+                knowledgeable, and always on schedule."
+              </p>
+            </div>
+            
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <div className="flex items-center mb-4">
+                <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
+                  <span className="text-green-700 font-bold text-xl">M</span>
+                </div>
+                <div>
+                  <h4 className="font-semibold">Michael T.</h4>
+                  <p className="text-sm text-gray-500">Milton, GA</p>
+                </div>
+              </div>
+              <p className="text-gray-700 italic">
+                "Our Milton property's large lot was overwhelming until Gardening Thyme implemented a 
+                sustainable maintenance plan perfect for our Georgia native landscape. They understand 
+                the unique needs of larger properties in our area."
+              </p>
+            </div>
+          </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: -30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 1.1 }}
           className="text-center"
         >
           <h2 className="text-3xl font-playfair text-green-800 mb-8">Ready to Get Started?</h2>
+          <p className="text-xl text-gray-700 max-w-2xl mx-auto mb-8">
+            We provide specialized groundskeeping services throughout Georgia, with focused expertise in 
+            Alpharetta, Milton, and Vinings. Contact us today to discuss your property's needs.
+          </p>
           <Link
             href="/contact"
             className="inline-block bg-green-600 text-white font-semibold px-8 py-4 rounded-lg hover:bg-green-700 transition-colors duration-300"
