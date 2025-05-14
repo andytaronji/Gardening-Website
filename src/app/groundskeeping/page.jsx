@@ -32,13 +32,13 @@ export default function GroundskeepingPage() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-lg"
           >
-            <ImageComponent
-              src="/images/new/landscape-2.jpg"
-              alt="Professional groundskeeping services"
-              priority={true}
-              quality={75}
-              objectFit="cover"
-            />
+              <ImageComponent
+                src="https://res.cloudinary.com/di4phdven/image/upload/v1746894191/Portfolio_Page_1_oskao9.jpg"
+                alt="Professional groundskeeping services"
+                priority={true}
+                quality={85}
+                objectFit="cover"
+              />
           </motion.div>
 
           <motion.div
@@ -164,9 +164,9 @@ export default function GroundskeepingPage() {
           >
             <div className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-lg">
               <ImageComponent
-                src="/images/new/landscape-1.jpg"
+                src="https://res.cloudinary.com/di4phdven/image/upload/v1747170880/Groundskeeping_Alpharetta_GA_jpcd1v.jpg"
                 alt="Alpharetta, GA groundskeeping services"
-                quality={75}
+                quality={85}
                 objectFit="cover"
               />
             </div>
@@ -204,9 +204,9 @@ export default function GroundskeepingPage() {
           >
             <div className="md:order-2 relative aspect-[4/3] rounded-lg overflow-hidden shadow-lg">
               <ImageComponent
-                src="/images/new/landscape-3.jpg"
+                src="https://res.cloudinary.com/di4phdven/image/upload/v1747170883/Groundskeeping_Milton_GA_pzzx3v.jpg"
                 alt="Milton, GA estate groundskeeping"
-                quality={75}
+                quality={85}
                 objectFit="cover"
               />
             </div>
@@ -244,9 +244,9 @@ export default function GroundskeepingPage() {
           >
             <div className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-lg">
               <ImageComponent
-                src="/images/new/landscape-4.jpg"
+                src="https://res.cloudinary.com/di4phdven/image/upload/v1747170896/Groundskeeping_Vining_GA_hdqaug.jpg"
                 alt="Vinings, GA landscape maintenance"
-                quality={75}
+                quality={85}
                 objectFit="cover"
               />
             </div>
