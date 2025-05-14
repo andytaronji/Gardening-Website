@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 
@@ -50,8 +51,15 @@ export default function Navigation() {
   return (
     <nav className="bg-green-800 text-white p-4 sticky top-0 z-50 shadow-md">
       <div className="container mx-auto flex justify-between items-center">
-        <Link href="/" className="text-xl font-cursive">
-          Gardening Thyme
+        <Link href="/" className="flex items-center space-x-2 text-xl font-cursive">
+          <Image 
+            src="https://res.cloudinary.com/di4phdven/image/upload/v1747232934/Gardening_Thyme_LLC_Logo_hkdlsk.jpg" 
+            alt="Gardening Thyme Logo" 
+            width={30} 
+            height={30} 
+            className="rounded-full"
+          />
+          <span>Gardening Thyme</span>
         </Link>
         
         {isMobile ? (
@@ -200,4 +208,4 @@ export default function Navigation() {
       </div>
     </nav>
   );
-} 
+}
