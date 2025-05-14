@@ -29,13 +29,11 @@ export default function GardenDesignPage() {
             className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-lg"
           >
             <ImageComponent
-              src="/images/portfolio/garden-design.jpg"
+              src="https://res.cloudinary.com/di4phdven/image/upload/v1747228491/Garden_Design_xh5y5u.jpg"
               alt="Professional garden design"
-              useRandomImage={true}
-              category="garden"
               componentId="garden-design-hero"
               priority={true}
-              quality={75}
+              quality={90}
               objectFit="cover"
             />
           </motion.div>
@@ -71,7 +69,7 @@ export default function GardenDesignPage() {
                 <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
-                <span>Custom design plans and 3D visualizations</span>
+                <span>Custom design plans and 2D visualizations</span>
               </motion.li>
               <motion.li
                 initial={{ opacity: 0, y: -20 }}
@@ -158,4 +156,4 @@ export default function GardenDesignPage() {
       </div>
     </div>
   );
-} 
+}

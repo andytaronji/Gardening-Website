@@ -35,8 +35,8 @@ export default function FeaturedProjectSection() {
             variants={variants}
           >
             <ImageComponent 
-              src="/images/new/landscape-3.jpg"
-              alt="Featured garden project"
+              src="https://res.cloudinary.com/di4phdven/image/upload/v1747229592/Screenshot_2025-05-14_093253_c1yke9.png"
+              alt="Natural Stream Solutions"
               useRandomImage={false}
               componentId="featured-project"
               priority={true}
@@ -46,17 +46,16 @@ export default function FeaturedProjectSection() {
             />
           </motion.div>
           <motion.div variants={variants}>
-            <h3 className="text-3xl font-semibold text-green-700 mb-4">Riverside Retreat</h3>
+            <h3 className="text-3xl font-semibold text-green-700 mb-4">Natural Stream Solutions</h3>
             <p className="text-gray-600 mb-6 leading-relaxed">
-              This stunning riverside garden was transformed from an overlooked space into a peaceful retreat that takes full advantage of its natural setting. We incorporated native plants, sustainable materials, and created distinct zones for relaxation, dining, and entertaining.
-            </p>
-            <p className="text-gray-600 mb-6 leading-relaxed">
-              The design includes a series of terraced gardens that lead down to the water, a natural stone patio, and carefully selected plantings that provide year-round interest while requiring minimal maintenance.
+              Natural irrigation solutions include man-made dry creek beds to combat terraced and severely inclined yards.
+              
+              Streams made from colorful river rock add a beautiful touch to your yard and can be built around pollinating flowers to attract butterflies, hummingbirds, bees, and also support local ecosystems!
             </p>
             <div className="flex flex-wrap gap-3">
               <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">Sustainable Design</span>
               <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">Native Plants</span>
-              <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">Waterfront</span>
+              <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">Natural Stream</span>
               <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">Low Maintenance</span>
             </div>
           </motion.div>

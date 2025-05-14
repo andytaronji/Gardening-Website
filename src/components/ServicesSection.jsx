@@ -34,13 +34,13 @@ export default function ServicesSection() {
           >
             <div className="relative h-80 overflow-hidden group">
               <a 
-                href="https://res.cloudinary.com/di4phdven/image/upload/f_auto,q_auto/v1746893644/IMG_2465_ik43b7" 
+                href="https://res.cloudinary.com/di4phdven/image/upload/v1747228711/gardendesignhomepage_z6bfth.jpg" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="block h-full w-full"
               >
                 <ImageComponent
-                  src="https://res.cloudinary.com/di4phdven/image/upload/f_auto,q_auto/v1746893644/IMG_2465_ik43b7"
+                  src="https://res.cloudinary.com/di4phdven/image/upload/v1747228711/gardendesignhomepage_z6bfth.jpg"
                   alt="Garden Design Service"
                   priority={true}
                   quality={90}
