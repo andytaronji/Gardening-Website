@@ -28,17 +28,14 @@ export default function VegetableGardenPage() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
               <Image
-                src="/images/downloaded/new-vegetable-garden.jpg"
+                src="https://res.cloudinary.com/di4phdven/image/upload/v1747170882/Vegetable_Garden_Design_exhteo.jpg"
                 alt="Vegetable garden design"
                 width={800}
                 height={600}
                 className="rounded-lg shadow-lg object-cover w-full h-full"
                 priority
-              quality={75}
-              loading="eager"
-              onError={(e) => {
-                e.target.src = "/images/portfolio/vegetable-garden.jpg";
-              }}
+                quality={85}
+                loading="eager"
             />
           </motion.div>
 

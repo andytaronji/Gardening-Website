@@ -29,10 +29,10 @@ export default function QuarterlyCleanupPage() {
             className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-lg"
           >
             <ImageComponent
-              src="/images/downloaded/new-cleanup.jpg"
+              src="https://res.cloudinary.com/di4phdven/image/upload/v1747170894/Quarterly_Cleanup_pwdlis.jpg"
               alt="Quarterly garden cleanup"
               priority={true}
-              quality={75}
+              quality={85}
               objectFit="cover"
             />
           </motion.div>
