@@ -117,7 +117,7 @@ export const blogPosts = [
       
       <p>At Gardening Thyme, we understand the unique groundskeeping needs of Alpharetta, Milton, and Vinings properties. Our Georgia-specific approach ensures your landscape thrives in our local conditions while meeting the aesthetic standards of these premier communities.</p>
     `,
-    image: 'https://res.cloudinary.com/di4phdven/image/upload/f_jpg/v1746893645/front_Page_wm3lfv.heic',
+    image: 'https://res.cloudinary.com/di4phdven/image/upload/v1746894191/Portfolio_3_jrpfhy.jpg',
     date: '2025-04-15',
     author: 'Najet Hamdoun',
     tags: ['groundskeeping', 'Georgia', 'Alpharetta', 'Milton', 'Vinings', 'landscape maintenance']
@@ -171,7 +171,7 @@ export const blogPosts = [
       
       <p>With these fundamentals in place, your spring garden will be set up for success. Happy planting!</p>
     `,
-    image: '/images/new/garden-design-1.jpg',
+    image: 'https://res.cloudinary.com/di4phdven/image/upload/v1746894181/Vegetable_Garden_Design_After_Liz_dk9vpm.jpg',
     date: '2025-03-01',
     author: 'Najet Hamdoun',
     tags: ['spring', 'planting', 'soil preparation']
@@ -239,7 +239,7 @@ export const blogPosts = [
       
       <p>By implementing these sustainable practices, you'll create a garden that not only looks beautiful but also contributes positively to the environment. Your sustainable garden will become more resilient and self-sufficient over time, requiring less input while providing greater rewards.</p>
     `,
-    image: '/images/new/landscape-2.jpg',
+    image: 'https://res.cloudinary.com/di4phdven/image/upload/v1747240647/IMG_7604_tu7oa6.jpg',
     date: '2025-02-15',
     author: 'Najet Hamdoun',
     tags: ['sustainability', 'eco-friendly', 'native plants']
@@ -319,7 +319,7 @@ export const blogPosts = [
       
       <p>With these container gardening strategies, you can create a lush, productive garden in even the smallest spaces. The flexibility of containers allows you to experiment, rearrange, and enjoy gardening regardless of your living situation.</p>
     `,
-    image: '/images/new/vegetable-garden-1.jpg',
+    image: 'https://res.cloudinary.com/di4phdven/image/upload/v1747240505/portfoliox_dfk47b.jpg',
     date: '2025-01-20',
     author: 'Najet Hamdoun',
     tags: ['container gardening', 'small spaces', 'urban gardening']
@@ -403,7 +403,7 @@ export const blogPosts = [
       
       <p>By following this seasonal maintenance schedule, you'll develop a rhythm that keeps your garden thriving year after year. Remember that timing may vary based on your specific climate zone, so adjust accordingly for your region.</p>
     `,
-    image: '/images/new/garden-design-2.jpg',
+    image: 'https://res.cloudinary.com/di4phdven/image/upload/v1746894212/bed_cleanup2_after_nrdc8a.jpg',
     date: '2024-12-10',
     author: 'Najet Hamdoun',
     tags: ['seasonal maintenance', 'garden care', 'year-round gardening']
