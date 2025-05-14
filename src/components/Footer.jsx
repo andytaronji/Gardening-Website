@@ -52,9 +52,14 @@ export default function Footer() {
           </div>
         </div>
         
-        {/* Copyright */}
+        {/* Copyright and Legal */}
         <div className="border-t border-green-700 mt-8 pt-8 text-center">
-          <p>&copy; {new Date().getFullYear()} Gardening Thyme. All rights reserved.</p>
+          <p className="mb-2">&copy; {new Date().getFullYear()} Gardening Thyme. All rights reserved.</p>
+          <div className="flex justify-center space-x-4 text-sm">
+            <Link href="/privacy-policy" className="text-green-300 hover:text-white transition-colors">
+              Privacy Policy
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
