@@ -11,13 +11,15 @@ export default function HeroSection() {
     <section className="relative h-screen min-h-[600px] bg-gray-900">
       <div className="absolute inset-0 z-0">
         <ImageComponent
-          src="https://res.cloudinary.com/di4phdven/image/upload/f_auto,q_80/v1746893645/front_Page_wm3lfv"
+          src="https://res.cloudinary.com/di4phdven/image/upload/f_auto,q_70,w_1200/v1746893645/front_Page_wm3lfv"
           alt="High-end garden design and landscaping in Atlanta area by Gardening Thyme"
           priority={true}
-          quality={80}
+          quality={70}
           sizes="100vw"
           objectFit="cover"
           className="h-full"
+          width={1200}
+          height={800}
         />
         <div className="absolute inset-0 bg-black bg-opacity-50" />
       </div>

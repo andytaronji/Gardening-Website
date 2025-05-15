@@ -26,14 +26,16 @@ export default function FeaturedProjectSection() {
             variants={fadeInUpVariants}
           >
             <ImageComponent 
-              src="https://res.cloudinary.com/di4phdven/image/upload/f_auto,q_80/v1747229592/Screenshot_2025-05-14_093253_c1yke9.png"
+              src="https://res.cloudinary.com/di4phdven/image/upload/f_auto,q_70,w_800/v1747229592/Screenshot_2025-05-14_093253_c1yke9.png"
               alt="Natural Stream Solutions"
               useRandomImage={false}
               componentId="featured-project"
               priority={true}
-              quality={80}
+              quality={70}
               sizes="(max-width: 768px) 100vw, 50vw"
               objectFit="cover"
+              width={800}
+              height={600}
             />
           </LazyMotionDiv>
           <LazyMotionDiv variants={fadeInUpVariants}>

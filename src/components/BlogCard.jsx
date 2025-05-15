@@ -2,8 +2,8 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
 import ImageComponent from './ImageComponent';
+import { LazyMotionDiv } from '@/utils/lazyMotion';
 import { getFallbackImage } from '@/utils/imageUtils';
 
 export default function BlogCard({ post }) {
@@ -28,7 +28,7 @@ export default function BlogCard({ post }) {
 
   return (
     <Link href={`/blog/${post.slug}`} passHref>
-      <motion.div 
+      <LazyMotionDiv 
         className="bg-[#f5f5f7] rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer"
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
@@ -41,7 +41,9 @@ export default function BlogCard({ post }) {
             aspectRatio="16/9"
             objectFit="cover"
             priority={false}
-            quality={90}
+            quality={70}
+            width={600}
+            height={338}
           />
         </div>
         <div className="p-6">
@@ -68,7 +70,7 @@ export default function BlogCard({ post }) {
             </svg>
           </div>
         </div>
-      </motion.div>
+      </LazyMotionDiv>
     </Link>
   );
 }

@@ -13,12 +13,12 @@ export default function RootLayout({ children }) {
       <head>
         <link 
           rel="icon" 
-          href="https://res.cloudinary.com/di4phdven/image/upload/v1747232934/Gardening_Thyme_LLC_Logo_hkdlsk.jpg" 
+          href="https://res.cloudinary.com/di4phdven/image/upload/f_auto,q_70,w_192/v1747232934/Gardening_Thyme_LLC_Logo_hkdlsk.jpg" 
           type="image/jpeg" 
         />
         <link 
           rel="apple-touch-icon" 
-          href="https://res.cloudinary.com/di4phdven/image/upload/v1747232934/Gardening_Thyme_LLC_Logo_hkdlsk.jpg" 
+          href="https://res.cloudinary.com/di4phdven/image/upload/f_auto,q_70,w_192/v1747232934/Gardening_Thyme_LLC_Logo_hkdlsk.jpg" 
         />
         <script
           type="application/ld+json"
@@ -27,7 +27,7 @@ export default function RootLayout({ children }) {
               "@context": "https://schema.org",
               "@type": "GardenStore",
               "name": "Gardening Thyme",
-              "image": "https://res.cloudinary.com/di4phdven/image/upload/v1747232934/Gardening_Thyme_LLC_Logo_hkdlsk.jpg",
+              "image": "https://res.cloudinary.com/di4phdven/image/upload/f_auto,q_70,w_192/v1747232934/Gardening_Thyme_LLC_Logo_hkdlsk.jpg",
               "telephone": "(508) 932-4056",
               "email": "services@gardeningthyme.com",
               "address": {

@@ -53,11 +53,12 @@ export default function Navigation() {
       <div className="container mx-auto flex justify-between items-center">
         <Link href="/" className="flex items-center space-x-2 text-xl font-cursive">
           <Image 
-            src="https://res.cloudinary.com/di4phdven/image/upload/v1747232934/Gardening_Thyme_LLC_Logo_hkdlsk.jpg" 
+            src="https://res.cloudinary.com/di4phdven/image/upload/f_auto,q_70,w_60/v1747232934/Gardening_Thyme_LLC_Logo_hkdlsk.jpg" 
             alt="Gardening Thyme Logo" 
             width={30} 
             height={30} 
             className="rounded-full"
+            priority={true}
           />
           <span>Gardening Thyme</span>
         </Link>
