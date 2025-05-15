@@ -2,8 +2,8 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
 import ImageComponent from './ImageComponent';
+import { LazyMotionDiv, fadeInUpVariants } from '../utils/lazyMotion';
 import { getPortfolioImage } from '../utils/imageUtils';
 
 export default function HeroSection() {
@@ -11,10 +11,10 @@ export default function HeroSection() {
     <section className="relative h-screen min-h-[600px] bg-gray-900">
       <div className="absolute inset-0 z-0">
         <ImageComponent
-          src="https://res.cloudinary.com/di4phdven/image/upload/f_auto,q_auto/v1746893645/front_Page_wm3lfv"
+          src="https://res.cloudinary.com/di4phdven/image/upload/f_auto,q_80/v1746893645/front_Page_wm3lfv"
           alt="High-end garden design and landscaping in Atlanta area by Gardening Thyme"
           priority={true}
-          quality={100}
+          quality={80}
           sizes="100vw"
           objectFit="cover"
           className="h-full"
@@ -23,7 +23,7 @@ export default function HeroSection() {
       </div>
 
       <div className="relative z-10 h-full container mx-auto px-4 flex items-center">
-        <motion.div
+        <LazyMotionDiv
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -49,7 +49,7 @@ export default function HeroSection() {
               Check Out Our Blog!
             </Link>
           </div>
-        </motion.div>
+        </LazyMotionDiv>
       </div>
     </section>
   );

@@ -1,8 +1,11 @@
 import './globals.css';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
-import { metadata } from './metadata';
+import Preload from '../components/Preload';
 import { Analytics } from "@vercel/analytics/next";
+import { metadata as siteMetadata } from './metadata';
+
+export const metadata = siteMetadata;
 
 export default function RootLayout({ children }) {
   return (
@@ -50,6 +53,7 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body>
+        <Preload />
         <Navigation />
         <main>{children}</main>
         <Footer />

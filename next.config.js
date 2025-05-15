@@ -2,7 +2,7 @@
 const nextConfig = {
   // Image optimization configuration
   images: {
-    domains: ['localhost', 'vercel.app', 'gardeningthyme.com'],
+    domains: ['localhost', 'vercel.app', 'gardeningthyme.com', 'res.cloudinary.com'],
     formats: ['image/avif', 'image/webp'],
     unoptimized: process.env.NODE_ENV === 'development',
     // Allow images from any domain in production for Vercel deployment
@@ -12,6 +12,8 @@ const nextConfig = {
         hostname: '**',
       },
     ],
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
   },
   
   // Enable strict mode for better development
@@ -25,7 +27,31 @@ const nextConfig = {
         destination: '/api/:path*'
       }
     ];
-  }
+  },
+
+  // Add cache headers for static assets
+  async headers() {
+    return [
+      {
+        source: '/(.*?)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      {
+        source: '/api/(.*?)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'no-cache, no-store, must-revalidate',
+          },
+        ],
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;

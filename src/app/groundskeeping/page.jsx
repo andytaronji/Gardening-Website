@@ -2,8 +2,8 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
 import ImageComponent from '@/components/ImageComponent';
+import { LazyMotionDiv, LazyMotionSection, fadeInUpVariants } from '@/utils/lazyMotion';
 import Head from 'next/head';
 
 export default function GroundskeepingPage() {
@@ -13,7 +13,7 @@ export default function GroundskeepingPage() {
   return (
     <div className="min-h-screen bg-white">
       <div className="container mx-auto px-4 py-16">
-        <motion.div
+        <LazyMotionDiv
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -23,10 +23,10 @@ export default function GroundskeepingPage() {
           <p className="text-xl text-gray-700 leading-relaxed">
             Expert maintenance services to keep your landscape beautiful year-round
           </p>
-        </motion.div>
+        </LazyMotionDiv>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-20">
-          <motion.div
+          <LazyMotionDiv
             initial={{ opacity: 0, y: -30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -36,12 +36,12 @@ export default function GroundskeepingPage() {
                 src="https://res.cloudinary.com/di4phdven/image/upload/v1746894191/Portfolio_Page_1_oskao9.jpg"
                 alt="Professional groundskeeping services"
                 priority={true}
-                quality={85}
+                quality={80}
                 objectFit="cover"
               />
-          </motion.div>
+          </LazyMotionDiv>
 
-          <motion.div
+          <LazyMotionDiv
             initial={{ opacity: 0, y: -30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
@@ -54,7 +54,7 @@ export default function GroundskeepingPage() {
               looking their best.
             </p>
             <ul className="space-y-4">
-              <motion.li
+              <LazyMotionDiv
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.6 }}
@@ -63,9 +63,9 @@ export default function GroundskeepingPage() {
                 <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
-                <span>Regular lawn maintenance and mowing</span>
-              </motion.li>
-              <motion.li
+                <span>Regular fertilization</span>
+              </LazyMotionDiv>
+              <LazyMotionDiv
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.7 }}
@@ -75,8 +75,8 @@ export default function GroundskeepingPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
                 <span>Plant health monitoring and care</span>
-              </motion.li>
-              <motion.li
+              </LazyMotionDiv>
+              <LazyMotionDiv
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.8 }}
@@ -86,12 +86,12 @@ export default function GroundskeepingPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
                 <span>Weed control and prevention</span>
-              </motion.li>
+              </LazyMotionDiv>
             </ul>
-          </motion.div>
+          </LazyMotionDiv>
         </div>
 
-        <motion.div
+        <LazyMotionDiv
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
@@ -99,7 +99,7 @@ export default function GroundskeepingPage() {
         >
           <h2 className="text-3xl font-playfair text-green-800 mb-8 text-center">Our Services</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <motion.div
+            <LazyMotionDiv
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.8 }}
@@ -111,9 +111,9 @@ export default function GroundskeepingPage() {
                 </svg>
               </div>
               <h3 className="text-xl font-semibold text-green-800 mb-2">Regular Maintenance</h3>
-              <p className="text-gray-600">Scheduled mowing, edging, and trimming to keep your landscape neat and tidy</p>
-            </motion.div>
-            <motion.div
+              <p className="text-gray-600">Scheduled deweeding and pruning to keep your garden beds looking fresh</p>
+            </LazyMotionDiv>
+            <LazyMotionDiv
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.9 }}
@@ -126,8 +126,8 @@ export default function GroundskeepingPage() {
               </div>
               <h3 className="text-xl font-semibold text-green-800 mb-2">Plant Health Care</h3>
               <p className="text-gray-600">Regular monitoring and treatment of plants to prevent diseases</p>
-            </motion.div>
-            <motion.div
+            </LazyMotionDiv>
+            <LazyMotionDiv
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 1.0 }}
@@ -140,23 +140,23 @@ export default function GroundskeepingPage() {
               </div>
               <h3 className="text-xl font-semibold text-green-800 mb-2">Seasonal Services</h3>
               <p className="text-gray-600">Specialized care and maintenance tailored to each season</p>
-            </motion.div>
+            </LazyMotionDiv>
           </div>
-        </motion.div>
+        </LazyMotionDiv>
 
         {/* Location-specific sections */}
         <div className="mb-20">
-          <motion.h2 
+          <LazyMotionDiv 
             initial={{ opacity: 0, y: -30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
             className="text-3xl font-playfair text-green-800 mb-12 text-center"
           >
             Serving Your Georgia Community
-          </motion.h2>
+          </LazyMotionDiv>
 
           {/* Alpharetta Section */}
-          <motion.div 
+          <LazyMotionDiv 
             initial={{ opacity: 0, y: -30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.7 }}
@@ -166,7 +166,7 @@ export default function GroundskeepingPage() {
               <ImageComponent
                 src="https://res.cloudinary.com/di4phdven/image/upload/v1747170880/Groundskeeping_Alpharetta_GA_jpcd1v.jpg"
                 alt="Alpharetta, GA groundskeeping services"
-                quality={85}
+                quality={80}
                 objectFit="cover"
               />
             </div>
@@ -193,10 +193,10 @@ export default function GroundskeepingPage() {
                 </li>
               </ul>
             </div>
-          </motion.div>
+          </LazyMotionDiv>
 
           {/* Milton Section */}
-          <motion.div 
+          <LazyMotionDiv 
             initial={{ opacity: 0, y: -30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.8 }}
@@ -206,7 +206,7 @@ export default function GroundskeepingPage() {
               <ImageComponent
                 src="https://res.cloudinary.com/di4phdven/image/upload/v1747170883/Groundskeeping_Milton_GA_pzzx3v.jpg"
                 alt="Milton, GA estate groundskeeping"
-                quality={85}
+                quality={80}
                 objectFit="cover"
               />
             </div>
@@ -233,10 +233,10 @@ export default function GroundskeepingPage() {
                 </li>
               </ul>
             </div>
-          </motion.div>
+          </LazyMotionDiv>
 
           {/* Vinings Section */}
-          <motion.div 
+          <LazyMotionDiv 
             initial={{ opacity: 0, y: -30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.9 }}
@@ -246,7 +246,7 @@ export default function GroundskeepingPage() {
               <ImageComponent
                 src="https://res.cloudinary.com/di4phdven/image/upload/v1747170896/Groundskeeping_Vining_GA_hdqaug.jpg"
                 alt="Vinings, GA landscape maintenance"
-                quality={85}
+                quality={80}
                 objectFit="cover"
               />
             </div>
@@ -272,11 +272,11 @@ export default function GroundskeepingPage() {
                 </li>
               </ul>
             </div>
-          </motion.div>
+          </LazyMotionDiv>
         </div>
 
         {/* Testimonials Section */}
-        <motion.div
+        <LazyMotionDiv
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 1.0 }}
@@ -319,9 +319,9 @@ export default function GroundskeepingPage() {
               </p>
             </div>
           </div>
-        </motion.div>
+        </LazyMotionDiv>
 
-        <motion.div
+        <LazyMotionDiv
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 1.1 }}
@@ -338,7 +338,7 @@ export default function GroundskeepingPage() {
           >
             Schedule Service
           </Link>
-        </motion.div>
+        </LazyMotionDiv>
       </div>
     </div>
   );

@@ -21,15 +21,15 @@ const ImageComponent = ({
 
   const handleImageLoad = () => {
     setIsLoading(false);
-    console.log('Image loaded successfully:', imageSrc);
+    // Removed console.log for production
   };
 
   const handleImageError = () => {
-    console.warn('Image failed to load:', imageSrc);
+    // Removed console.warn for production
     setErrorCount(prev => {
       const newCount = prev + 1;
       if (newCount >= 3) {
-        console.warn('Multiple load failures, using fallback image');
+        // Removed console.warn for production
         setImageSrc(fallbackSrc);
         return 0;
       }
@@ -76,4 +76,4 @@ const ImageComponent = ({
   );
 };
 
-export default ImageComponent; 
+export default ImageComponent;

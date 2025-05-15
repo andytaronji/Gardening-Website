@@ -2,15 +2,15 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
 import ImageComponent from './ImageComponent';
+import { LazyMotionDiv, LazyMotionSection, fadeInUpVariants } from '../utils/lazyMotion';
 import { getPortfolioImage } from '../utils/imageUtils';
 
 export default function ServicesSection() {
   return (
     <section className="py-16 bg-white">
       <div className="container mx-auto px-4">
-        <motion.div
+        <LazyMotionDiv
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -21,11 +21,11 @@ export default function ServicesSection() {
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             We offer comprehensive high-end gardening services throughout Marietta and Metro Atlanta, including Alpharetta, Woodstock, and Vinings to help you create and maintain your perfect outdoor space.
           </p>
-        </motion.div>
+        </LazyMotionDiv>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Garden Design Service */}
-          <motion.div
+          <LazyMotionDiv
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -38,12 +38,13 @@ export default function ServicesSection() {
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="block h-full w-full"
+                aria-label="View full-size garden design image"
               >
                 <ImageComponent
-                  src="https://res.cloudinary.com/di4phdven/image/upload/v1747228711/gardendesignhomepage_z6bfth.jpg"
+                  src="https://res.cloudinary.com/di4phdven/image/upload/f_auto,q_80/v1747228711/gardendesignhomepage_z6bfth.jpg"
                   alt="High-end garden design service in Marietta and Atlanta area by Gardening Thyme"
                   priority={true}
-                  quality={90}
+                  quality={80}
                   sizes="(max-width: 768px) 100vw, 33vw"
                   objectFit="cover"
                   className="h-full transition-transform duration-300 group-hover:scale-110"
@@ -63,10 +64,10 @@ export default function ServicesSection() {
                 Learn More
               </Link>
             </div>
-          </motion.div>
+          </LazyMotionDiv>
 
           {/* Groundskeeping Service */}
-          <motion.div
+          <LazyMotionDiv
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -79,12 +80,13 @@ export default function ServicesSection() {
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="block h-full w-full"
+                aria-label="View full-size groundskeeping image"
               >
                 <ImageComponent
-                  src="https://res.cloudinary.com/di4phdven/image/upload/f_auto,q_auto/v1746894206/Garden_Design_CreepingJenny_gsgu3z"
+                  src="https://res.cloudinary.com/di4phdven/image/upload/f_auto,q_80/v1746894206/Garden_Design_CreepingJenny_gsgu3z"
                   alt="Professional groundskeeping and garden maintenance services in Alpharetta and Marietta by Gardening Thyme"
                   priority={true}
-                  quality={90}
+                  quality={80}
                   sizes="(max-width: 768px) 100vw, 33vw"
                   objectFit="cover"
                   className="h-full transition-transform duration-300 group-hover:scale-110"
@@ -104,10 +106,10 @@ export default function ServicesSection() {
                 Learn More
               </Link>
             </div>
-          </motion.div>
+          </LazyMotionDiv>
 
           {/* Quarterly Cleanups Service */}
-          <motion.div
+          <LazyMotionDiv
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -120,12 +122,13 @@ export default function ServicesSection() {
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="block h-full w-full"
+                aria-label="View full-size seasonal garden cleanup image"
               >
                 <ImageComponent
-                  src="https://res.cloudinary.com/di4phdven/image/upload/f_auto,q_auto/v1746894176/Sandra_Cleanup_After_3_sa4bn9"
+                  src="https://res.cloudinary.com/di4phdven/image/upload/f_auto,q_80/v1746894176/Sandra_Cleanup_After_3_sa4bn9"
                   alt="Seasonal garden cleanup services in Woodstock and Vinings by Gardening Thyme"
                   priority={true}
-                  quality={90}
+                  quality={80}
                   sizes="(max-width: 768px) 100vw, 33vw"
                   objectFit="cover"
                   className="h-full transition-transform duration-300 group-hover:scale-110"
@@ -145,7 +148,7 @@ export default function ServicesSection() {
                 Learn More
               </Link>
             </div>
-          </motion.div>
+          </LazyMotionDiv>
         </div>
       </div>
     </section>
