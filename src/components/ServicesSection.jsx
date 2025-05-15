@@ -17,9 +17,9 @@ export default function ServicesSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl font-bold text-gray-800 mb-4">Our Services</h2>
+          <h2 className="text-4xl font-bold text-gray-800 mb-4">Our Services in Marietta & the Metro Atlanta Area</h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            We offer comprehensive gardening services to help you create and maintain your perfect outdoor space.
+            We offer comprehensive high-end gardening services throughout Marietta and Metro Atlanta, including Alpharetta, Woodstock, and Vinings to help you create and maintain your perfect outdoor space.
           </p>
         </motion.div>
 
@@ -41,7 +41,7 @@ export default function ServicesSection() {
               >
                 <ImageComponent
                   src="https://res.cloudinary.com/di4phdven/image/upload/v1747228711/gardendesignhomepage_z6bfth.jpg"
-                  alt="Garden Design Service"
+                  alt="High-end garden design service in Marietta and Atlanta area by Gardening Thyme"
                   priority={true}
                   quality={90}
                   sizes="(max-width: 768px) 100vw, 33vw"
@@ -51,10 +51,10 @@ export default function ServicesSection() {
               </a>
             </div>
             <div className="p-6">
-              <h3 className="text-2xl font-semibold text-gray-800 mb-3">Garden Design</h3>
+              <h3 className="text-2xl font-semibold text-gray-800 mb-3">High-End Garden Design</h3>
               <p className="text-gray-600 mb-4">
-                Transform your outdoor space with our expert garden design services. We create beautiful, sustainable gardens
-                that reflect your style and needs.
+                Transform your Marietta or Metro Atlanta property with our expert garden design services. We create beautiful, sustainable pollinator gardens
+                that reflect your style and enhance your home's value.
               </p>
               <Link
                 href="/garden-design"
@@ -82,7 +82,7 @@ export default function ServicesSection() {
               >
                 <ImageComponent
                   src="https://res.cloudinary.com/di4phdven/image/upload/f_auto,q_auto/v1746894206/Garden_Design_CreepingJenny_gsgu3z"
-                  alt="Groundskeeping Service"
+                  alt="Professional groundskeeping and garden maintenance services in Alpharetta and Marietta by Gardening Thyme"
                   priority={true}
                   quality={90}
                   sizes="(max-width: 768px) 100vw, 33vw"
@@ -92,10 +92,10 @@ export default function ServicesSection() {
               </a>
             </div>
             <div className="p-6">
-              <h3 className="text-2xl font-semibold text-gray-800 mb-3">Groundskeeping</h3>
+              <h3 className="text-2xl font-semibold text-gray-800 mb-3">Estate Groundskeeping</h3>
               <p className="text-gray-600 mb-4">
-                Keep your garden looking its best with our professional groundskeeping services. Regular maintenance for a
-                healthy, thriving garden.
+                Keep your Alpharetta or Woodstock property looking its best with our professional groundskeeping services. We provide regular maintenance for large properties, ensuring a
+                healthy, thriving garden landscape year-round.
               </p>
               <Link
                 href="/groundskeeping"
@@ -123,7 +123,7 @@ export default function ServicesSection() {
               >
                 <ImageComponent
                   src="https://res.cloudinary.com/di4phdven/image/upload/f_auto,q_auto/v1746894176/Sandra_Cleanup_After_3_sa4bn9"
-                  alt="Quarterly Cleanups Service"
+                  alt="Seasonal garden cleanup services in Woodstock and Vinings by Gardening Thyme"
                   priority={true}
                   quality={90}
                   sizes="(max-width: 768px) 100vw, 33vw"
@@ -133,10 +133,10 @@ export default function ServicesSection() {
               </a>
             </div>
             <div className="p-6">
-              <h3 className="text-2xl font-semibold text-gray-800 mb-3">Quarterly Cleanups</h3>
+              <h3 className="text-2xl font-semibold text-gray-800 mb-3">Seasonal Garden Cleanups</h3>
               <p className="text-gray-600 mb-4">
-                Seasonal garden cleanup services to prepare your garden for each season. Comprehensive care for year-round
-                beauty.
+                Our professional seasonal cleanup services in Vinings and East Cobb prepare your garden for each season. We provide comprehensive care for year-round
+                beauty, ensuring your landscape looks pristine throughout the changing Georgia seasons.
               </p>
               <Link
                 href="/quarterly-cleanups"

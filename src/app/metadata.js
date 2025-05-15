@@ -1,7 +1,7 @@
 export const metadata = {
-  title: 'Gardening Thyme | Garden Design & Groundskeeping in Atlanta, Alpharetta, Milton & Vinings',
-  description: 'Professional garden design and groundskeeping services in Georgia, specializing in Alpharetta, Milton, Vinings, and surrounding areas.',
-  keywords: 'gardening, landscaping, groundskeeping, garden design, Alpharetta, Milton, Vinings, Georgia, lawn maintenance',
+  title: 'Gardening Thyme | High-End Garden Design & Maintenance in Marietta & the Metro Atlanta Area',
+  description: 'Professional garden design, groundskeeping, and seasonal cleanups for high-end properties in Marietta and Metro Atlanta, including Alpharetta, Woodstock, and Vinings. Specializing in pollinator gardens and unique designs.',
+  keywords: 'high-end garden design, estate landscaping, groundskeeping, garden maintenance, quarterly cleanups, vegetable garden design, pollinator gardens, Marietta, Alpharetta, Woodstock, Vinings, East Cobb, Atlanta',
   icons: {
     icon: [
       {

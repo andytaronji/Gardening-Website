@@ -15,9 +15,9 @@ export default function GardenDesignPage() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="max-w-4xl mx-auto text-center mb-16"
         >
-          <h1 className="text-5xl font-playfair text-green-900 mb-6">Garden Design Services</h1>
+          <h1 className="text-5xl font-playfair text-green-900 mb-6">High-End Garden Design Services in Marietta & the Metro Atlanta Area</h1>
           <p className="text-xl text-gray-700 leading-relaxed">
-            Transform your outdoor space into a stunning, sustainable garden that reflects your style and enhances your lifestyle.
+            Transform your Marietta or Metro Atlanta property into a stunning, sustainable garden that reflects your style, enhances your lifestyle, and increases your home's value. Our expert garden designers specialize in creating unique pollinator gardens for high-end properties.
           </p>
         </motion.div>
 
@@ -30,7 +30,7 @@ export default function GardenDesignPage() {
           >
             <ImageComponent
               src="https://res.cloudinary.com/di4phdven/image/upload/v1747228491/Garden_Design_xh5y5u.jpg"
-              alt="Professional garden design"
+              alt="High-end garden design services in Marietta and Atlanta by Gardening Thyme - professional landscape design featuring pollinator gardens"
               componentId="garden-design-hero"
               priority={true}
               quality={90}
@@ -44,9 +44,9 @@ export default function GardenDesignPage() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="space-y-6"
           >
-            <h2 className="text-3xl font-playfair text-green-800">Our Design Process</h2>
+            <h2 className="text-3xl font-playfair text-green-800">Our Garden Design Process</h2>
             <p className="text-gray-700">
-              We begin with a thorough consultation to understand your vision, lifestyle, and specific needs. Our expert designers then create a customized plan that harmoniously blends aesthetics with functionality.
+              We begin with a thorough on-site consultation at your property to understand your vision, lifestyle, and specific needs. Our expert designers then create a customized garden plan that harmoniously blends aesthetics with functionality, incorporating native Georgia plants and pollinator-friendly elements.
             </p>
             <ul className="space-y-4">
               <motion.li
@@ -58,7 +58,7 @@ export default function GardenDesignPage() {
                 <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
-                <span>Personalized consultation and site analysis</span>
+                <span>Personalized consultation and site analysis for your property</span>
               </motion.li>
               <motion.li
                 initial={{ opacity: 0, y: -20 }}
@@ -69,7 +69,7 @@ export default function GardenDesignPage() {
                 <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
-                <span>Custom design plans and 2D visualizations</span>
+                <span>Custom high-end garden design plans and 2D visualizations</span>
               </motion.li>
               <motion.li
                 initial={{ opacity: 0, y: -20 }}
@@ -80,7 +80,7 @@ export default function GardenDesignPage() {
                 <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
-                <span>Plant selection and layout planning</span>
+                <span>Native Georgia plant selection and pollinator garden layout planning</span>
               </motion.li>
             </ul>
           </motion.div>
@@ -92,7 +92,7 @@ export default function GardenDesignPage() {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="bg-green-50 rounded-2xl p-8 md:p-12 mb-20"
         >
-          <h2 className="text-3xl font-playfair text-green-800 mb-8 text-center">Why Choose Our Design Services</h2>
+          <h2 className="text-3xl font-playfair text-green-800 mb-8 text-center">Why Choose Our Garden Design Services</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <motion.div
               initial={{ opacity: 0, y: -20 }}
@@ -106,7 +106,7 @@ export default function GardenDesignPage() {
                 </svg>
               </div>
               <h3 className="text-xl font-semibold text-green-800 mb-2">Expert Design</h3>
-              <p className="text-gray-600">Professional designers with years of experience in landscape architecture</p>
+              <p className="text-gray-600">Professional designers with years of experience creating high-end garden landscapes throughout Georgia</p>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: -20 }}
@@ -119,8 +119,8 @@ export default function GardenDesignPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold text-green-800 mb-2">Sustainable Practices</h3>
-              <p className="text-gray-600">Eco-friendly solutions that conserve water and support local ecosystems</p>
+              <h3 className="text-xl font-semibold text-green-800 mb-2">Sustainable Gardens</h3>
+              <p className="text-gray-600">Eco-friendly garden solutions that conserve water and support Georgia's native pollinators and ecosystems</p>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: -20 }}
@@ -134,7 +134,7 @@ export default function GardenDesignPage() {
                 </svg>
               </div>
               <h3 className="text-xl font-semibold text-green-800 mb-2">Ongoing Support</h3>
-              <p className="text-gray-600">Continuous guidance and maintenance recommendations for your garden</p>
+              <p className="text-gray-600">Continuous guidance and maintenance recommendations for your garden projects, ensuring year-round beauty in Georgia's climate</p>
             </motion.div>
           </div>
         </motion.div>
@@ -146,11 +146,14 @@ export default function GardenDesignPage() {
           className="text-center"
         >
           <h2 className="text-3xl font-playfair text-green-800 mb-8">Ready to Transform Your Garden?</h2>
+          <p className="text-xl text-gray-700 mb-6">
+            Contact us today to schedule a consultation for your high-end garden design project.
+          </p>
           <Link
             href="/contact"
             className="inline-block bg-green-600 text-white font-semibold px-8 py-4 rounded-lg hover:bg-green-700 transition-colors duration-300"
           >
-            Schedule a Consultation
+            Schedule Your Garden Design Consultation
           </Link>
         </motion.div>
       </div>

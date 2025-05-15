@@ -12,7 +12,7 @@ export default function HeroSection() {
       <div className="absolute inset-0 z-0">
         <ImageComponent
           src="https://res.cloudinary.com/di4phdven/image/upload/f_auto,q_auto/v1746893645/front_Page_wm3lfv"
-          alt="Beautiful garden landscape"
+          alt="High-end garden design and landscaping in Atlanta area by Gardening Thyme"
           priority={true}
           quality={100}
           sizes="100vw"
@@ -33,7 +33,7 @@ export default function HeroSection() {
             Transform Your Outdoor Space
           </h1>
           <p className="text-xl md:text-2xl mb-8">
-            Expert garden design and maintenance services to create your perfect outdoor sanctuary.
+            High-end garden design and maintenance services in Marietta, Alpharetta, Vinings, and more. Specializing in pollinator gardens and unique designs for your perfect outdoor sanctuary.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Link
