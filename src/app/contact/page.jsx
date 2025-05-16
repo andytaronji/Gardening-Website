@@ -135,6 +135,11 @@ export default function ContactPage() {
         showStatus: true
       });
       
+      // Google Ads conversion tracking
+      if (typeof window !== 'undefined' && window.gtag) {
+        window.gtag('event', 'conversion', {'send_to': 'AW-11312192738/9imTCMqd3cgaEOK5iZIq'});
+      }
+      
       setFormData({
         name: '',
         email: '',
