@@ -45,10 +45,10 @@ export default function HeroSection() {
               View Portfolio
             </Link>
             <Link
-              href="/blog"
+              href="/contact"
               className="inline-block bg-white text-green-600 px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-100 transition-colors"
             >
-              Check Out Our Blog!
+              Contact Us!
             </Link>
           </div>
         </LazyMotionDiv>
