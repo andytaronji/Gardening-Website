@@ -1,12 +1,16 @@
 'use client';
 
+import { portfolioSchema } from './schema';
 import React, { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { portfolioItems } from '../data/portfolio';
 import ImageComponent from '@/components/ImageComponent';
 import Image from 'next/image';
+import Script from 'next/script';
 
 export default function PortfolioPage() {
+  // Add structured data for SEO
+  const jsonLd = portfolioSchema;
   const [selectedImage, setSelectedImage] = useState(null);
   const [selectedTitle, setSelectedTitle] = useState('');
   const modalRef = useRef(null);
@@ -46,6 +50,11 @@ export default function PortfolioPage() {
 
   return (
     <div className="min-h-screen bg-white">
+      <Script
+        id="portfolio-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="container mx-auto px-4 py-16">
         <motion.div
           initial={{ opacity: 0, y: -50 }}
@@ -55,7 +64,8 @@ export default function PortfolioPage() {
         >
           <h1 className="text-5xl font-playfair text-green-900 mb-6">Our Portfolio</h1>
           <p className="text-xl text-gray-700 leading-relaxed">
-            Explore some of our property transformations across Georgia
+            Explore our garden maintenance, drip irrigation systems, Japanese maple installations, 
+            native plantings, and property enhancements across Georgia
           </p>
         </motion.div>
 
@@ -118,7 +128,7 @@ export default function PortfolioPage() {
           transition={{ duration: 0.6, delay: 0.8 }}
           className="text-center mt-16"
         >
-          <h2 className="text-3xl font-playfair text-green-800 mb-8">Ready to Transform Your Garden?</h2>
+          <h2 className="text-3xl font-playfair text-green-800 mb-8">Ready for Your Gardening, Maintenance, or Irrigation Project?</h2>
           <a
             href="/contact"
             className="inline-block bg-green-600 text-white font-semibold px-8 py-4 rounded-lg hover:bg-green-700 transition-colors duration-300"
