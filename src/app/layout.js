@@ -56,7 +56,7 @@ export default function RootLayout({ children }) {
               "name": "Gardening Thyme",
               "image": "https://res.cloudinary.com/di4phdven/image/upload/f_auto,q_70,w_192/v1747232934/Gardening_Thyme_LLC_Logo_hkdlsk.jpg",
               "telephone": "(508) 932-4056",
-              "email": "services@gardeningthyme.com",
+              "email": "taronjiandrew@gmail.com",
               "address": {
                 "@type": "PostalAddress",
                 "addressLocality": "Marietta",

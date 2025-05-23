@@ -381,8 +381,16 @@ export default function ContactPage() {
           className="mt-12 text-center"
         >
           <div className="space-y-2 text-[#86868b]">
-            <p className="text-sm">services@gardeningthyme.com</p>
-            <p className="text-sm">508-932-4056</p>
+            <p className="text-sm">
+              <a href="mailto:taronjiandrew@gmail.com" className="hover:text-green-600 transition-colors">
+                taronjiandrew@gmail.com
+              </a>
+            </p>
+            <p className="text-sm">
+              <a href="tel:+15089324056" className="hover:text-green-600 transition-colors">
+                508-932-4056
+              </a>
+            </p>
             <p className="text-sm">Marietta, Roswell, Alpharetta, Woodstock, Smyrna / Vinings</p>
             <p className="text-sm">Mon - Fri: 9am - 5pm</p>
           </div>
