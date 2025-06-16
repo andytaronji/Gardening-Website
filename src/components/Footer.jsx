@@ -35,7 +35,7 @@ export default function Footer() {
           {/* Contact Info */}
           <div>
             <h4 className="text-xl font-semibold mb-4">Contact Us</h4>
-            <p className="mb-2">Phone: <a href="tel:+15089324056" className="hover:text-green-300 transition-colors">(508) 932-4056</a></p>
+            <p className="mb-2">Phone: <a href="tel:+14048617744" className="hover:text-green-300 transition-colors">(404) 861-7744</a></p>
             <p className="mb-4">Email: <a href="mailto:taronjiandrew@gmail.com" className="hover:text-green-300 transition-colors">taronjiandrew@gmail.com</a></p>
             <div className="flex space-x-4">
               <a 

@@ -387,8 +387,8 @@ export default function ContactPage() {
               </a>
             </p>
             <p className="text-sm">
-              <a href="tel:+15089324056" className="hover:text-green-600 transition-colors">
-                508-932-4056
+              <a href="tel:+14048617744" className="hover:text-green-600 transition-colors">
+                404-861-7744
               </a>
             </p>
             <p className="text-sm">Marietta, Roswell, Alpharetta, Woodstock, Smyrna / Vinings</p>

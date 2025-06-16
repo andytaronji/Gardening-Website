@@ -6,7 +6,7 @@ import { getFallbackImage } from '@/utils/imageUtils';
 
 const ImageComponent = ({
   src,
-  alt = "Garden image",
+  alt = "Professional gardening and landscaping services by Gardening Thyme",
   sizes = "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw",
   priority = false,
   quality = 75,
