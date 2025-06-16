@@ -58,7 +58,7 @@ export default function Navigation() {
             width={30} 
             height={30} 
             className="rounded-full"
-            priority={true}
+            priority={false}
           />
           <span>Gardening Thyme</span>
         </Link>

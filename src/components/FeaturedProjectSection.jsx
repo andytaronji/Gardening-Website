@@ -30,7 +30,7 @@ export default function FeaturedProjectSection() {
               alt="Natural Stream Solutions"
               useRandomImage={false}
               componentId="featured-project"
-              priority={true}
+              priority={false}
               quality={70}
               sizes="(max-width: 768px) 100vw, 50vw"
               objectFit="cover"
