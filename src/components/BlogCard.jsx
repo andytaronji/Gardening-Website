@@ -27,7 +27,7 @@ export default function BlogCard({ post }) {
   };
 
   return (
-    <Link href={`/blog/${post.slug}`} passHref>
+    <Link href={`/blog/${post.slug}`} className="block">
       <LazyMotionDiv 
         className="bg-[#f5f5f7] rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer"
         whileHover={{ scale: 1.02 }}

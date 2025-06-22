@@ -15,7 +15,7 @@ export default function GroundskeepingClient() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="max-w-4xl mx-auto text-center mb-16"
         >
-          <h1 className="text-5xl font-playfair text-green-900 mb-6">Premium Garden Maintenance Services</h1>
+          <h1 className="text-5xl font-playfair text-green-900 mb-6">Premium Groundskeeping Services</h1>
           <p className="text-xl text-gray-700 leading-relaxed">
             Expert maintenance services to keep your landscape beautiful year-round
           </p>

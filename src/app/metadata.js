@@ -1,7 +1,10 @@
 export const metadata = {
-  title: 'High-End Garden Design & Maintenance | Marietta & Atlanta | Gardening Thyme',
-  description: 'Professional garden design, groundskeeping, and seasonal cleanups for high-end properties in Marietta and Metro Atlanta, including Alpharetta, Woodstock, and Vinings. Specializing in pollinator gardens and unique designs.',
+  title: 'Premium Garden Design & Maintenance | Marietta GA',
+  description: 'Expert garden design, groundskeeping, and seasonal cleanups for high-end properties in Marietta and Metro Atlanta. Specializing in pollinator gardens.',
   keywords: 'high-end garden design, estate landscaping, groundskeeping, garden maintenance, quarterly cleanups, vegetable garden design, pollinator gardens, Marietta, Alpharetta, Woodstock, Vinings, East Cobb, Atlanta',
+  alternates: {
+    canonical: 'https://www.gardeningthyme.com',
+  },
   icons: {
     icon: [
       {
