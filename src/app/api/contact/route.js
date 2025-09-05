@@ -1,4 +1,6 @@
-import nodemailer from 'nodemailer';
+import { Resend } from 'resend';
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req) {
   try {
@@ -31,36 +33,9 @@ export async function POST(req) {
     }
 
     // Check if environment variables are set
-    if (!process.env.SMTP_HOST || !process.env.SMTP_PORT || !process.env.SMTP_USER || !process.env.SMTP_PASSWORD) {
-      console.error('SMTP configuration is missing');
+    if (!process.env.RESEND_API_KEY || !process.env.FROM_EMAIL) {
+      console.error('Resend configuration is missing');
       return new Response(JSON.stringify({ error: 'Server configuration error. Please contact the administrator.' }), {
-        status: 500,
-        headers: { 'Content-Type': 'application/json' },
-      });
-    }
-
-    // Create a transporter with SMTP settings
-    const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST,
-      port: parseInt(process.env.SMTP_PORT),
-      secure: true, // use SSL
-      auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASSWORD,
-      },
-      tls: {
-        // do not fail on invalid certs
-        rejectUnauthorized: false
-      }
-    });
-
-    try {
-      // Test the connection
-      await transporter.verify();
-      console.log('SMTP connection verified');
-    } catch (error) {
-      console.error('SMTP connection failed:', error);
-      return new Response(JSON.stringify({ error: 'Failed to connect to email server. Please try again later.' }), {
         status: 500,
         headers: { 'Content-Type': 'application/json' },
       });
@@ -81,13 +56,36 @@ export async function POST(req) {
       minute: '2-digit'
     });
 
-    // Email content
-    const mailOptions = {
-      from: `"Gardening Thyme Potential Client" <${process.env.SMTP_USER}>`,
-      replyTo: email,
-      to: process.env.SMTP_USER,
-      subject: `New Contact Form Message: ${subject}`,
-      text: `
+    try {
+      // Send email using Resend
+      const { data: emailData, error } = await resend.emails.send({
+        from: `Gardening Thyme Contact Form <${process.env.FROM_EMAIL}>`,
+        to: [process.env.FROM_EMAIL],
+        replyTo: email,
+        subject: `New Contact Form Message: ${subject}`,
+        html: `
+          <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #e0e0e0; border-radius: 5px;">
+            <h2 style="color: #2e7d32; border-bottom: 1px solid #e0e0e0; padding-bottom: 10px;">New Contact Form Message</h2>
+            <p style="color: #666;">Submitted on: ${currentDate}</p>
+            
+            <h3 style="color: #2e7d32; margin-top: 20px;">Contact Details:</h3>
+            <p><strong>Name:</strong> ${name}</p>
+            <p><strong>Email:</strong> <a href="mailto:${email}" style="color: #2e7d32;">${email}</a></p>
+            <p><strong>Phone:</strong> ${phone || 'Not provided'}</p>
+            <p><strong>Service Type:</strong> ${formattedServiceType}</p>
+            <p><strong>Subject:</strong> ${subject}</p>
+            
+            <h3 style="color: #2e7d32; margin-top: 20px;">Message:</h3>
+            <div style="background-color: #f9f9f9; padding: 15px; border-radius: 5px;">
+              ${message.replace(/\n/g, '<br>')}
+            </div>
+            
+            <p style="margin-top: 30px; font-size: 12px; color: #999; text-align: center;">
+              This email was sent from the contact form on the Gardening Thyme website.
+            </p>
+          </div>
+        `,
+        text: `
 New message from the Gardening Thyme website contact form
 Submitted on: ${currentDate}
 
@@ -100,35 +98,20 @@ Subject: ${subject}
 
 MESSAGE:
 ${message}
-      `,
-      html: `
-        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #e0e0e0; border-radius: 5px;">
-          <h2 style="color: #2e7d32; border-bottom: 1px solid #e0e0e0; padding-bottom: 10px;">New Contact Form Message</h2>
-          <p style="color: #666;">Submitted on: ${currentDate}</p>
-          
-          <h3 style="color: #2e7d32; margin-top: 20px;">Contact Details:</h3>
-          <p><strong>Name:</strong> ${name}</p>
-          <p><strong>Email:</strong> <a href="mailto:${email}" style="color: #2e7d32;">${email}</a></p>
-          <p><strong>Phone:</strong> ${phone || 'Not provided'}</p>
-          <p><strong>Service Type:</strong> ${formattedServiceType}</p>
-          <p><strong>Subject:</strong> ${subject}</p>
-          
-          <h3 style="color: #2e7d32; margin-top: 20px;">Message:</h3>
-          <div style="background-color: #f9f9f9; padding: 15px; border-radius: 5px;">
-            ${message.replace(/\n/g, '<br>')}
-          </div>
-          
-          <p style="margin-top: 30px; font-size: 12px; color: #999; text-align: center;">
-            This email was sent from the contact form on the Gardening Thyme website.
-          </p>
-        </div>
-      `,
-    };
+        `,
+      });
 
-    try {
-      // Send email
-      const info = await transporter.sendMail(mailOptions);
-      console.log('Message sent: %s', info.messageId);
+      if (error) {
+        console.error('Error sending email with Resend:', error);
+        return new Response(JSON.stringify({ error: 'Failed to send email. Please try again later.' }), {
+          status: 500,
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        });
+      }
+
+      console.log('Email sent successfully with Resend:', emailData?.id);
 
       return new Response(JSON.stringify({ message: 'Email sent successfully' }), {
         status: 200,
