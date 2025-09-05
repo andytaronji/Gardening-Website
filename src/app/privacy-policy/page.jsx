@@ -130,7 +130,7 @@ export default function PrivacyPolicyPage() {
             </p>
             <p className="mb-6">
               Gardening Thyme<br />
-              Email: <a href="mailto:taronjiandrew@gmail.com" className="text-green-600 hover:text-green-800 transition-colors">taronjiandrew@gmail.com</a><br />
+              Email: <a href="mailto:services@gardeningthyme.com" className="text-green-600 hover:text-green-800 transition-colors">services@gardeningthyme.com</a><br />
               Phone: <a href="tel:+14048617744" className="text-green-600 hover:text-green-800 transition-colors">(404) 861-7744</a>
             </p>
           </div>

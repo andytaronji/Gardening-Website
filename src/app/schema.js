@@ -12,7 +12,7 @@ export const localBusinessSchema = {
     "https://res.cloudinary.com/di4phdven/image/upload/v1747228491/Garden_Design_xh5y5u.jpg"
   ],
   "telephone": "+1-404-861-7744",
-  "email": "taronjiandrew@gmail.com",
+  "email": "services@gardeningthyme.com",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Marietta",
@@ -135,7 +135,7 @@ export const organizationSchema = {
     "@type": "ContactPoint",
     "telephone": "+1-404-861-7744",
     "contactType": "customer service",
-    "email": "taronjiandrew@gmail.com",
+    "email": "services@gardeningthyme.com",
     "availableLanguage": "English"
   }
 };

@@ -382,8 +382,8 @@ export default function ContactClient() {
         >
           <div className="space-y-2 text-[#86868b]">
             <p className="text-sm">
-              <a href="mailto:taronjiandrew@gmail.com" className="hover:text-green-600 transition-colors">
-                taronjiandrew@gmail.com
+              <a href="mailto:services@gardeningthyme.com" className="hover:text-green-600 transition-colors">
+                services@gardeningthyme.com
               </a>
             </p>
             <p className="text-sm">
