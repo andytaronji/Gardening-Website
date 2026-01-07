@@ -2,6 +2,8 @@ import './globals.css';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import Preload from '../components/Preload';
+import OptimizedAnalytics from '../components/OptimizedAnalytics';
+import CookieBanner from '../components/CookieConsent';
 import { Analytics } from "@vercel/analytics/next";
 import { metadata as siteMetadata } from './metadata';
 import { localBusinessSchema, organizationSchema, websiteSchema } from './schema';
@@ -12,32 +14,14 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        {/* Google Tag Manager */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              <!-- Google Tag Manager -->
-              (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-              })(window,document,'script','dataLayer','GTM-WN7LXHF8');
-              <!-- End Google Tag Manager -->
-            `
-          }}
-        />
-        
-        {/* Google tag (gtag.js) */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17486011088"></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'AW-17486011088');
-            `
-          }}
+        {/* Preload hero images for optimal LCP */}
+        <link 
+          rel="preload" 
+          as="image" 
+          href="https://res.cloudinary.com/di4phdven/image/upload/f_auto,q_auto:eco,w_1200/v1747228491/Garden_Design_xh5y5u.jpg"
+          imageSrcSet="https://res.cloudinary.com/di4phdven/image/upload/f_auto,q_auto:eco,w_640/v1747228491/Garden_Design_xh5y5u.jpg 640w,
+                       https://res.cloudinary.com/di4phdven/image/upload/f_auto,q_auto:eco,w_1200/v1747228491/Garden_Design_xh5y5u.jpg 1200w"
+          imageSizes="(max-width: 768px) 100vw, 1200px"
         />
         <link 
           rel="icon" 
@@ -82,6 +66,8 @@ export default function RootLayout({ children }) {
         <Navigation />
         <main>{children}</main>
         <Footer />
+        <CookieBanner />
+        <OptimizedAnalytics />
         <Analytics />
       </body>
     </html>
