@@ -23,13 +23,6 @@ export default function RootLayout({ children }) {
           rel="apple-touch-icon" 
           href="https://res.cloudinary.com/di4phdven/image/upload/f_auto,q_70,w_192/v1747232934/Gardening_Thyme_LLC_Logo_hkdlsk.jpg" 
         />
-        {/* Cookiebot - MUST be in <head> for proper loading */}
-        <script
-          id="Cookiebot"
-          src="https://consent.cookiebot.com/uc.js"
-          data-cbid="6645d838-2055-4407-8885-69ca6c2eb2c1"
-          type="text/javascript"
-        ></script>
         {/* Enhanced Schema Markup */}
         <script
           type="application/ld+json"
@@ -51,6 +44,14 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body>
+        {/* Cookiebot - Loads before everything else */}
+        <Script
+          id="Cookiebot"
+          src="https://consent.cookiebot.com/uc.js"
+          data-cbid="6645d838-2055-4407-8885-69ca6c2eb2c1"
+          strategy="beforeInteractive"
+        />
+        
         {/* Google Tag Manager (noscript) */}
         <noscript
           dangerouslySetInnerHTML={{
