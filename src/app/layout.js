@@ -3,10 +3,10 @@ import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import Preload from '../components/Preload';
 import OptimizedAnalytics from '../components/OptimizedAnalytics';
-import CookieBanner from '../components/CookieConsent';
 import { Analytics } from "@vercel/analytics/next";
 import { metadata as siteMetadata } from './metadata';
 import { localBusinessSchema, organizationSchema, websiteSchema } from './schema';
+import Script from 'next/script';
 
 export const metadata = siteMetadata;
 
@@ -14,15 +14,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        {/* Preload hero images for optimal LCP */}
-        <link 
-          rel="preload" 
-          as="image" 
-          href="https://res.cloudinary.com/di4phdven/image/upload/f_auto,q_auto:eco,w_1200/v1747228491/Garden_Design_xh5y5u.jpg"
-          imageSrcSet="https://res.cloudinary.com/di4phdven/image/upload/f_auto,q_auto:eco,w_640/v1747228491/Garden_Design_xh5y5u.jpg 640w,
-                       https://res.cloudinary.com/di4phdven/image/upload/f_auto,q_auto:eco,w_1200/v1747228491/Garden_Design_xh5y5u.jpg 1200w"
-          imageSizes="(max-width: 768px) 100vw, 1200px"
-        />
         <link 
           rel="icon" 
           href="https://res.cloudinary.com/di4phdven/image/upload/f_auto,q_70,w_192/v1747232934/Gardening_Thyme_LLC_Logo_hkdlsk.jpg" 
@@ -53,6 +44,15 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body>
+        {/* Cookiebot - GDPR Compliant Consent Management with Google Consent Mode v2 */}
+        <Script
+          id="Cookiebot"
+          src="https://consent.cookiebot.com/uc.js"
+          data-cbid="6645d838-2055-4407-8885-69ca6c2eb2c1"
+          data-blockingmode="auto"
+          strategy="afterInteractive"
+        />
+        
         {/* Google Tag Manager (noscript) */}
         <noscript
           dangerouslySetInnerHTML={{
@@ -66,7 +66,6 @@ export default function RootLayout({ children }) {
         <Navigation />
         <main>{children}</main>
         <Footer />
-        <CookieBanner />
         <OptimizedAnalytics />
         <Analytics />
       </body>

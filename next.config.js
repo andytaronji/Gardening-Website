@@ -4,6 +4,7 @@ const nextConfig = {
   images: {
     domains: ['localhost', 'vercel.app', 'gardeningthyme.com', 'res.cloudinary.com'],
     formats: ['image/avif', 'image/webp'],
+    qualities: [70, 75, 80],
     unoptimized: process.env.NODE_ENV === 'development',
     // Allow images from any domain in production for Vercel deployment
     remotePatterns: [
@@ -101,7 +102,7 @@ const nextConfig = {
           },
           {
             key: 'Content-Security-Policy',
-            value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://googleads.g.doubleclick.net https://va.vercel-scripts.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; media-src 'self' https:; object-src 'none'; frame-src 'self' https://www.googletagmanager.com https://td.doubleclick.net; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com https://res.cloudinary.com https://www.google.com; worker-src 'self' blob:; child-src 'self' blob:; form-action 'self'; base-uri 'self'; manifest-src 'self';"
+            value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://googleads.g.doubleclick.net https://va.vercel-scripts.com https://consent.cookiebot.com https://consentcdn.cookiebot.com https://www.google.com https://www.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://consent.cookiebot.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; media-src 'self' https:; object-src 'none'; frame-src 'self' https://www.googletagmanager.com https://td.doubleclick.net https://consent.cookiebot.com https://consentcdn.cookiebot.com https://www.google.com https://recaptcha.google.com; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com https://res.cloudinary.com https://www.google.com https://consent.cookiebot.com https://consentcdn.cookiebot.com; worker-src 'self' blob:; child-src 'self' blob:; form-action 'self'; base-uri 'self'; manifest-src 'self';"
           },
           {
             key: 'Referrer-Policy',

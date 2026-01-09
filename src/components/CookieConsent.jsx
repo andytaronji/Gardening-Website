@@ -16,23 +16,40 @@ export default function CookieBanner() {
 
   const handleAccept = () => {
     localStorage.setItem('gardening-thyme-cookie-consent', 'accepted');
-    // Enable analytics
-    if (typeof window !== 'undefined' && window.dataLayer) {
-      window.dataLayer.push({ event: 'cookie_consent_given' });
+    
+    // Dispatch consent event for Consent Mode v2
+    if (typeof window !== 'undefined') {
+      window.dispatchEvent(new CustomEvent('consentUpdated', { 
+        detail: { consent: 'accepted' } 
+      }));
+      
+      // Also push to dataLayer for backward compatibility
+      if (window.dataLayer) {
+        window.dataLayer.push({ event: 'cookie_consent_given' });
+      }
     }
+    
     setShowBanner(false);
     setConsentGiven('accepted');
   };
 
   const handleDeny = () => {
     localStorage.setItem('gardening-thyme-cookie-consent', 'denied');
-    // Disable Google Analytics
+    
+    // Dispatch consent event for Consent Mode v2
     if (typeof window !== 'undefined') {
+      window.dispatchEvent(new CustomEvent('consentUpdated', { 
+        detail: { consent: 'denied' } 
+      }));
+      
+      // Disable Google Analytics (legacy support)
       window['ga-disable-AW-17486011088'] = true;
-      // Also disable GTM tracking
+      
+      // Also push to dataLayer for backward compatibility
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({ event: 'cookie_consent_denied' });
     }
+    
     setShowBanner(false);
     setConsentGiven('denied');
   };

@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 export default function ContactClient() {
@@ -10,7 +10,8 @@ export default function ContactClient() {
     phone: '',
     serviceType: '',
     subject: '',
-    message: ''
+    message: '',
+    honeypot: '' // Hidden honeypot field
   });
 
   const [status, setStatus] = useState({
@@ -20,6 +21,7 @@ export default function ContactClient() {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [recaptchaLoaded, setRecaptchaLoaded] = useState(false);
 
   const serviceTypes = [
     { value: '', label: 'Select a service (optional)' },
@@ -29,6 +31,35 @@ export default function ContactClient() {
     { value: 'consultation', label: 'Consultation' },
     { value: 'other', label: 'Other' }
   ];
+
+  // Load reCAPTCHA v3 script
+  useEffect(() => {
+    const loadRecaptcha = () => {
+      if (typeof window === 'undefined' || !process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY) {
+        return;
+      }
+
+      // Check if already loaded
+      if (window.grecaptcha) {
+        setRecaptchaLoaded(true);
+        return;
+      }
+
+      const script = document.createElement('script');
+      script.src = `https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`;
+      script.async = true;
+      script.defer = true;
+      script.onload = () => {
+        setRecaptchaLoaded(true);
+      };
+      script.onerror = () => {
+        console.warn('reCAPTCHA failed to load');
+      };
+      document.head.appendChild(script);
+    };
+
+    loadRecaptcha();
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -99,6 +130,23 @@ export default function ContactClient() {
     return true;
   };
 
+  const getRecaptchaToken = async () => {
+    if (!recaptchaLoaded || !window.grecaptcha || !process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY) {
+      console.warn('reCAPTCHA not available, submitting without token');
+      return null;
+    }
+
+    try {
+      const token = await window.grecaptcha.execute(process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY, { 
+        action: 'contact_form_submit' 
+      });
+      return token;
+    } catch (error) {
+      console.error('Error getting reCAPTCHA token:', error);
+      return null;
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     
@@ -115,12 +163,18 @@ export default function ContactClient() {
     });
 
     try {
+      // Get reCAPTCHA token
+      const recaptchaToken = await getRecaptchaToken();
+
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          recaptchaToken
+        }),
       });
 
       const data = await response.json();
@@ -146,7 +200,8 @@ export default function ContactClient() {
         phone: '',
         serviceType: '',
         subject: '',
-        message: ''
+        message: '',
+        honeypot: ''
       });
     } catch (error) {
       console.error('Error submitting form:', error);
@@ -196,6 +251,20 @@ export default function ContactClient() {
           )}
 
           <form onSubmit={handleSubmit} className="space-y-8">
+            {/* Honeypot field - hidden from users but visible to bots */}
+            <div style={{ position: 'absolute', left: '-9999px', opacity: 0, pointerEvents: 'none' }} aria-hidden="true">
+              <label htmlFor="website">Website (leave blank)</label>
+              <input
+                type="text"
+                id="website"
+                name="honeypot"
+                value={formData.honeypot}
+                onChange={handleChange}
+                tabIndex="-1"
+                autoComplete="off"
+              />
+            </div>
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <motion.div
                 initial={{ opacity: 0 }}
@@ -370,6 +439,19 @@ export default function ContactClient() {
               >
                 {isSubmitting ? 'Sending...' : 'Send Message'}
               </button>
+              
+              {/* reCAPTCHA badge notice */}
+              <p className="text-xs text-[#86868b] text-center mt-4">
+                This site is protected by reCAPTCHA and the Google{' '}
+                <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-green-700 hover:underline">
+                  Privacy Policy
+                </a>{' '}
+                and{' '}
+                <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer" className="text-green-700 hover:underline">
+                  Terms of Service
+                </a>{' '}
+                apply.
+              </p>
             </motion.div>
           </form>
         </motion.div>
