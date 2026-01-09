@@ -14,9 +14,25 @@ export default function CookiebotDiagnostic() {
         cookiebotObjectDefined: typeof window.Cookiebot !== 'undefined',
         cookiebotReady: window.Cookiebot?.consent !== undefined,
         consentState: window.Cookiebot?.consent || 'Not available',
+        bannerExists: !!document.getElementById('CybotCookiebotDialog'),
+        bannerVisible: false,
+        hasStoredConsent: false,
+        renewAvailable: typeof window.Cookiebot?.renew === 'function',
         errors: [],
         scripts: []
       };
+
+      // Check if banner element exists and is visible
+      const bannerEl = document.getElementById('CybotCookiebotDialog');
+      if (bannerEl) {
+        const styles = window.getComputedStyle(bannerEl);
+        results.bannerVisible = styles.display !== 'none' && styles.visibility !== 'hidden' && styles.opacity !== '0';
+      }
+
+      // Check for stored consent
+      if (window.Cookiebot?.consent) {
+        results.hasStoredConsent = window.Cookiebot.consent.necessary === true;
+      }
 
       // Check for scripts loading from Cookiebot domains
       document.querySelectorAll('script').forEach(script => {
@@ -92,6 +108,15 @@ export default function CookiebotDiagnostic() {
         </div>
         <div style={{ color: diagnostics.cookiebotReady ? 'lime' : 'orange' }}>
           {diagnostics.cookiebotReady ? '✅' : '⏳'} Cookiebot Ready
+        </div>
+        <div style={{ color: diagnostics.bannerExists ? 'lime' : 'red', marginTop: '5px', borderTop: '1px solid #555', paddingTop: '5px' }}>
+          {diagnostics.bannerExists ? '✅' : '❌'} Banner Element Exists
+        </div>
+        <div style={{ color: diagnostics.bannerVisible ? 'lime' : 'red' }}>
+          {diagnostics.bannerVisible ? '✅' : '❌'} Banner Visible
+        </div>
+        <div style={{ color: diagnostics.hasStoredConsent ? 'orange' : 'lime' }}>
+          {diagnostics.hasStoredConsent ? '⚠️' : '✅'} {diagnostics.hasStoredConsent ? 'Has Stored Consent' : 'No Stored Consent'}
         </div>
       </div>
 
