@@ -28,9 +28,8 @@ export default function RootLayout({ children }) {
           id="Cookiebot"
           src="https://consent.cookiebot.com/uc.js"
           data-cbid="6645d838-2055-4407-8885-69ca6c2eb2c1"
-          data-blockingmode="auto"
           type="text/javascript"
-        />
+        ></script>
         {/* Enhanced Schema Markup */}
         <script
           type="application/ld+json"
