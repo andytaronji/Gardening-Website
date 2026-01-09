@@ -3,7 +3,6 @@ import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import Preload from '../components/Preload';
 import OptimizedAnalytics from '../components/OptimizedAnalytics';
-import CookiebotDiagnostic from '../components/CookiebotDiagnostic';
 import { Analytics } from "@vercel/analytics/next";
 import { metadata as siteMetadata } from './metadata';
 import { localBusinessSchema, organizationSchema, websiteSchema } from './schema';
@@ -68,7 +67,6 @@ export default function RootLayout({ children }) {
         <Footer />
         <OptimizedAnalytics />
         <Analytics />
-        <CookiebotDiagnostic />
       </body>
     </html>
   );
