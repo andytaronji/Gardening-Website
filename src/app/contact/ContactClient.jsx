@@ -252,7 +252,11 @@ export default function ContactClient() {
 
           <form onSubmit={handleSubmit} className="space-y-8">
             {/* Honeypot field - hidden from users but visible to bots */}
-            <div style={{ position: 'absolute', left: '-9999px', opacity: 0, pointerEvents: 'none' }} aria-hidden="true">
+            <div 
+              style={{ position: 'absolute', left: '-9999px', opacity: 0, pointerEvents: 'none' }} 
+              aria-hidden="true"
+              suppressHydrationWarning
+            >
               <label htmlFor="website">Website (leave blank)</label>
               <input
                 type="text"
@@ -260,7 +264,7 @@ export default function ContactClient() {
                 name="honeypot"
                 value={formData.honeypot}
                 onChange={handleChange}
-                tabIndex="-1"
+                tabIndex={-1}
                 autoComplete="off"
               />
             </div>
