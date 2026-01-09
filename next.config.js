@@ -1,4 +1,24 @@
 /** @type {import('next').NextConfig} */
+
+// Determine if we're in development mode
+const isDevelopment = process.env.NODE_ENV === 'development';
+
+// Build CSP script-src directive with conditional unsafe-eval
+const scriptSrc = [
+  "'self'",
+  "'unsafe-inline'",
+  // Include unsafe-eval for both development (React) and production (Cookiebot needs it)
+  "'unsafe-eval'",
+  "https://www.googletagmanager.com",
+  "https://www.google-analytics.com",
+  "https://googleads.g.doubleclick.net",
+  "https://va.vercel-scripts.com",
+  "https://consent.cookiebot.com",
+  "https://consentcdn.cookiebot.com",
+  "https://www.google.com",
+  "https://www.gstatic.com"
+].join(' ');
+
 const nextConfig = {
   // Image optimization configuration
   images: {
@@ -102,7 +122,7 @@ const nextConfig = {
           },
           {
             key: 'Content-Security-Policy',
-            value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://googleads.g.doubleclick.net https://va.vercel-scripts.com https://consent.cookiebot.com https://consentcdn.cookiebot.com https://www.google.com https://www.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://consent.cookiebot.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; media-src 'self' https:; object-src 'none'; frame-src 'self' https://www.googletagmanager.com https://td.doubleclick.net https://consent.cookiebot.com https://consentcdn.cookiebot.com https://www.google.com https://recaptcha.google.com; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com https://res.cloudinary.com https://www.google.com https://consent.cookiebot.com https://consentcdn.cookiebot.com https://www.googleadservices.com; worker-src 'self' blob:; child-src 'self' blob:; form-action 'self'; base-uri 'self'; manifest-src 'self';"
+            value: `default-src 'self'; script-src ${scriptSrc}; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://consent.cookiebot.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; media-src 'self' https:; object-src 'none'; frame-src 'self' https://www.googletagmanager.com https://td.doubleclick.net https://consent.cookiebot.com https://consentcdn.cookiebot.com https://www.google.com https://recaptcha.google.com; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com https://res.cloudinary.com https://www.google.com https://consent.cookiebot.com https://consentcdn.cookiebot.com https://www.googleadservices.com; worker-src 'self' blob:; child-src 'self' blob:; form-action 'self'; base-uri 'self'; manifest-src 'self';`
           },
           {
             key: 'Referrer-Policy',
