@@ -321,19 +321,23 @@ export default function GroundskeepingClient() {
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 1.1 }}
-          className="text-center"
+          className="max-w-4xl mx-auto"
         >
-          <h2 className="text-3xl font-playfair text-teal-800 mb-8">Ready to Get Started?</h2>
-          <p className="text-xl text-gray-700 max-w-2xl mx-auto mb-8">
-            We provide specialized groundskeeping services throughout Georgia, with focused expertise in 
-            Alpharetta, Milton, and Vinings. Contact us today to discuss your property's needs.
-          </p>
-          <Link
-            href="/contact"
-            className="inline-block btn-primary-teal text-white font-semibold px-8 py-4 rounded-lg hover:btn-primary-teal-hover transition-colors duration-300"
-          >
-            Schedule Service
-          </Link>
+          <div className="bg-teal-50 p-8 rounded-lg shadow-md">
+            <h2 className="text-3xl font-semibold text-teal-800 mb-4 text-center">Ready to Get Started?</h2>
+            <p className="text-lg text-gray-600 mb-6 max-w-3xl mx-auto text-center">
+              We provide specialized groundskeeping services throughout Georgia, with focused expertise in 
+              Alpharetta, Milton, and Vinings. Contact us today to discuss your property's needs.
+            </p>
+            <div className="flex justify-center">
+              <Link
+                href="/contact"
+                className="btn-primary-teal hover:btn-primary-teal-hover text-white font-bold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105"
+              >
+                Schedule Service
+              </Link>
+            </div>
+          </div>
         </LazyMotionDiv>
       </div>
     </div>

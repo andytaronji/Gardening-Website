@@ -7,28 +7,28 @@ import { LazyMotionDiv } from '../utils/lazyMotion';
 
 const heroImages = [
   {
-    src: "https://res.cloudinary.com/di4phdven/image/upload/f_auto,q_70,w_1200,c_fill,g_auto/v1768065704/Pink_Flower_Wet_owusjv.jpg",
-    alt: "Beautiful pink flower garden with water details"
+    src: "https://res.cloudinary.com/di4phdven/image/upload/f_auto,q_70,w_1200,c_fill,g_auto/v1768063570/IMG_1284_yy9onk.jpg",
+    alt: "Beautiful garden landscape and maintenance"
+  },
+  {
+    src: "https://res.cloudinary.com/di4phdven/image/upload/f_auto,q_70,w_1200,c_fill,g_auto/v1768072387/IMG_3553__1_ztycn5.jpg",
+    alt: "Professional garden design and landscaping services"
   },
   {
     src: "https://res.cloudinary.com/di4phdven/image/upload/f_auto,q_70,w_1200,c_fill,g_auto/v1768063571/IMG_2733_fvvhjm.jpg",
     alt: "Sustainable garden design and groundskeeping"
   },
   {
-    src: "https://res.cloudinary.com/di4phdven/image/upload/f_auto,q_70,w_1200,c_fill,g_auto/v1768065698/Hanging_Planter_zp31jk.jpg",
-    alt: "Elegant hanging planter garden feature"
-  },
-  {
-    src: "https://res.cloudinary.com/di4phdven/image/upload/f_auto,q_70,w_1200,c_fill,g_auto/v1768052393/Front_of_Sandra_s_fin0ck.jpg",
-    alt: "Professional front garden landscape design"
-  },
-  {
-    src: "https://res.cloudinary.com/di4phdven/image/upload/f_auto,q_70,w_1200,c_fill,g_auto/v1768063570/IMG_1284_yy9onk.jpg",
-    alt: "Beautiful garden landscape and maintenance"
+    src: "https://res.cloudinary.com/di4phdven/image/upload/f_auto,q_70,w_1200,c_fill,g_auto/v1768072387/IMG_2255_ojecpp.jpg",
+    alt: "Expert garden transformation and landscape design"
   },
   {
     src: "https://res.cloudinary.com/di4phdven/image/upload/f_auto,q_70,w_1200,c_fill,g_auto/v1768063569/IMG_1996_romwvs.jpg",
     alt: "Expert garden design services in Atlanta area"
+  },
+  {
+    src: "https://res.cloudinary.com/di4phdven/image/upload/f_auto,q_70,w_1200,c_fill,g_auto/v1768052393/Front_of_Sandra_s_fin0ck.jpg",
+    alt: "Professional front garden landscape design"
   }
 ];
 

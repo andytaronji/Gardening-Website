@@ -219,21 +219,19 @@ export default function ConsultationsPage() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="bg-teal-50 p-8 rounded-lg shadow-md"
+        className="max-w-4xl mx-auto"
       >
-        <h2 className="text-2xl font-semibold text-teal-700 mb-4 text-center">Ready to Transform Your Garden?</h2>
-        <p className="text-gray-700 text-center mb-6">
-          Book a consultation today and take the first step toward creating the garden of your dreams.
-        </p>
-        <motion.div 
-          className="flex justify-center"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          <Link href="/contact" className="btn-primary-teal hover:btn-primary-teal-hover text-white font-bold py-3 px-6 rounded-lg transition duration-300">
-            Schedule a Consultation
-          </Link>
-        </motion.div>
+        <div className="bg-teal-50 p-8 rounded-lg shadow-md">
+          <h2 className="text-3xl font-semibold text-teal-800 mb-4 text-center">Ready to Transform Your Garden?</h2>
+          <p className="text-lg text-gray-600 mb-6 max-w-3xl mx-auto text-center">
+            Book a consultation today and take the first step toward creating the garden of your dreams.
+          </p>
+          <div className="flex justify-center">
+            <Link href="/contact" className="btn-primary-teal hover:btn-primary-teal-hover text-white font-bold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105">
+              Schedule a Consultation
+            </Link>
+          </div>
+        </div>
       </motion.div>
     </div>
   );

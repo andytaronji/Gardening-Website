@@ -76,14 +76,14 @@ export default function ServicesSection() {
           >
             <div className="relative h-80 overflow-hidden group">
               <a 
-                href="https://res.cloudinary.com/di4phdven/image/upload/f_auto,q_auto/v1746894206/Garden_Design_CreepingJenny_gsgu3z" 
+                href="https://res.cloudinary.com/di4phdven/image/upload/f_auto,q_auto/v1768073385/Estate_Groundskeeping_pwha5o.jpg" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="block h-full w-full"
                 aria-label="View full-size groundskeeping image"
               >
                 <ImageComponent
-                  src="https://res.cloudinary.com/di4phdven/image/upload/f_auto,q_80/v1746894206/Garden_Design_CreepingJenny_gsgu3z"
+                  src="https://res.cloudinary.com/di4phdven/image/upload/f_auto,q_80/v1768073385/Estate_Groundskeeping_pwha5o.jpg"
                   alt="Professional groundskeeping and garden maintenance services in Alpharetta and Marietta by Gardening Thyme"
                   priority={true}
                   quality={80}
@@ -118,14 +118,14 @@ export default function ServicesSection() {
           >
             <div className="relative h-80 overflow-hidden group">
               <a 
-                href="https://res.cloudinary.com/di4phdven/image/upload/f_auto,q_auto/v1746894176/Sandra_Cleanup_After_3_sa4bn9" 
+                href="https://res.cloudinary.com/di4phdven/image/upload/f_auto,q_auto/v1768072927/IMG_3482__1_w3clrx.jpg" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="block h-full w-full"
                 aria-label="View full-size seasonal garden cleanup image"
               >
                 <ImageComponent
-                  src="https://res.cloudinary.com/di4phdven/image/upload/f_auto,q_80/v1746894176/Sandra_Cleanup_After_3_sa4bn9"
+                  src="https://res.cloudinary.com/di4phdven/image/upload/f_auto,q_80/v1768072927/IMG_3482__1_w3clrx.jpg"
                   alt="Seasonal garden cleanup services in Woodstock and Vinings by Gardening Thyme"
                   priority={true}
                   quality={80}

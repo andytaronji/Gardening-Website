@@ -130,6 +130,15 @@ export default function Navigation() {
                   </li>
                   <li>
                     <Link 
+                      href="/permaculture-lawns" 
+                      className={getMobileLinkClass('/permaculture-lawns')}
+                      onClick={() => setIsOpen(false)}
+                    >
+                      Permaculture Lawns
+                    </Link>
+                  </li>
+                  <li>
+                    <Link 
                       href="/portfolio" 
                       className={getMobileLinkClass('/portfolio')}
                       onClick={() => setIsOpen(false)}
@@ -201,6 +210,7 @@ export default function Navigation() {
                 ))}
               </ul>
             </li>
+            <li><Link href="/permaculture-lawns" className={getLinkClass('/permaculture-lawns')}>Permaculture Lawns</Link></li>
             <li><Link href="/portfolio" className={getLinkClass('/portfolio')}>Portfolio</Link></li>
             <li><Link href="/blog" className={getLinkClass('/blog')}>Blog</Link></li>
             <li><Link href="/contact" className={getLinkClass('/contact')}>Contact</Link></li>

@@ -16,7 +16,8 @@ export async function generateStaticParams() {
 
 // Dynamic metadata generation for each location
 export async function generateMetadata({ params }) {
-  const locationData = getLocationData(params.location);
+  const resolvedParams = await params;
+  const locationData = getLocationData(resolvedParams.location);
   
   return {
     title: `Premium Garden Design Services in ${locationData.city} | Expert Landscaping`,
@@ -60,8 +61,9 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default function GardenDesignLocationPage({ params }) {
-  const locationData = getLocationData(params.location);
+export default async function GardenDesignLocationPage({ params }) {
+  const resolvedParams = await params;
+  const locationData = getLocationData(resolvedParams.location);
   const faqSchema = generateFAQSchema(locationData.city);
   
   return (

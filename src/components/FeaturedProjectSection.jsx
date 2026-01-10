@@ -26,8 +26,8 @@ export default function FeaturedProjectSection() {
             variants={fadeInUpVariants}
           >
             <ImageComponent 
-              src="https://res.cloudinary.com/di4phdven/image/upload/f_auto,q_70,w_800/v1747229592/Screenshot_2025-05-14_093253_c1yke9.png"
-              alt="Natural Stream Solutions"
+              src="https://res.cloudinary.com/di4phdven/image/upload/v1768076475/Featured_Project_utgj7g.jpg"
+              alt="Natural Stream Solutions - Dry Creek Bed with Pollinating Flowers"
               useRandomImage={false}
               componentId="featured-project"
               priority={false}

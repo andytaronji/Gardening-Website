@@ -223,15 +223,22 @@ export default function VegetableGardenClient() {
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.8 }}
-          className="text-center"
+          className="max-w-4xl mx-auto"
         >
-          <h2 className="text-3xl font-playfair text-teal-800 mb-8">Start Your Garden Today</h2>
-          <Link
-            href="/contact"
-            className="inline-block btn-primary-teal text-white font-semibold px-8 py-4 rounded-lg hover:btn-primary-teal-hover transition-colors duration-300"
-          >
-            Get Started
-          </Link>
+          <div className="bg-teal-50 p-8 rounded-lg shadow-md">
+            <h2 className="text-3xl font-semibold text-teal-800 mb-4 text-center">Start Your Garden Today</h2>
+            <p className="text-lg text-gray-600 mb-6 max-w-3xl mx-auto text-center">
+              Contact us to design and create your custom vegetable garden with expert guidance every step of the way.
+            </p>
+            <div className="flex justify-center">
+              <Link
+                href="/contact"
+                className="btn-primary-teal hover:btn-primary-teal-hover text-white font-bold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105"
+              >
+                Get Started
+              </Link>
+            </div>
+          </div>
         </motion.div>
       </div>
     </div>
