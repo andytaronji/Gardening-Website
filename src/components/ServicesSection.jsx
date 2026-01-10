@@ -59,7 +59,7 @@ export default function ServicesSection() {
               </p>
               <Link
                 href="/garden-design"
-                className="inline-block bg-green-600 text-white px-6 py-2 rounded-full hover:bg-green-700 transition-colors"
+                className="inline-block btn-primary-teal text-white px-6 py-2 rounded-full hover:btn-primary-teal-hover transition-colors"
               >
                 Learn More
               </Link>
@@ -101,7 +101,7 @@ export default function ServicesSection() {
               </p>
               <Link
                 href="/groundskeeping"
-                className="inline-block bg-green-600 text-white px-6 py-2 rounded-full hover:bg-green-700 transition-colors"
+                className="inline-block btn-primary-teal text-white px-6 py-2 rounded-full hover:btn-primary-teal-hover transition-colors"
               >
                 Learn More
               </Link>
@@ -143,7 +143,7 @@ export default function ServicesSection() {
               </p>
               <Link
                 href="/quarterly-cleanups"
-                className="inline-block bg-green-600 text-white px-6 py-2 rounded-full hover:bg-green-700 transition-colors"
+                className="inline-block btn-primary-teal text-white px-6 py-2 rounded-full hover:btn-primary-teal-hover transition-colors"
               >
                 Learn More
               </Link>

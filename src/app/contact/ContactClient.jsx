@@ -216,7 +216,7 @@ export default function ContactClient() {
   };
 
   return (
-    <div className="min-h-screen bg-[#f5f5f7]">
+    <div className="min-h-screen bg-neutral-100">
       <div className="container mx-auto px-4 py-16 max-w-3xl">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -224,8 +224,8 @@ export default function ContactClient() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h1 className="text-4xl font-medium text-[#1d1d1f] mb-4">Contact Gardening Thyme</h1>
-          <p className="text-lg text-[#86868b] max-w-2xl mx-auto leading-relaxed">
+          <h1 className="text-4xl font-medium text-slate-900 mb-4">Contact Gardening Thyme</h1>
+          <p className="text-lg text-slate-500 max-w-2xl mx-auto leading-relaxed">
             Whether you're dreaming of a vibrant garden or need expert maintenance, we're here to help your outdoor space thrive.
           </p>
         </motion.div>
@@ -243,7 +243,7 @@ export default function ContactClient() {
               className={`mb-8 px-4 py-3 rounded-lg text-sm font-medium ${
                 status.isError 
                   ? 'bg-red-50 text-red-800 border border-red-100' 
-                  : 'bg-green-50 text-green-800 border border-green-100'
+                  : 'bg-teal-50 text-teal-800 border border-teal-100'
               }`}
             >
               {status.message}
@@ -282,14 +282,14 @@ export default function ContactClient() {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="peer w-full px-4 pt-8 pb-3 text-base border-b border-[#86868b] bg-transparent focus:outline-none focus:border-[#1d1d1f] transition-colors placeholder-transparent"
+                  className="peer w-full px-4 pt-8 pb-3 text-base border-b border-slate-400 bg-transparent focus:outline-none focus:border-slate-900 transition-colors placeholder-transparent"
                   placeholder="Name"
                   required
                   disabled={isSubmitting}
                 />
                 <label 
                   htmlFor="name"
-                  className="absolute top-2 left-4 text-xs text-[#86868b] transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-6 peer-focus:top-2 peer-focus:text-xs"
+                  className="absolute top-2 left-4 text-xs text-slate-500 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-6 peer-focus:top-2 peer-focus:text-xs"
                 >
                   Name
                 </label>
@@ -307,14 +307,14 @@ export default function ContactClient() {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="peer w-full px-4 pt-8 pb-3 text-base border-b border-[#86868b] bg-transparent focus:outline-none focus:border-[#1d1d1f] transition-colors placeholder-transparent"
+                  className="peer w-full px-4 pt-8 pb-3 text-base border-b border-slate-400 bg-transparent focus:outline-none focus:border-slate-900 transition-colors placeholder-transparent"
                   placeholder="Email"
                   required
                   disabled={isSubmitting}
                 />
                 <label 
                   htmlFor="email"
-                  className="absolute top-2 left-4 text-xs text-[#86868b] transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-6 peer-focus:top-2 peer-focus:text-xs"
+                  className="absolute top-2 left-4 text-xs text-slate-500 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-6 peer-focus:top-2 peer-focus:text-xs"
                 >
                   Email
                 </label>
@@ -334,13 +334,13 @@ export default function ContactClient() {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  className="peer w-full px-4 pt-8 pb-3 text-base border-b border-[#86868b] bg-transparent focus:outline-none focus:border-[#1d1d1f] transition-colors placeholder-transparent"
+                  className="peer w-full px-4 pt-8 pb-3 text-base border-b border-slate-400 bg-transparent focus:outline-none focus:border-slate-900 transition-colors placeholder-transparent"
                   placeholder="Phone (optional)"
                   disabled={isSubmitting}
                 />
                 <label 
                   htmlFor="phone"
-                  className="absolute top-2 left-4 text-xs text-[#86868b] transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-6 peer-focus:top-2 peer-focus:text-xs"
+                  className="absolute top-2 left-4 text-xs text-slate-500 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-6 peer-focus:top-2 peer-focus:text-xs"
                 >
                   Phone (optional)
                 </label>
@@ -357,7 +357,7 @@ export default function ContactClient() {
                   name="serviceType"
                   value={formData.serviceType}
                   onChange={handleChange}
-                  className="peer w-full px-4 pt-8 pb-3 text-base border-b border-[#86868b] bg-transparent focus:outline-none focus:border-[#1d1d1f] transition-colors appearance-none"
+                  className="peer w-full px-4 pt-8 pb-3 text-base border-b border-slate-400 bg-transparent focus:outline-none focus:border-slate-900 transition-colors appearance-none"
                   disabled={isSubmitting}
                 >
                   {serviceTypes.map((service) => (
@@ -368,7 +368,7 @@ export default function ContactClient() {
                 </select>
                 <label 
                   htmlFor="serviceType"
-                  className="absolute top-2 left-4 text-xs text-[#86868b]"
+                  className="absolute top-2 left-4 text-xs text-slate-500"
                 >
                   Service Type
                 </label>
@@ -392,14 +392,14 @@ export default function ContactClient() {
                 name="subject"
                 value={formData.subject}
                 onChange={handleChange}
-                className="peer w-full px-4 pt-8 pb-3 text-base border-b border-[#86868b] bg-transparent focus:outline-none focus:border-[#1d1d1f] transition-colors placeholder-transparent"
+                className="peer w-full px-4 pt-8 pb-3 text-base border-b border-slate-400 bg-transparent focus:outline-none focus:border-slate-900 transition-colors placeholder-transparent"
                 placeholder="Subject"
                 required
                 disabled={isSubmitting}
               />
               <label 
                 htmlFor="subject"
-                className="absolute top-2 left-4 text-xs text-[#86868b] transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-6 peer-focus:top-2 peer-focus:text-xs"
+                className="absolute top-2 left-4 text-xs text-slate-500 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-6 peer-focus:top-2 peer-focus:text-xs"
               >
                 Subject
               </label>
@@ -417,14 +417,14 @@ export default function ContactClient() {
                 value={formData.message}
                 onChange={handleChange}
                 rows="4"
-                className="peer w-full px-4 pt-8 pb-3 text-base border-b border-[#86868b] bg-transparent focus:outline-none focus:border-[#1d1d1f] transition-colors placeholder-transparent resize-none"
+                className="peer w-full px-4 pt-8 pb-3 text-base border-b border-slate-400 bg-transparent focus:outline-none focus:border-slate-900 transition-colors placeholder-transparent resize-none"
                 placeholder="Message"
                 required
                 disabled={isSubmitting}
               ></textarea>
               <label 
                 htmlFor="message"
-                className="absolute top-2 left-4 text-xs text-[#86868b] transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-6 peer-focus:top-2 peer-focus:text-xs"
+                className="absolute top-2 left-4 text-xs text-slate-500 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-6 peer-focus:top-2 peer-focus:text-xs"
               >
                 Message
               </label>
@@ -439,19 +439,19 @@ export default function ContactClient() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-green-800 text-white font-medium py-3 px-8 rounded-full hover:bg-green-700 transition-colors duration-300 text-base disabled:opacity-70 disabled:cursor-not-allowed"
+                className="w-full btn-primary-teal text-white font-medium py-3 px-8 rounded-full hover:btn-primary-teal-hover transition-colors duration-300 text-base disabled:opacity-70 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? 'Sending...' : 'Send Message'}
               </button>
               
               {/* reCAPTCHA badge notice */}
-              <p className="text-xs text-[#86868b] text-center mt-4">
+              <p className="text-xs text-slate-500 text-center mt-4">
                 This site is protected by reCAPTCHA and the Google{' '}
-                <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-green-700 hover:underline">
+                <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-teal-700 hover:underline">
                   Privacy Policy
                 </a>{' '}
                 and{' '}
-                <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer" className="text-green-700 hover:underline">
+                <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer" className="text-teal-700 hover:underline">
                   Terms of Service
                 </a>{' '}
                 apply.
@@ -466,14 +466,14 @@ export default function ContactClient() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="mt-12 text-center"
         >
-          <div className="space-y-2 text-[#86868b]">
+          <div className="space-y-2 text-slate-500">
             <p className="text-sm">
-              <a href="mailto:services@gardeningthyme.com" className="hover:text-green-600 transition-colors">
+              <a href="mailto:services@gardeningthyme.com" className="hover:text-teal-600 transition-colors">
                 services@gardeningthyme.com
               </a>
             </p>
             <p className="text-sm">
-              <a href="tel:+14048617744" className="hover:text-green-600 transition-colors">
+              <a href="tel:+14048617744" className="hover:text-teal-600 transition-colors">
                 404-861-7744
               </a>
             </p>

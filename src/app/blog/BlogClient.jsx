@@ -16,7 +16,7 @@ export default function BlogClient() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="max-w-4xl mx-auto text-center mb-16"
         >
-          <h1 className="text-5xl font-playfair text-green-900 mb-6">Our Garden Blog</h1>
+          <h1 className="text-5xl font-playfair text-teal-900 mb-6">Our Garden Blog</h1>
           <p className="text-xl text-gray-700 leading-relaxed">
             Discover expert tips, seasonal guides, and inspiring ideas for your garden
           </p>
@@ -48,7 +48,7 @@ export default function BlogClient() {
         >
           <Link
             href="/contact"
-            className="inline-block bg-green-600 text-white font-semibold px-8 py-4 rounded-lg hover:bg-green-700 transition-colors duration-300"
+            className="inline-block btn-primary-teal text-white font-semibold px-8 py-4 rounded-lg hover:btn-primary-teal-hover transition-colors duration-300"
           >
             Reach out today to learn about our Gardening Lessons!
           </Link>

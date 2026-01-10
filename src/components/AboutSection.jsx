@@ -24,7 +24,7 @@ export default function AboutSection() {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
           <motion.h2 
-            className="text-4xl font-bold text-green-800 mb-6"
+            className="text-4xl font-bold text-teal-800 mb-6"
             variants={variants}
           >
             About Gardening Thyme

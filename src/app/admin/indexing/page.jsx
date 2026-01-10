@@ -337,7 +337,7 @@ function IndexingDashboard({ onLogout }) {
           {results && (
             <div className="mb-8">
               <h2 className="text-xl font-semibold mb-4">Results</h2>
-              <div className={`p-4 rounded-md ${results.success ? 'bg-green-50 border border-green-200' : 'bg-red-50 border border-red-200'}`}>
+              <div className={`p-4 rounded-md ${results.success ? 'bg-teal-50 border border-teal-200' : 'bg-red-50 border border-red-200'}`}>
                 <div className="flex items-center mb-2">
                   <span className={`inline-block w-3 h-3 rounded-full mr-2 ${results.success ? 'bg-green-500' : 'bg-red-500'}`}></span>
                   <span className="font-medium">{results.success ? 'Success' : 'Error'}</span>
@@ -359,7 +359,7 @@ function IndexingDashboard({ onLogout }) {
                     </summary>
                     <div className="mt-2 max-h-60 overflow-y-auto">
                       {results.results.map((result, index) => (
-                        <div key={index} className={`text-xs p-2 mb-1 rounded ${result.success ? 'bg-green-100' : 'bg-red-100'}`}>
+                        <div key={index} className={`text-xs p-2 mb-1 rounded ${result.success ? 'bg-teal-100' : 'bg-red-100'}`}>
                           <div className="font-medium">{result.url}</div>
                           <div>{result.success ? 'Success' : `Error: ${result.error}`}</div>
                           <div className="text-gray-500">{result.timestamp}</div>

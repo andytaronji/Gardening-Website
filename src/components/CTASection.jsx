@@ -23,9 +23,9 @@ export default function CTASection() {
       className="py-20 bg-white"
     >
       <div className="container mx-auto px-4">
-        <div className="bg-green-50 p-8 rounded-lg shadow-md">
+        <div className="bg-teal-50 p-8 rounded-lg shadow-md">
           <motion.h2 
-            className="text-3xl font-semibold text-green-800 mb-4 text-center"
+            className="text-3xl font-semibold text-teal-800 mb-4 text-center"
             variants={variants}
           >
             Ready to Transform Your Garden?
@@ -40,7 +40,7 @@ export default function CTASection() {
             className="flex justify-center"
             variants={variants}
           >
-            <Link href="/contact" className="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105">
+            <Link href="/contact" className="btn-primary-teal hover:btn-primary-teal-hover text-white font-bold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105">
               Contact Us Today!
             </Link>
           </motion.div>

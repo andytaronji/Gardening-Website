@@ -53,8 +53,8 @@ const BlogModal = ({ post, onClose }) => {
 
           <div className="p-8">
             <div className="flex items-center mb-4">
-              <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center mr-3">
-                <span className="text-green-600 font-bold">{post.author.charAt(0)}</span>
+              <div className="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center mr-3">
+                <span className="text-teal-600 font-bold">{post.author.charAt(0)}</span>
               </div>
               <div>
                 <p className="text-gray-700">{post.author}</p>
@@ -68,7 +68,7 @@ const BlogModal = ({ post, onClose }) => {
               {post.tags.map((tag, index) => (
                 <span
                   key={index}
-                  className="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full"
+                  className="bg-teal-100 text-teal-800 text-xs px-3 py-1 rounded-full"
                 >
                   {tag}
                 </span>

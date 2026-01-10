@@ -15,7 +15,7 @@ export default function FeaturedProjectSection() {
     >
       <div className="container mx-auto px-4">
         <LazyMotionH2 
-          className="text-4xl font-bold text-center text-green-800 mb-12"
+          className="text-4xl font-bold text-center text-teal-800 mb-12"
           variants={fadeInUpVariants}
         >
           Featured Project
@@ -39,17 +39,17 @@ export default function FeaturedProjectSection() {
             />
           </LazyMotionDiv>
           <LazyMotionDiv variants={fadeInUpVariants}>
-            <h3 className="text-3xl font-semibold text-green-700 mb-4">Natural Stream Solutions</h3>
+            <h3 className="text-3xl font-semibold text-teal-700 mb-4">Natural Stream Solutions</h3>
             <p className="text-gray-600 mb-6 leading-relaxed">
               Natural irrigation solutions include man-made dry creek beds to combat terraced and severely inclined yards.
               
               Streams made from colorful river rock add a beautiful touch to your yard and can be built around pollinating flowers to attract butterflies, hummingbirds, bees, and also support local ecosystems!
             </p>
             <div className="flex flex-wrap gap-3">
-              <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">Sustainable Design</span>
-              <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">Native Plants</span>
-              <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">Natural Stream</span>
-              <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">Low Maintenance</span>
+              <span className="bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm font-medium">Sustainable Design</span>
+              <span className="bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm font-medium">Native Plants</span>
+              <span className="bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm font-medium">Natural Stream</span>
+              <span className="bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm font-medium">Low Maintenance</span>
             </div>
           </LazyMotionDiv>
         </div>

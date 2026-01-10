@@ -36,22 +36,22 @@ export default function Navigation() {
 
   const getLinkClass = (path) => {
     const baseClass = "transition-colors duration-200";
-    const activeClass = "text-green-200 font-medium";
-    const hoverClass = "hover:text-green-200";
+    const activeClass = "text-teal-200 font-medium";
+    const hoverClass = "hover:text-teal-200";
     return `${baseClass} ${isActive(path) ? activeClass : hoverClass}`;
   };
 
   const getMobileLinkClass = (path) => {
     const baseClass = "block w-full py-2 px-4";
-    const activeClass = "bg-green-700 text-green-200 font-medium";
-    const hoverClass = "hover:bg-green-700";
+    const activeClass = "navbar-dropdown-hover text-teal-200 font-medium";
+    const hoverClass = "hover:navbar-dropdown-hover";
     return `${baseClass} ${isActive(path) ? activeClass : hoverClass}`;
   };
 
   return (
-    <nav className="bg-green-800 text-white p-4 sticky top-0 z-50 shadow-md">
+    <nav className="navbar-bg-sage text-white p-4 sticky top-0 z-50 shadow-md">
       <div className="container mx-auto flex justify-between items-center">
-        <Link href="/" className="flex items-center space-x-2 text-xl font-cursive">
+        <Link href="/" className="flex items-center space-x-2 text-xl font-cursive hover:text-teal-200 transition-colors duration-200">
           <Image 
             src="https://res.cloudinary.com/di4phdven/image/upload/f_auto,q_70,w_60/v1747232934/Gardening_Thyme_LLC_Logo_hkdlsk.jpg" 
             alt="Gardening Thyme Logo" 
@@ -67,7 +67,7 @@ export default function Navigation() {
           <>
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="md:hidden p-2 rounded hover:bg-green-700 transition-colors duration-200"
+              className="md:hidden p-2 rounded hover:bg-teal-700 transition-colors duration-200"
               aria-label="Toggle menu"
             >
               <div className={`hamburger ${isOpen ? 'open' : ''}`}>
@@ -78,7 +78,7 @@ export default function Navigation() {
             </button>
             
             {isOpen && (
-              <div className="absolute top-16 left-0 right-0 bg-green-800 z-50 shadow-lg">
+              <div className="absolute top-16 left-0 right-0 navbar-dropdown-bg z-50 shadow-lg">
                 <ul className="flex flex-col py-2">
                   <li>
                     <Link href="/" className={getMobileLinkClass('/')} onClick={() => setIsOpen(false)}>
@@ -97,7 +97,7 @@ export default function Navigation() {
                   <li className="relative">
                     <button 
                       onClick={() => setIsServicesOpen(!isServicesOpen)}
-                      className={`flex items-center justify-between w-full py-2 px-4 ${isActive('/consultations') ? 'bg-green-700 text-green-200 font-medium' : 'hover:bg-green-700'}`}
+                      className={`flex items-center justify-between w-full py-2 px-4 ${isActive('/consultations') ? 'navbar-dropdown-hover text-teal-200 font-medium' : 'hover:navbar-dropdown-hover'}`}
                     >
                       <span>Services</span>
                       <svg 
@@ -110,7 +110,7 @@ export default function Navigation() {
                       </svg>
                     </button>
                     {isServicesOpen && (
-                      <ul className="bg-green-700 py-1">
+                      <ul className="navbar-dropdown-hover py-1">
                         {services.map((service) => (
                           <li key={service.name}>
                             <Link 
@@ -119,7 +119,7 @@ export default function Navigation() {
                                 setIsServicesOpen(false);
                                 setIsOpen(false);
                               }}
-                              className={`block py-2 px-8 ${isActive(service.href) ? 'bg-green-600 text-green-200 font-medium' : 'hover:bg-green-600'}`}
+                              className={`block py-2 px-8 ${isActive(service.href) ? 'bg-[#007777] text-teal-200 font-medium' : 'hover:bg-[#007777]'}`}
                             >
                               {service.name}
                             </Link>
@@ -173,7 +173,7 @@ export default function Navigation() {
             <li className="relative group">
               <div className="peer">
                 <button 
-                  className={`flex items-center ${isActive('/consultations') ? 'text-green-200 font-medium' : 'hover:text-green-200'}`}
+                  className={`flex items-center ${isActive('/consultations') ? 'text-teal-200 font-medium' : 'hover:text-teal-200'}`}
                 >
                   Services
                   <svg 
@@ -187,13 +187,13 @@ export default function Navigation() {
                 </button>
               </div>
               <ul 
-                className="absolute top-full left-0 mt-2 w-56 bg-green-800 rounded-md shadow-lg py-2 z-50 opacity-0 invisible peer-hover:opacity-100 peer-hover:visible hover:opacity-100 hover:visible transition-all duration-200"
+                className="absolute top-full left-0 mt-2 w-56 navbar-dropdown-bg rounded-md shadow-lg py-2 z-50 opacity-0 invisible peer-hover:opacity-100 peer-hover:visible hover:opacity-100 hover:visible transition-all duration-200"
               >
                 {services.map((service) => (
                   <li key={service.name}>
                     <Link 
                       href={service.href}
-                      className={`block px-4 py-2 ${isActive(service.href) ? 'bg-green-700 text-green-200 font-medium' : 'hover:bg-green-700'}`}
+                      className={`block px-4 py-2 ${isActive(service.href) ? 'navbar-dropdown-hover text-teal-200 font-medium' : 'hover:navbar-dropdown-hover'}`}
                     >
                       {service.name}
                     </Link>

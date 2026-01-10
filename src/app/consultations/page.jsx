@@ -31,7 +31,7 @@ export default function ConsultationsPage() {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="text-4xl font-bold text-center mb-8 text-green-800"
+        className="text-4xl font-bold text-center mb-8 text-teal-800"
       >
         Gardening Thyme Consultations
       </motion.h1>
@@ -67,7 +67,7 @@ export default function ConsultationsPage() {
           variants={fadeIn}
           className="flex flex-col justify-center"
         >
-          <h2 className="text-2xl font-semibold text-green-700 mb-4">Transform Your Outdoor Space</h2>
+          <h2 className="text-2xl font-semibold text-teal-700 mb-4">Transform Your Outdoor Space</h2>
           <p className="text-gray-700 mb-4">
             Our expert garden designers will work with you to create a beautiful, functional outdoor space 
             that reflects your personal style and meets your specific needs. Whether you're looking for a 
@@ -92,7 +92,7 @@ export default function ConsultationsPage() {
           variants={fadeIn}
           className="flex flex-col justify-center order-2 md:order-1"
         >
-          <h2 className="text-2xl font-semibold text-green-700 mb-4">Sustainable Garden Solutions</h2>
+          <h2 className="text-2xl font-semibold text-teal-700 mb-4">Sustainable Garden Solutions</h2>
           <p className="text-gray-700 mb-4">
             We specialize in eco-friendly garden designs that conserve water, support local wildlife, 
             and reduce the need for chemical fertilizers and pesticides. Our sustainable approaches 
@@ -156,7 +156,7 @@ export default function ConsultationsPage() {
           variants={fadeIn}
           className="flex flex-col justify-center"
         >
-          <h2 className="text-2xl font-semibold text-green-700 mb-4">Our Consultation Process</h2>
+          <h2 className="text-2xl font-semibold text-teal-700 mb-4">Our Consultation Process</h2>
           <p className="text-gray-700 mb-4">
             Our garden design consultations begin with an on-site visit to assess your space and 
             discuss your goals, preferences, and budget. We'll then create a customized design plan 
@@ -180,7 +180,7 @@ export default function ConsultationsPage() {
           variants={fadeIn}
           className="flex flex-col justify-center order-2 md:order-1"
         >
-          <h2 className="text-2xl font-semibold text-green-700 mb-4">Video Course Consultations</h2>
+          <h2 className="text-2xl font-semibold text-teal-700 mb-4">Video Course Consultations</h2>
           <p className="text-gray-700 mb-4">
             Can't schedule an in-person visit? Our video course consultations offer the perfect solution. 
             Connect with our expert gardeners virtually and receive personalized advice and guidance for 
@@ -219,9 +219,9 @@ export default function ConsultationsPage() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="bg-green-50 p-8 rounded-lg shadow-md"
+        className="bg-teal-50 p-8 rounded-lg shadow-md"
       >
-        <h2 className="text-2xl font-semibold text-green-700 mb-4 text-center">Ready to Transform Your Garden?</h2>
+        <h2 className="text-2xl font-semibold text-teal-700 mb-4 text-center">Ready to Transform Your Garden?</h2>
         <p className="text-gray-700 text-center mb-6">
           Book a consultation today and take the first step toward creating the garden of your dreams.
         </p>
@@ -230,7 +230,7 @@ export default function ConsultationsPage() {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
-          <Link href="/contact" className="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+          <Link href="/contact" className="btn-primary-teal hover:btn-primary-teal-hover text-white font-bold py-3 px-6 rounded-lg transition duration-300">
             Schedule a Consultation
           </Link>
         </motion.div>

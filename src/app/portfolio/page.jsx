@@ -62,7 +62,7 @@ export default function PortfolioPage() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="max-w-4xl mx-auto text-center mb-16"
         >
-          <h1 className="text-5xl font-playfair text-green-900 mb-6">Our Portfolio</h1>
+          <h1 className="text-5xl font-playfair text-teal-900 mb-6">Our Portfolio</h1>
           <p className="text-xl text-gray-700 leading-relaxed">
             Explore our garden maintenance, drip irrigation systems, Japanese maple installations, 
             native plantings, and property enhancements across Georgia
@@ -108,12 +108,12 @@ export default function PortfolioPage() {
               </div>
               <div className="p-6">
                 <div className="flex items-center mb-4">
-                  <span className="bg-green-100 text-green-800 text-sm font-medium px-3 py-1 rounded-full">
+                  <span className="bg-teal-100 text-teal-800 text-sm font-medium px-3 py-1 rounded-full">
                     {item.category}
                   </span>
                   <span className="text-gray-500 text-sm ml-4">{item.location}</span>
                 </div>
-                <h2 className="text-xl font-semibold text-green-800 mb-3">
+                <h2 className="text-xl font-semibold text-teal-800 mb-3">
                   {item.title}
                 </h2>
                 <p className="text-gray-600">{item.description}</p>
@@ -128,10 +128,10 @@ export default function PortfolioPage() {
           transition={{ duration: 0.6, delay: 0.8 }}
           className="text-center mt-16"
         >
-          <h2 className="text-3xl font-playfair text-green-800 mb-8">Ready for Your Gardening, Maintenance, or Irrigation Project?</h2>
+          <h2 className="text-3xl font-playfair text-teal-800 mb-8">Ready for Your Gardening, Maintenance, or Irrigation Project?</h2>
           <a
             href="/contact"
-            className="inline-block bg-green-600 text-white font-semibold px-8 py-4 rounded-lg hover:bg-green-700 transition-colors duration-300"
+            className="inline-block btn-primary-teal text-white font-semibold px-8 py-4 rounded-lg hover:btn-primary-teal-hover transition-colors duration-300"
           >
             Start Your Project
           </a>
@@ -158,7 +158,7 @@ export default function PortfolioPage() {
             
             {/* Modal title */}
             <div className="absolute top-0 left-0 right-0 bg-white bg-opacity-75 p-2 text-center z-40">
-              <h3 className="text-xl font-playfair text-green-800">{selectedTitle}</h3>
+              <h3 className="text-xl font-playfair text-teal-800">{selectedTitle}</h3>
             </div>
             
             {/* Image container - using a simpler img tag approach */}

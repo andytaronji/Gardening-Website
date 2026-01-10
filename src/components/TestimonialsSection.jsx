@@ -33,7 +33,7 @@ export default function TestimonialsSection() {
     >
       <div className="container mx-auto px-4">
         <motion.h2 
-          className="text-4xl font-bold text-center text-green-800 mb-12"
+          className="text-4xl font-bold text-center text-teal-800 mb-12"
           variants={itemVariants}
         >
           What Our Clients Say

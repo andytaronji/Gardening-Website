@@ -17,7 +17,7 @@ export default function GardenDesignLocationClient({ locationData }) {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="max-w-4xl mx-auto text-center mb-16"
         >
-          <h1 className="text-5xl font-playfair text-green-900 mb-6">
+          <h1 className="text-5xl font-playfair text-teal-900 mb-6">
             High-End Garden Design Services in {city}
           </h1>
           <p className="text-xl text-gray-700 leading-relaxed">
@@ -48,7 +48,7 @@ export default function GardenDesignLocationClient({ locationData }) {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="space-y-6"
           >
-            <h2 className="text-3xl font-playfair text-green-800">
+            <h2 className="text-3xl font-playfair text-teal-800">
               Garden Design Process in {city}
             </h2>
             <p className="text-gray-700">
@@ -61,7 +61,7 @@ export default function GardenDesignLocationClient({ locationData }) {
                 transition={{ duration: 0.4, delay: 0.6 }}
                 className="flex items-center space-x-3 text-gray-700"
               >
-                <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-6 h-6 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
                 <span>Personalized consultation and site analysis for {city} properties</span>
@@ -72,7 +72,7 @@ export default function GardenDesignLocationClient({ locationData }) {
                 transition={{ duration: 0.4, delay: 0.7 }}
                 className="flex items-center space-x-3 text-gray-700"
               >
-                <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-6 h-6 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
                 <span>Custom high-end garden design plans and 2D visualizations</span>
@@ -83,7 +83,7 @@ export default function GardenDesignLocationClient({ locationData }) {
                 transition={{ duration: 0.4, delay: 0.8 }}
                 className="flex items-center space-x-3 text-gray-700"
               >
-                <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-6 h-6 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
                 <span>Native Georgia plant selection optimized for {city}'s climate</span>
@@ -99,12 +99,12 @@ export default function GardenDesignLocationClient({ locationData }) {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl p-8 md:p-12 mb-20"
         >
-          <h2 className="text-3xl font-playfair text-green-800 mb-6 text-center">
+          <h2 className="text-3xl font-playfair text-teal-800 mb-6 text-center">
             Specialized {city} Garden Design Expertise
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
-              <h3 className="text-xl font-semibold text-green-800 mb-4">Local Knowledge</h3>
+              <h3 className="text-xl font-semibold text-teal-800 mb-4">Local Knowledge</h3>
               <p className="text-gray-700 mb-4">{localFeatures}</p>
               {neighborhoods.length > 0 && (
                 <div className="text-sm text-gray-600">
@@ -113,7 +113,7 @@ export default function GardenDesignLocationClient({ locationData }) {
               )}
             </div>
             <div>
-              <h3 className="text-xl font-semibold text-green-800 mb-4">Garden Considerations</h3>
+              <h3 className="text-xl font-semibold text-teal-800 mb-4">Garden Considerations</h3>
               <p className="text-gray-700">{gardenConsiderations}</p>
             </div>
           </div>
@@ -124,9 +124,9 @@ export default function GardenDesignLocationClient({ locationData }) {
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="bg-green-50 rounded-2xl p-8 md:p-12 mb-20"
+          className="bg-teal-50 rounded-2xl p-8 md:p-12 mb-20"
         >
-          <h2 className="text-3xl font-playfair text-green-800 mb-8 text-center">
+          <h2 className="text-3xl font-playfair text-teal-800 mb-8 text-center">
             Why Choose Our {city} Garden Design Services
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -137,11 +137,11 @@ export default function GardenDesignLocationClient({ locationData }) {
               className="text-center"
             >
               <div className="bg-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-8 h-8 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold text-green-800 mb-2">Expert Design</h3>
+              <h3 className="text-xl font-semibold text-teal-800 mb-2">Expert Design</h3>
               <p className="text-gray-600">Professional designers with years of experience creating high-end garden landscapes throughout {city} and Georgia</p>
             </motion.div>
             <motion.div
@@ -151,11 +151,11 @@ export default function GardenDesignLocationClient({ locationData }) {
               className="text-center"
             >
               <div className="bg-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-8 h-8 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold text-green-800 mb-2">Sustainable Gardens</h3>
+              <h3 className="text-xl font-semibold text-teal-800 mb-2">Sustainable Gardens</h3>
               <p className="text-gray-600">Eco-friendly garden solutions that conserve water and support {city}'s native pollinators and ecosystems</p>
             </motion.div>
             <motion.div
@@ -165,11 +165,11 @@ export default function GardenDesignLocationClient({ locationData }) {
               className="text-center"
             >
               <div className="bg-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-8 h-8 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold text-green-800 mb-2">Ongoing Support</h3>
+              <h3 className="text-xl font-semibold text-teal-800 mb-2">Ongoing Support</h3>
               <p className="text-gray-600">Continuous guidance and maintenance recommendations for your {city} garden projects</p>
             </motion.div>
           </div>
@@ -182,7 +182,7 @@ export default function GardenDesignLocationClient({ locationData }) {
           transition={{ duration: 0.6, delay: 0.8 }}
           className="text-center"
         >
-          <h2 className="text-3xl font-playfair text-green-800 mb-8">
+          <h2 className="text-3xl font-playfair text-teal-800 mb-8">
             Ready to Transform Your {city} Garden?
           </h2>
           <p className="text-xl text-gray-700 mb-6">
@@ -190,7 +190,7 @@ export default function GardenDesignLocationClient({ locationData }) {
           </p>
           <Link
             href="/contact"
-            className="inline-block bg-green-600 text-white font-semibold px-8 py-4 rounded-lg hover:bg-green-700 transition-colors duration-300"
+            className="inline-block btn-primary-teal text-white font-semibold px-8 py-4 rounded-lg hover:btn-primary-teal-hover transition-colors duration-300"
           >
             Schedule Your {city} Garden Design Consultation
           </Link>

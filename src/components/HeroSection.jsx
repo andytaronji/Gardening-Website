@@ -40,13 +40,13 @@ export default function HeroSection() {
           <div className="flex flex-col sm:flex-row gap-4">
             <Link
               href="/portfolio"
-              className="inline-block bg-green-600 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-green-700 transition-colors"
+              className="inline-block btn-primary-teal text-white px-8 py-3 rounded-full text-lg font-semibold hover:btn-primary-teal-hover transition-colors"
             >
               View Portfolio
             </Link>
             <Link
               href="/contact"
-              className="inline-block bg-white text-green-600 px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-100 transition-colors"
+              className="inline-block bg-white text-teal-600 px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-100 transition-colors"
             >
               Contact Us!
             </Link>

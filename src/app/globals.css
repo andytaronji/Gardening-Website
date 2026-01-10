@@ -5,8 +5,8 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-rgb: 255, 255, 255;
+  --foreground-rgb: 15, 23, 42;    /* slate-900 */
+  --background-rgb: 248, 250, 252; /* slate-50 */
 }
 
 body {
@@ -27,4 +27,49 @@ body {
     font-family: 'Parisienne', cursive;
     font-weight: 400;
   }
+}
+
+@layer components {
+  /* Isolated navbar background - cannot leak to other elements */
+  .navbar-bg-sage {
+    background-color: #003333 !important;
+  }
+  
+  /* Isolated dropdown background - matches navbar */
+  .navbar-dropdown-bg {
+    background-color: #003333 !important;
+  }
+  
+  /* Lighter teal for dropdown hover - complementary to #003333 */
+  .navbar-dropdown-hover {
+    background-color: #005555 !important;
+  }
+  
+  /* Primary button - matches navbar dark teal */
+  .btn-primary-teal {
+    background-color: #003333 !important;
+  }
+  
+  /* Primary button hover - lighter teal */
+  .btn-primary-teal-hover {
+    background-color: #005555 !important;
+  }
+  
+  /* Comprehensive Teal Color System */
+  .text-teal-900 { color: #002828 !important; }      /* Darkest - main headings */
+  .text-teal-800 { color: #003333 !important; }      /* Dark - section headings */ 
+  .text-teal-700 { color: #004444 !important; }      /* Medium-dark - subheadings */
+  .text-teal-600 { color: #005555 !important; }      /* Medium - icons, links */
+  .text-teal-200 { color: #B8E6E6 !important; }      /* Light - nav active states */
+  .text-teal-300 { color: #A3D9D9 !important; }      /* Light-medium - link hovers */
+  
+  .bg-teal-100 { background-color: #E6F7F7 !important; }  /* Very light - badges/tags */
+  .bg-teal-50 { background-color: #F0FAFA !important; }   /* Lightest - success states */
+  
+  .border-teal-700 { border-color: #004444 !important; }  /* Borders/dividers */
+  .border-teal-200 { border-color: #B8E6E6 !important; }  /* Light borders */
+  
+  /* Hover states */
+  .hover\:text-teal-800:hover { color: #003333 !important; }
+  .hover\:text-teal-300:hover { color: #A3D9D9 !important; }
 }
