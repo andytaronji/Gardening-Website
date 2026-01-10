@@ -3,10 +3,10 @@ import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import Preload from '../components/Preload';
 import OptimizedAnalytics from '../components/OptimizedAnalytics';
+import CookieConsent from '../components/CookieConsent';
 import { Analytics } from "@vercel/analytics/next";
 import { metadata as siteMetadata } from './metadata';
 import { localBusinessSchema, organizationSchema, websiteSchema } from './schema';
-import Script from 'next/script';
 
 export const metadata = siteMetadata;
 
@@ -44,14 +44,6 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body>
-        {/* Cookiebot - Loads before everything else */}
-        <Script
-          id="Cookiebot"
-          src="https://consent.cookiebot.com/uc.js"
-          data-cbid="6645d838-2055-4407-8885-69ca6c2eb2c1"
-          strategy="beforeInteractive"
-        />
-        
         {/* Google Tag Manager (noscript) */}
         <noscript
           dangerouslySetInnerHTML={{
@@ -65,6 +57,7 @@ export default function RootLayout({ children }) {
         <Navigation />
         <main>{children}</main>
         <Footer />
+        <CookieConsent />
         <OptimizedAnalytics />
         <Analytics />
       </body>

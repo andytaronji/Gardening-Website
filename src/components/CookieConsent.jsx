@@ -4,14 +4,21 @@ import { useState, useEffect } from 'react';
 
 export default function CookieBanner() {
   const [showBanner, setShowBanner] = useState(false);
-  const [consentGiven, setConsentGiven] = useState(null);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const consent = localStorage.getItem('gardening-thyme-cookie-consent');
-    setConsentGiven(consent);
     if (!consent) {
       setShowBanner(true);
     }
+
+    // Check if mobile
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
   const handleAccept = () => {
@@ -30,31 +37,9 @@ export default function CookieBanner() {
     }
     
     setShowBanner(false);
-    setConsentGiven('accepted');
   };
 
-  const handleDeny = () => {
-    localStorage.setItem('gardening-thyme-cookie-consent', 'denied');
-    
-    // Dispatch consent event for Consent Mode v2
-    if (typeof window !== 'undefined') {
-      window.dispatchEvent(new CustomEvent('consentUpdated', { 
-        detail: { consent: 'denied' } 
-      }));
-      
-      // Disable Google Analytics (legacy support)
-      window['ga-disable-AW-17486011088'] = true;
-      
-      // Also push to dataLayer for backward compatibility
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({ event: 'cookie_consent_denied' });
-    }
-    
-    setShowBanner(false);
-    setConsentGiven('denied');
-  };
-
-  if (consentGiven !== null || !showBanner) return null;
+  if (!showBanner) return null;
 
   return (
     <div 
@@ -63,83 +48,61 @@ export default function CookieBanner() {
         bottom: 0,
         left: 0,
         right: 0,
-        background: 'linear-gradient(90deg, rgba(22,101,52,0.98) 0%, rgba(21,128,61,0.98) 100%)',
+        background: '#027c68',
         color: '#fff',
-        padding: '20px',
-        boxShadow: '0 -4px 20px rgba(0,0,0,0.15)',
+        padding: isMobile ? '12px 16px' : '16px 32px',
+        boxShadow: '0 -2px 10px rgba(0,0,0,0.1)',
         zIndex: 9999,
         display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        gap: '15px',
+        flexDirection: isMobile ? 'column' : 'row',
+        alignItems: isMobile ? 'stretch' : 'center',
+        justifyContent: 'space-between',
+        gap: isMobile ? '12px' : '24px',
       }}
     >
       <div style={{ 
-        fontSize: '14px', 
-        lineHeight: '1.6', 
-        textAlign: 'center',
-        maxWidth: '800px',
+        flex: 1,
+        fontSize: '14px',
+        lineHeight: '1.5',
+        textAlign: isMobile ? 'center' : 'left'
       }}>
-        <span>
-          🌱 <strong>We value your privacy.</strong> We use cookies to enhance your experience, 
-          analyze site traffic, and provide personalized content. You can choose to accept or deny 
-          non-essential cookies.{' '}
-          <a 
-            href="/privacy-policy" 
-            style={{ 
-              color: '#fff', 
-              textDecoration: 'underline',
-              fontWeight: '600'
-            }}
-          >
-            Learn more
-          </a>
-        </span>
-      </div>
-      <div style={{ 
-        display: 'flex', 
-        gap: '12px',
-        flexWrap: 'wrap',
-        justifyContent: 'center'
-      }}>
-        <button 
-          onClick={handleAccept}
-          style={{
-            backgroundColor: '#15803d',
+        🌸 <strong>This website uses cookies</strong> - We use cookies in order to enhance your experience on our website. By using our website and pressing "Ok" you consent to cookies.{' '}
+        <a 
+          href="/privacy-policy" 
+          style={{ 
             color: '#fff',
-            fontSize: '14px',
-            fontWeight: '600',
-            padding: '12px 32px',
-            borderRadius: '8px',
-            border: 'none',
-            cursor: 'pointer',
-            transition: 'all 0.3s ease',
-            boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+            textDecoration: 'underline',
+            fontWeight: '600'
           }}
-          onMouseOver={(e) => e.target.style.backgroundColor = '#166534'}
-          onMouseOut={(e) => e.target.style.backgroundColor = '#15803d'}
         >
-          Accept All Cookies
-        </button>
-        <button 
-          onClick={handleDeny}
-          style={{
-            backgroundColor: '#374151',
-            color: '#fff',
-            fontSize: '14px',
-            fontWeight: '600',
-            padding: '12px 32px',
-            borderRadius: '8px',
-            border: '1px solid #6b7280',
-            cursor: 'pointer',
-            transition: 'all 0.3s ease',
-          }}
-          onMouseOver={(e) => e.target.style.backgroundColor = '#1f2937'}
-          onMouseOut={(e) => e.target.style.backgroundColor = '#374151'}
-        >
-          Deny Non-Essential
-        </button>
+          Legal index
+        </a>
       </div>
+      <button 
+        onClick={handleAccept}
+        style={{
+          backgroundColor: '#fff',
+          color: '#027c68',
+          fontSize: '16px',
+          fontWeight: '700',
+          padding: '8px 24px',
+          border: 'none',
+          borderRadius: '4px',
+          cursor: 'pointer',
+          transition: 'all 0.3s ease',
+          whiteSpace: 'nowrap',
+          flexShrink: 0,
+          alignSelf: isMobile ? 'center' : 'auto'
+        }}
+        onMouseOver={(e) => {
+          e.target.style.backgroundColor = '#f0f0f0';
+        }}
+        onMouseOut={(e) => {
+          e.target.style.backgroundColor = '#fff';
+        }}
+      >
+        Ok
+      </button>
     </div>
   );
 }
