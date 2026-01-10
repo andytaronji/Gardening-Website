@@ -7,24 +7,28 @@ import { LazyMotionDiv } from '../utils/lazyMotion';
 
 const heroImages = [
   {
-    src: "https://res.cloudinary.com/di4phdven/image/upload/f_auto,q_70,w_1200/v1768052394/Garden_Beds_with_Full_Drip_Irrigation_vxpker",
-    alt: "Garden beds with full drip irrigation system"
+    src: "https://res.cloudinary.com/di4phdven/image/upload/f_auto,q_70,w_1200,c_fill,g_auto/v1768065704/Pink_Flower_Wet_owusjv.jpg",
+    alt: "Beautiful pink flower garden with water details"
   },
   {
-    src: "https://res.cloudinary.com/di4phdven/image/upload/f_auto,q_70,w_1200/v1768052394/Drip_In_Action_bwre1o",
-    alt: "Drip irrigation system in action"
+    src: "https://res.cloudinary.com/di4phdven/image/upload/f_auto,q_70,w_1200,c_fill,g_auto/v1768063571/IMG_2733_fvvhjm.jpg",
+    alt: "Sustainable garden design and groundskeeping"
   },
   {
-    src: "https://res.cloudinary.com/di4phdven/image/upload/f_auto,q_70,w_1200/v1768052397/Raised_bed_Drip_Irrigation_Edible_Garden_e9ddnm",
-    alt: "Raised bed drip irrigation edible garden"
+    src: "https://res.cloudinary.com/di4phdven/image/upload/f_auto,q_70,w_1200,c_fill,g_auto/v1768065698/Hanging_Planter_zp31jk.jpg",
+    alt: "Elegant hanging planter garden feature"
   },
   {
-    src: "https://res.cloudinary.com/di4phdven/image/upload/f_auto,q_70,w_1200/v1768052395/Healthy_Edibles_ickibt",
-    alt: "Healthy edible garden plants"
+    src: "https://res.cloudinary.com/di4phdven/image/upload/f_auto,q_70,w_1200,c_fill,g_auto/v1768052393/Front_of_Sandra_s_fin0ck.jpg",
+    alt: "Professional front garden landscape design"
   },
   {
-    src: "https://res.cloudinary.com/di4phdven/image/upload/f_auto,q_70,w_1200/v1768052386/Amazing_Okra_lonct2",
-    alt: "Amazing okra garden"
+    src: "https://res.cloudinary.com/di4phdven/image/upload/f_auto,q_70,w_1200,c_fill,g_auto/v1768063570/IMG_1284_yy9onk.jpg",
+    alt: "Beautiful garden landscape and maintenance"
+  },
+  {
+    src: "https://res.cloudinary.com/di4phdven/image/upload/f_auto,q_70,w_1200,c_fill,g_auto/v1768063569/IMG_1996_romwvs.jpg",
+    alt: "Expert garden design services in Atlanta area"
   }
 ];
 
@@ -97,7 +101,7 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="w-full lg:w-[55%] order-1 lg:order-2"
           >
-            <div className="relative w-full aspect-video bg-gray-900 shadow-lg overflow-hidden">
+            <div className="relative w-full aspect-[4/3] bg-gray-900 shadow-lg overflow-hidden">
               {/* Images */}
               {heroImages.map((image, index) => (
                 <div

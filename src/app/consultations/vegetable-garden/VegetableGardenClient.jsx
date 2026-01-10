@@ -1,11 +1,61 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
-import ImageComponent from '@/components/ImageComponent';
+
+const vegetableGardenImages = [
+  {
+    src: "https://res.cloudinary.com/di4phdven/image/upload/f_auto,q_70,w_1200,c_fill,g_auto/v1768052394/Garden_Beds_with_Full_Drip_Irrigation_vxpker",
+    alt: "Garden beds with full drip irrigation system"
+  },
+  {
+    src: "https://res.cloudinary.com/di4phdven/image/upload/f_auto,q_70,w_1200,c_fill,g_auto/v1768052394/Drip_In_Action_bwre1o",
+    alt: "Drip irrigation system in action"
+  },
+  {
+    src: "https://res.cloudinary.com/di4phdven/image/upload/f_auto,q_70,w_1200,c_fill,g_auto/v1768052397/Raised_bed_Drip_Irrigation_Edible_Garden_e9ddnm",
+    alt: "Raised bed drip irrigation edible garden"
+  },
+  {
+    src: "https://res.cloudinary.com/di4phdven/image/upload/f_auto,q_70,w_1200,c_fill,g_auto/v1768052395/Healthy_Edibles_ickibt",
+    alt: "Healthy edible garden plants"
+  },
+  {
+    src: "https://res.cloudinary.com/di4phdven/image/upload/f_auto,q_70,w_1200,c_fill,g_auto/v1768052386/Amazing_Okra_lonct2",
+    alt: "Amazing okra vegetable garden"
+  }
+];
 
 export default function VegetableGardenClient() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const timerRef = useRef(null);
+
+  // Auto-advance slideshow every 5 seconds
+  useEffect(() => {
+    // Clear any existing timer
+    if (timerRef.current) {
+      clearInterval(timerRef.current);
+    }
+
+    // Start a new timer
+    timerRef.current = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % vegetableGardenImages.length);
+    }, 5000); // 5 seconds
+
+    // Cleanup on unmount
+    return () => {
+      if (timerRef.current) {
+        clearInterval(timerRef.current);
+      }
+    };
+  }, [currentSlide]); // Restart timer when currentSlide changes
+
+  const goToSlide = (index) => {
+    setCurrentSlide(index);
+    // Timer will automatically restart due to useEffect dependency
+  };
   return (
     <div className="min-h-screen bg-white">
       <div className="container mx-auto px-4 py-16">
@@ -26,15 +76,45 @@ export default function VegetableGardenClient() {
             initial={{ opacity: 0, y: -30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-lg"
+            className="relative"
           >
-            <ImageComponent
-              src="https://res.cloudinary.com/di4phdven/image/upload/v1747170882/Vegetable_Garden_Design_exhteo.jpg"
-              alt="Vegetable garden design and consultation services in Marietta and Atlanta"
-              priority={true}
-              quality={85}
-              objectFit="cover"
-            />
+            <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden shadow-lg">
+              {/* Drip Irrigation Slideshow */}
+              {vegetableGardenImages.map((image, index) => (
+                <div
+                  key={index}
+                  className={`absolute inset-0 transition-opacity duration-1000 ${
+                    index === currentSlide ? 'opacity-100' : 'opacity-0'
+                  }`}
+                >
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover"
+                    priority={index === 0}
+                    quality={70}
+                  />
+                </div>
+              ))}
+            </div>
+
+            {/* Navigation Dots */}
+            <div className="flex justify-center gap-2 mt-2">
+              {vegetableGardenImages.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => goToSlide(index)}
+                  className={`w-3 h-3 rounded-full border-2 transition-all duration-300 ${
+                    index === currentSlide
+                      ? 'bg-teal-600 border-teal-600'
+                      : 'bg-transparent border-teal-600 hover:bg-teal-600'
+                  }`}
+                  aria-label={`Go to slide ${index + 1}`}
+                />
+              ))}
+            </div>
           </motion.div>
 
           <motion.div
