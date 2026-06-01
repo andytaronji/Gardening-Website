@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Color Palette for Gardening Thyme - Exact Implementation */
+:root {
+  /* Exact colors from the palette image */
+  --charcoal: #252827;        /* H2, H3, and Body Text */
+  --sage: #909c98;            /* Navbar and Accents */
+  --forest-green: #314528;    /* H1 Text Color */
+  --cream: #efebe2;           /* BG Color */
+}
+
+/* Site-Wide Background */
+body {
+  background-color: var(--cream);
+  color: var(--forest-green);
+  font-family: 'Raleway', sans-serif;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+}
+
+/* Component-Specific Overrides */
+.navigation {
+  background-color: var(--charcoal);
+  color: var(--cream);
+}
+
+.hero-section {
+  background-color: var(--cream);
+}
+
+.footer {
+  background-color: var(--charcoal);
+  color: var(--cream);
+}
+
+/* Custom Scrollbar - Using Palette Colors */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--sage);
+  border-radius: 6px;
+  border: 2px solid var(--cream);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--forest-green);
+}
+
+/* Selection Styling - Using Palette Colors */
+::selection {
+  background: var(--sage);
+  color: var(--cream);
+}
+
+::-moz-selection {
+  background: var(--sage);
+  color: var(--cream);
+}

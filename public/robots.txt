@@ -1,0 +1,15 @@
+# Robots.txt file for Gardening Thyme
+
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://gardeningthyme.com/sitemap.xml
+
+# Optimize crawl rate
+Crawl-delay: 1
+
+# Disallow admin or private areas
+Disallow: /admin/
+Disallow: /api/admin/
