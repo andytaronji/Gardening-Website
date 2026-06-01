@@ -27,7 +27,7 @@ export default function PermacultureClient() {
       </section>
 
       {/* History Section */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-cream">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <LazyMotionDiv
@@ -87,7 +87,7 @@ export default function PermacultureClient() {
       </section>
 
       {/* What is a Groundcover Section */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-cream">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <LazyMotionDiv
