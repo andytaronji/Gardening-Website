@@ -63,21 +63,8 @@ export default function RootLayout({ children }) {
             __html: JSON.stringify(websiteSchema)
           }}
         />
-        {/* Google tag (gtag.js) */}
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=AW-17486011088"
-        />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'AW-17486011088');
-            `
-          }}
-        />
+        {/* Google Ads gtag (AW-17486011088) + GTM are loaded once, non-blocking,
+            in <OptimizedAnalytics />. Don't re-add the tag here — it double-loads. */}
       </head>
       <body className={`${raleway.variable} ${playfair.variable} ${parisienne.variable}`}>
         {/* Google Tag Manager (noscript) */}
