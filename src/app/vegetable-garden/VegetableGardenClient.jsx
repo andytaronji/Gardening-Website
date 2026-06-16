@@ -30,12 +30,27 @@ const vegetableGardenImages = [
 
 export default function VegetableGardenClient() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  // Defer the carousel (extra slides + rotation) until after window load so it
+  // never competes with the LCP hero image. Before activation only slide 0 mounts.
+  const [activated, setActivated] = useState(false);
   const timerRef = useRef(null);
 
   useEffect(() => {
-    if (timerRef.current) {
-      clearInterval(timerRef.current);
+    const start = () => {
+      const idle = window.requestIdleCallback || ((cb) => setTimeout(cb, 1));
+      idle(() => setActivated(true));
+    };
+
+    if (document.readyState === 'complete') {
+      start();
+    } else {
+      window.addEventListener('load', start, { once: true });
+      return () => window.removeEventListener('load', start);
     }
+  }, []);
+
+  useEffect(() => {
+    if (!activated) return;
 
     timerRef.current = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % vegetableGardenImages.length);
@@ -46,7 +61,7 @@ export default function VegetableGardenClient() {
         clearInterval(timerRef.current);
       }
     };
-  }, [currentSlide]);
+  }, [activated, currentSlide]);
 
   const goToSlide = (index) => {
     setCurrentSlide(index);
@@ -56,8 +71,8 @@ export default function VegetableGardenClient() {
     <div className="min-h-screen bg-cream">
       <div className="container mx-auto px-4 py-16">
         <motion.div
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ y: -50 }}
+          animate={{ y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="max-w-4xl mx-auto text-center mb-16"
         >
@@ -69,30 +84,35 @@ export default function VegetableGardenClient() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-20">
           <motion.div
-            initial={{ opacity: 0, y: -30 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ y: -30 }}
+            animate={{ y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="relative"
           >
             <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden shadow-lg">
-              {vegetableGardenImages.map((image, index) => (
-                <div
-                  key={index}
-                  className={`absolute inset-0 transition-opacity duration-1000 ${
-                    index === currentSlide ? 'opacity-100' : 'opacity-0'
-                  }`}
-                >
-                  <Image
-                    src={image.src}
-                    alt={image.alt}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    className="object-cover"
-                    priority={index === 0}
-                    quality={85}
-                  />
-                </div>
-              ))}
+              {vegetableGardenImages.map((image, index) => {
+                // Until the carousel activates, only the LCP slide (0) mounts so
+                // the other hero images don't steal bandwidth from it.
+                if (!activated && index !== 0) return null;
+                return (
+                  <div
+                    key={index}
+                    className={`absolute inset-0 transition-opacity duration-1000 ${
+                      index === currentSlide ? 'opacity-100' : 'opacity-0'
+                    }`}
+                  >
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      className="object-cover"
+                      priority={index === 0}
+                      quality={72}
+                    />
+                  </div>
+                );
+              })}
             </div>
 
             {/* Navigation Dots */}

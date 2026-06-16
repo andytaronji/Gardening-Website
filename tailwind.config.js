@@ -28,9 +28,15 @@ module.exports = {
         },
       },
       fontFamily: {
-        'sans': ['Raleway', 'sans-serif'],
-        'serif': ['Playfair Display', 'serif'],
-        'cursive': ['Parisienne', 'cursive'],
+        // Use the next/font CSS variables (defined on <body>). These resolve to
+        // e.g. `'Playfair Display', 'Playfair Display Fallback'` where the
+        // Fallback is next/font's metric-adjusted (size-adjust/ascent-override)
+        // local font — so the swap from fallback to the web font barely reflows,
+        // keeping CLS near zero. Referencing the raw font name here instead would
+        // fall back to a generic `serif`/`sans-serif` and cause large layout shift.
+        'sans': ['var(--font-raleway)', 'sans-serif'],
+        'serif': ['var(--font-playfair)', 'serif'],
+        'cursive': ['var(--font-parisienne)', 'cursive'],
       },
     },
   },

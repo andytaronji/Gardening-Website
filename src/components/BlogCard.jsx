@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { LazyMotionDiv } from '@/utils/lazyMotion';
 import { getFallbackImage } from '@/utils/imageUtils';
 
-export default function BlogCard({ post }) {
+export default function BlogCard({ post, priority = false }) {
   const formatDate = (dateString) => {
     const options = { year: 'numeric', month: 'long', day: 'numeric' };
     return new Date(dateString).toLocaleDateString('en-US', options);
@@ -20,13 +20,14 @@ export default function BlogCard({ post }) {
         whileTap={{ scale: 0.98 }}
       >
         <div className="relative w-full aspect-video">
-          <Image 
+          <Image
             src={post.image || getFallbackImage()}
-            alt={post.title} 
+            alt={post.title}
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             className="object-cover"
             quality={70}
+            priority={priority}
           />
         </div>
         <div className="p-6">

@@ -15,7 +15,7 @@
 body {
   background-color: var(--cream);
   color: var(--forest-green);
-  font-family: 'Raleway', sans-serif;
+  font-family: var(--font-raleway), sans-serif;
   line-height: 1.7;
   letter-spacing: 0.01em;
 }

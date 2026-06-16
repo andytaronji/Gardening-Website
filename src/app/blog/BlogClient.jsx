@@ -11,8 +11,8 @@ export default function BlogClient() {
     <div className="min-h-screen bg-cream">
       <div className="container mx-auto px-4 py-16">
         <motion.div
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ y: -50 }}
+          animate={{ y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="max-w-4xl mx-auto text-center mb-16"
         >
@@ -23,19 +23,20 @@ export default function BlogClient() {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: -30 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ y: -30 }}
+          animate={{ y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
           {blogPosts.map((post, index) => (
             <motion.div
               key={post.id}
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ y: -20 }}
+              animate={{ y: 0 }}
               transition={{ duration: 0.4, delay: 0.4 + (index * 0.1) }}
             >
-              <BlogCard post={post} />
+              {/* First card is the likely LCP element on mobile — load it eagerly. */}
+              <BlogCard post={post} priority={index === 0} />
             </motion.div>
           ))}
         </motion.div>

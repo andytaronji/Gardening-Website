@@ -34,12 +34,28 @@ const images = [
 
 export default function HeroSection() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  // The carousel (extra slides + auto-rotation) is deferred until after the
+  // window load event so it never competes with the LCP hero image for
+  // bandwidth or inflates lab LCP. Before activation only slide 0 is mounted.
+  const [activated, setActivated] = useState(false);
   const timerRef = useRef(null);
 
   useEffect(() => {
-    if (timerRef.current) {
-      clearInterval(timerRef.current);
+    const start = () => {
+      const idle = window.requestIdleCallback || ((cb) => setTimeout(cb, 1));
+      idle(() => setActivated(true));
+    };
+
+    if (document.readyState === 'complete') {
+      start();
+    } else {
+      window.addEventListener('load', start, { once: true });
+      return () => window.removeEventListener('load', start);
     }
+  }, []);
+
+  useEffect(() => {
+    if (!activated) return;
 
     timerRef.current = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % images.length);
@@ -50,7 +66,7 @@ export default function HeroSection() {
         clearInterval(timerRef.current);
       }
     };
-  }, [currentSlide]);
+  }, [activated, currentSlide]);
 
   const goToSlide = (index) => {
     setCurrentSlide(index);
@@ -94,10 +110,13 @@ export default function HeroSection() {
             </div>
           </LazyMotionDiv>
 
-          {/* Slideshow Container */}
+          {/* Slideshow Container — note: NO opacity in `initial`. An element at
+              opacity:0 is not "contentful", so fading the LCP hero image in
+              would block the LCP timer until the fade finished. We animate only
+              the translate (composited, no layout shift, stays paintable). */}
           <LazyMotionDiv
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ y: 30 }}
+            animate={{ y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: [0.4, 0, 0.2, 1] }}
             className="w-full lg:w-[48%] order-1 lg:order-2"
           >

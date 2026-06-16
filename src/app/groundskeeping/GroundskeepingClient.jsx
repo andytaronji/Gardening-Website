@@ -10,8 +10,8 @@ export default function GroundskeepingClient() {
     <div className="min-h-screen bg-cream">
       <div className="container mx-auto px-4 py-16">
         <LazyMotionDiv
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ y: -50 }}
+          animate={{ y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="max-w-4xl mx-auto text-center mb-16"
         >
@@ -23,8 +23,8 @@ export default function GroundskeepingClient() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-20">
           <LazyMotionDiv
-            initial={{ opacity: 0, y: -30 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ y: -30 }}
+            animate={{ y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-lg"
           >
@@ -35,7 +35,7 @@ export default function GroundskeepingClient() {
                 priority={true}
                 sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover"
-                quality={85}
+                quality={72}
               />
           </LazyMotionDiv>
 

@@ -45,8 +45,8 @@ export default function PortfolioClient() {
       <div className="container mx-auto px-4 py-16">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ y: -50 }}
+          animate={{ y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="max-w-4xl mx-auto text-center mb-16"
         >
@@ -60,10 +60,15 @@ export default function PortfolioClient() {
 
         {/* 4-column image grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-          {portfolioItems.map((item, index) => (
+          {portfolioItems.map((item, index) => {
+            // The first row is above the fold and holds the LCP candidate.
+            // Don't fade those tiles from opacity:0 (it blocks the LCP timer)
+            // and load their images eagerly.
+            const isAboveFold = index < 4;
+            return (
             <motion.div
               key={item.id}
-              initial={{ opacity: 0, scale: 0.95 }}
+              initial={isAboveFold ? { scale: 0.95 } : { opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.4, delay: index * 0.05 }}
               className="relative aspect-square cursor-pointer group overflow-hidden rounded-xl"
@@ -76,6 +81,7 @@ export default function PortfolioClient() {
                 sizes="(max-width: 768px) 50vw, 25vw"
                 className="object-cover transition-transform duration-500 group-hover:scale-110"
                 quality={75}
+                priority={isAboveFold}
               />
               {/* Hover overlay with title */}
               <div className="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/50 transition-all duration-300 flex items-end">
@@ -85,7 +91,8 @@ export default function PortfolioClient() {
                 </div>
               </div>
             </motion.div>
-          ))}
+            );
+          })}
         </div>
 
         {/* CTA */}
