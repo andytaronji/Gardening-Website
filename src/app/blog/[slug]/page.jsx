@@ -1,99 +1,100 @@
-'use client';
-
-import React from 'react';
-import Link from 'next/link';
-import { useParams } from 'next/navigation';
-import { motion } from 'framer-motion';
 import { blogPosts } from '../data/posts';
-import Image from 'next/image';
-import { notFound } from 'next/navigation';
+import BlogPostClient from './BlogPostClient';
 
-export default function BlogPostPage() {
-  const params = useParams();
-  const { slug } = params;
-  
-  const post = blogPosts.find(post => post.slug === slug);
-  
+const SITE = 'https://www.gardeningthyme.com';
+
+// Pre-render every blog post at build time
+export async function generateStaticParams() {
+  return blogPosts.map((post) => ({ slug: post.slug }));
+}
+
+// Per-post metadata so each article has a unique title, description, and canonical
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  const post = blogPosts.find((p) => p.slug === slug);
+
   if (!post) {
-    notFound();
+    return {
+      title: 'Post Not Found | Gardening Thyme Blog',
+      description: 'The blog post you are looking for could not be found.',
+    };
   }
-  
-  const formatDate = (dateString) => {
-    const options = { year: 'numeric', month: 'long', day: 'numeric' };
-    return new Date(dateString).toLocaleDateString('en-US', options);
+
+  const url = `${SITE}/blog/${post.slug}`;
+
+  return {
+    title: `${post.title} | Gardening Thyme Blog`,
+    description: post.excerpt,
+    keywords: Array.isArray(post.tags) ? post.tags.join(', ') : undefined,
+    alternates: {
+      canonical: url,
+    },
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      url,
+      type: 'article',
+      locale: 'en_US',
+      siteName: 'Gardening Thyme',
+      publishedTime: post.date,
+      authors: post.author ? [post.author] : undefined,
+      images: [
+        {
+          url: post.image,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.excerpt,
+      images: [post.image],
+    },
+  };
+}
+
+export default async function BlogPostPage({ params }) {
+  const { slug } = await params;
+  const post = blogPosts.find((p) => p.slug === slug);
+
+  const articleSchema = post && {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: post.title,
+    description: post.excerpt,
+    image: post.image,
+    datePublished: post.date,
+    dateModified: post.date,
+    author: {
+      '@type': 'Person',
+      name: post.author,
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Gardening Thyme',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://res.cloudinary.com/di4phdven/image/upload/v1747232934/Gardening_Thyme_LLC_Logo_hkdlsk.jpg',
+      },
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `${SITE}/blog/${post.slug}`,
+    },
   };
 
   return (
-    <div className="min-h-screen bg-cream">
-      <div className="container mx-auto px-4 py-8">
-        {/* Back button */}
-        <div className="mb-6">
-          <Link href="/blog" className="inline-flex items-center text-sage hover:text-forest-green transition-colors font-medium">
-            <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-            Back to Blog
-          </Link>
-        </div>
-        
-        <article className="max-w-4xl mx-auto bg-white rounded-2xl shadow-sm overflow-hidden border border-sage/10">
-          {/* Featured Image */}
-          <div className="relative h-[400px] w-full">
-            <Image
-              src={post.image}
-              alt={post.title}
-              fill
-              priority={true}
-              sizes="(max-width: 768px) 100vw, 896px"
-              className="object-cover"
-              quality={90}
-            />
-          </div>
-          
-          <div className="p-8">
-            {/* Author and Date */}
-            <div className="flex items-center mb-4">
-              <div className="w-10 h-10 rounded-full bg-cream flex items-center justify-center mr-3 border border-sage/30">
-                <span className="text-sage font-bold">{post.author.charAt(0)}</span>
-              </div>
-              <div>
-                <p className="text-forest-green font-medium">{post.author}</p>
-                <p className="text-forest-green/60 text-sm">{formatDate(post.date)}</p>
-              </div>
-            </div>
-            
-            {/* Title */}
-            <h1 className="text-3xl md:text-4xl font-bold text-charcoal mb-4">{post.title}</h1>
-            
-            {/* Tags */}
-            <div className="flex flex-wrap gap-2 mb-6">
-              {post.tags.map((tag, index) => (
-                <span
-                  key={index}
-                  className="bg-cream text-charcoal text-xs px-3 py-1 rounded-full border border-sage/20"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-            
-            {/* Content */}
-            <div
-              className="prose prose-green max-w-none"
-              dangerouslySetInnerHTML={{ __html: post.content }}
-            />
-          </div>
-        </article>
-        
-        <div className="mt-12 text-center">
-          <Link
-            href="/contact"
-            className="inline-block bg-charcoal text-cream font-semibold px-8 py-4 rounded-full hover:opacity-90 transition-all duration-300 hover:shadow-lg"
-          >
-            Reach out today to learn about our Gardening Lessons!
-          </Link>
-        </div>
-      </div>
-    </div>
+    <>
+      {articleSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+        />
+      )}
+      <BlogPostClient />
+    </>
   );
 }

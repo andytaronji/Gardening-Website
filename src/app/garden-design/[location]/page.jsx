@@ -1,6 +1,7 @@
 import React from 'react';
+import Link from 'next/link';
 import GardenDesignLocationClient from './GardenDesignLocationClient';
-import { getLocationData } from './locationData';
+import { getLocationData, getAllLocations } from './locationData';
 import { generateFAQSchema } from './faqSchema';
 
 // Generate static paths for all locations
@@ -56,7 +57,7 @@ export async function generateMetadata({ params }) {
       images: ['https://res.cloudinary.com/di4phdven/image/upload/v1747228491/Garden_Design_xh5y5u.jpg'],
     },
     alternates: {
-      canonical: `https://gardeningthyme.com/garden-design/${resolvedParams.location}`,
+      canonical: `https://www.gardeningthyme.com/garden-design/${resolvedParams.location}`,
     },
     other: {
       'link': JSON.stringify([
@@ -75,7 +76,8 @@ export default async function GardenDesignLocationPage({ params }) {
   const resolvedParams = await params;
   const locationData = getLocationData(resolvedParams.location);
   const faqSchema = generateFAQSchema(locationData.city);
-  
+  const nearbyLocations = getAllLocations().filter((slug) => slug !== resolvedParams.location);
+
   return (
     <>
       <script
@@ -83,6 +85,29 @@ export default async function GardenDesignLocationPage({ params }) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <GardenDesignLocationClient locationData={locationData} />
+
+      {/* Nearby areas — cross-links to the other location landing pages */}
+      <section className="bg-cream py-12 border-t border-sage/15">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-2xl font-serif text-forest-green mb-6">
+            We Also Serve Nearby Areas
+          </h2>
+          <div className="flex flex-wrap justify-center gap-3">
+            {nearbyLocations.map((slug) => {
+              const data = getLocationData(slug);
+              return (
+                <Link
+                  key={slug}
+                  href={`/garden-design/${slug}`}
+                  className="px-5 py-2.5 bg-white rounded-full border border-sage/20 text-forest-green font-medium text-sm hover:bg-sage/10 hover:border-sage/40 transition-all duration-300"
+                >
+                  Garden Design in {data.city}
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+      </section>
     </>
   );
 }

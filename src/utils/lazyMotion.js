@@ -1,22 +1,16 @@
 'use client';
 
-import dynamic from 'next/dynamic';
+import { motion } from 'framer-motion';
 
-// Dynamically import motion components with SSR disabled to reduce initial bundle size
-export const LazyMotionDiv = dynamic(
-  () => import('framer-motion').then(mod => mod.motion.div),
-  { ssr: false }
-);
-
-export const LazyMotionSection = dynamic(
-  () => import('framer-motion').then(mod => mod.motion.section),
-  { ssr: false }
-);
-
-export const LazyMotionH2 = dynamic(
-  () => import('framer-motion').then(mod => mod.motion.h2),
-  { ssr: false }
-);
+// These were previously dynamic(..., { ssr: false }), which kept the wrapped
+// content out of the server-rendered HTML. That caused two problems: the
+// content "popped in" after hydration (large CLS) and the LCP element wasn't
+// present in the initial HTML (slow LCP). framer-motion is already imported
+// directly elsewhere in the app, so rendering the real motion components here
+// adds no bundle weight while letting this content server-render.
+export const LazyMotionDiv = motion.div;
+export const LazyMotionSection = motion.section;
+export const LazyMotionH2 = motion.h2;
 
 // Export animation variants that can be reused across components
 export const fadeInUpVariants = {

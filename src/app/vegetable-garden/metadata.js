@@ -24,6 +24,6 @@ export const metadata = {
     images: ['https://res.cloudinary.com/di4phdven/image/upload/v1747170882/Vegetable_Garden_Design_exhteo.jpg'],
   },
   alternates: {
-    canonical: 'https://gardeningthyme.com/vegetable-garden',
+    canonical: 'https://www.gardeningthyme.com/vegetable-garden',
   },
 };

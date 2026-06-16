@@ -94,23 +94,38 @@ export async function submitMultipleUrls(urls, type = 'URL_UPDATED', delay = 100
  * Get all important URLs from your website for bulk indexing
  */
 export function getAllSiteUrls() {
-  const baseUrl = `https://${process.env.WEBSITE_DOMAIN}`;
-  
+  // Always submit the canonical (www) host so Google indexes the same URLs
+  // declared in the sitemap and canonical tags. WEBSITE_DOMAIN may override
+  // the host, but it must match the canonical (www) domain.
+  const baseUrl = `https://${process.env.WEBSITE_DOMAIN || 'www.gardeningthyme.com'}`;
+
   return [
-    // Main pages
+    // Core pages
     baseUrl,
     `${baseUrl}/garden-design`,
     `${baseUrl}/groundskeeping`,
-    `${baseUrl}/property-enhancement`,
     `${baseUrl}/quarterly-cleanups`,
     `${baseUrl}/vegetable-garden`,
+    `${baseUrl}/property-enhancement`,
+    `${baseUrl}/permaculture-lawns`,
     `${baseUrl}/portfolio`,
     `${baseUrl}/blog`,
     `${baseUrl}/contact`,
     `${baseUrl}/privacy-policy`,
-    
-    // Add specific blog posts or portfolio items here as needed
-    // You can expand this list with dynamic content
+
+    // Location-specific garden design landing pages
+    `${baseUrl}/garden-design/marietta`,
+    `${baseUrl}/garden-design/atlanta`,
+    `${baseUrl}/garden-design/roswell`,
+    `${baseUrl}/garden-design/alpharetta`,
+    `${baseUrl}/garden-design/sandy-springs`,
+
+    // Blog posts
+    `${baseUrl}/blog/georgia-groundskeeping-guide`,
+    `${baseUrl}/blog/spring-planting-guide`,
+    `${baseUrl}/blog/sustainable-gardening-practices`,
+    `${baseUrl}/blog/container-gardening-for-small-spaces`,
+    `${baseUrl}/blog/seasonal-garden-maintenance`,
   ];
 }
 

@@ -24,6 +24,6 @@ export const metadata = {
     images: ['https://res.cloudinary.com/di4phdven/image/upload/v1747228491/Garden_Design_xh5y5u.jpg'],
   },
   alternates: {
-    canonical: 'https://gardeningthyme.com/garden-design',
+    canonical: 'https://www.gardeningthyme.com/garden-design',
   },
 };

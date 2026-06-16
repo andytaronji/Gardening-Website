@@ -24,6 +24,6 @@ export const metadata = {
     images: ['https://res.cloudinary.com/di4phdven/image/upload/v1747170883/Property_Enhancement_Photo_hoeqsk.jpg'],
   },
   alternates: {
-    canonical: 'https://gardeningthyme.com/property-enhancement',
+    canonical: 'https://www.gardeningthyme.com/property-enhancement',
   },
 };

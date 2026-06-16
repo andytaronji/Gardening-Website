@@ -7,27 +7,27 @@ import { LazyMotionDiv } from '../utils/lazyMotion';
 
 const images = [
   {
-    src: "https://res.cloudinary.com/di4phdven/image/upload/q_auto:best,f_auto,w_1200,c_fill,g_auto/v1768063570/IMG_1284_yy9onk.jpg",
+    src: "https://res.cloudinary.com/di4phdven/image/upload/q_auto:good,f_auto,w_1200,c_fill,g_auto/v1768063570/IMG_1284_yy9onk.jpg",
     alt: "Beautiful garden landscape and maintenance"
   },
   {
-    src: "https://res.cloudinary.com/di4phdven/image/upload/q_auto:best,f_auto,w_1200,c_fill,g_auto/v1768072387/IMG_3553__1_ztycn5.jpg",
+    src: "https://res.cloudinary.com/di4phdven/image/upload/q_auto:good,f_auto,w_1200,c_fill,g_auto/v1768072387/IMG_3553__1_ztycn5.jpg",
     alt: "Professional garden design and landscaping services"
   },
   {
-    src: "https://res.cloudinary.com/di4phdven/image/upload/q_auto:best,f_auto,w_1200,c_fill,g_auto/v1768063571/IMG_2733_fvvhjm.jpg",
+    src: "https://res.cloudinary.com/di4phdven/image/upload/q_auto:good,f_auto,w_1200,c_fill,g_auto/v1768063571/IMG_2733_fvvhjm.jpg",
     alt: "Sustainable garden design and groundskeeping"
   },
   {
-    src: "https://res.cloudinary.com/di4phdven/image/upload/q_auto:best,f_auto,w_1200,c_fill,g_auto/v1768072387/IMG_2255_ojecpp.jpg",
+    src: "https://res.cloudinary.com/di4phdven/image/upload/q_auto:good,f_auto,w_1200,c_fill,g_auto/v1768072387/IMG_2255_ojecpp.jpg",
     alt: "Expert garden transformation and landscape design"
   },
   {
-    src: "https://res.cloudinary.com/di4phdven/image/upload/q_auto:best,f_auto,w_1200,c_fill,g_auto/v1768063569/IMG_1996_romwvs.jpg",
+    src: "https://res.cloudinary.com/di4phdven/image/upload/q_auto:good,f_auto,w_1200,c_fill,g_auto/v1768063569/IMG_1996_romwvs.jpg",
     alt: "Expert garden design services in Atlanta area"
   },
   {
-    src: "https://res.cloudinary.com/di4phdven/image/upload/q_auto:best,f_auto,w_1200,c_fill,g_auto/v1768052393/Front_of_Sandra_s_fin0ck.jpg",
+    src: "https://res.cloudinary.com/di4phdven/image/upload/q_auto:good,f_auto,w_1200,c_fill,g_auto/v1768052393/Front_of_Sandra_s_fin0ck.jpg",
     alt: "Professional front garden landscape design"
   }
 ];
@@ -104,26 +104,40 @@ export default function HeroSection() {
             <div className="relative">
               {/* Main image container */}
               <div className="relative w-full aspect-[4/3] overflow-hidden shadow-xl">
-                {images.map((image, index) => (
-                  <div
-                    key={index}
-                    className={`absolute inset-0 transition-opacity duration-1000 ${
-                      index === currentSlide ? 'opacity-100' : 'opacity-0'
-                    }`}
-                  >
-                    <Image
-                      src={image.src}
-                      alt={image.alt}
-                      fill
-                      priority={index === 0}
-                      fetchPriority={index === 0 ? "high" : "auto"}
-                      loading={index === 0 ? "eager" : "lazy"}
-                      sizes="(max-width: 767px) 100vw, (max-width: 1024px) 100vw, 48vw"
-                      className="object-cover"
-                      quality={90}
-                    />
-                  </div>
-                ))}
+                {images.map((image, index) => {
+                  // Only mount the active slide and its immediate neighbours so we
+                  // don't download all 6 hero images at once (which starves the LCP
+                  // image of bandwidth). The crossfade still works because the
+                  // outgoing slide stays mounted as a neighbour.
+                  const total = images.length;
+                  const isNeighbour =
+                    index === currentSlide ||
+                    index === (currentSlide + 1) % total ||
+                    index === (currentSlide - 1 + total) % total;
+
+                  return (
+                    <div
+                      key={index}
+                      className={`absolute inset-0 transition-opacity duration-1000 ${
+                        index === currentSlide ? 'opacity-100' : 'opacity-0'
+                      }`}
+                    >
+                      {isNeighbour && (
+                        <Image
+                          src={image.src}
+                          alt={image.alt}
+                          fill
+                          priority={index === 0}
+                          fetchPriority={index === 0 ? "high" : "auto"}
+                          loading={index === 0 ? "eager" : "lazy"}
+                          sizes="(max-width: 767px) 100vw, (max-width: 1024px) 100vw, 48vw"
+                          className="object-cover"
+                          quality={75}
+                        />
+                      )}
+                    </div>
+                  );
+                })}
                 
                 {/* Elegant overlay gradient */}
                 <div className="absolute inset-0 bg-gradient-to-t from-charcoal/20 via-transparent to-transparent pointer-events-none"></div>

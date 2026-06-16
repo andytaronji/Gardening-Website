@@ -24,6 +24,6 @@ export const metadata = {
     images: ['https://res.cloudinary.com/di4phdven/image/upload/v1747170894/Quarterly_Cleanup_pwdlis.jpg'],
   },
   alternates: {
-    canonical: 'https://gardeningthyme.com/quarterly-cleanups',
+    canonical: 'https://www.gardeningthyme.com/quarterly-cleanups',
   },
 };

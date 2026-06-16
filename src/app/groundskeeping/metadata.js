@@ -24,6 +24,6 @@ export const metadata = {
     images: ['https://res.cloudinary.com/di4phdven/image/upload/v1746894191/Portfolio_Page_1_oskao9.jpg'],
   },
   alternates: {
-    canonical: 'https://gardeningthyme.com/groundskeeping',
+    canonical: 'https://www.gardeningthyme.com/groundskeeping',
   },
 };

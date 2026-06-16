@@ -44,13 +44,6 @@ export default function RootLayout({ children }) {
           rel="apple-touch-icon" 
           href="https://res.cloudinary.com/di4phdven/image/upload/q_auto:best,f_auto,w_192/v1747232934/Gardening_Thyme_LLC_Logo_hkdlsk.jpg" 
         />
-        {/* Preload first slideshow image for homepage LCP */}
-        <link 
-          rel="preload" 
-          as="image" 
-          href="https://res.cloudinary.com/di4phdven/image/upload/q_auto:best,f_auto,w_1200,c_fill,g_auto/v1768063570/IMG_1284_yy9onk.jpg"
-          fetchPriority="high"
-        />
         {/* Enhanced Schema Markup */}
         <script
           type="application/ld+json"

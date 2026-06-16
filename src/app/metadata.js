@@ -1,4 +1,5 @@
 export const metadata = {
+  metadataBase: new URL('https://www.gardeningthyme.com'),
   title: 'Premium Garden Design & Maintenance | Marietta GA',
   description: 'Expert garden design, groundskeeping, and seasonal cleanups for high-end properties in Marietta and Metro Atlanta. Specializing in pollinator gardens.',
   keywords: 'high-end garden design, estate landscaping, groundskeeping, garden maintenance, quarterly cleanups, vegetable garden design, pollinator gardens, Marietta, Alpharetta, Woodstock, Vinings, East Cobb, Atlanta',

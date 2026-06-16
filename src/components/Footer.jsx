@@ -23,15 +23,18 @@ export default function Footer() {
     { name: 'Contact', href: '/contact' }
   ];
 
+  // Cities with a dedicated garden-design landing page link to it; the rest
+  // remain plain labels. This de-orphans the location pages sitewide.
   const serviceAreas = [
-    'East Cobb',
-    'Marietta',
-    'Roswell',
-    'Alpharetta',
-    'Milton',
-    'Buckhead',
-    'Atlanta',
-    'Vinings'
+    { name: 'East Cobb' },
+    { name: 'Marietta', href: '/garden-design/marietta' },
+    { name: 'Roswell', href: '/garden-design/roswell' },
+    { name: 'Alpharetta', href: '/garden-design/alpharetta' },
+    { name: 'Sandy Springs', href: '/garden-design/sandy-springs' },
+    { name: 'Milton' },
+    { name: 'Buckhead' },
+    { name: 'Atlanta', href: '/garden-design/atlanta' },
+    { name: 'Vinings' }
   ];
 
   return (
@@ -161,12 +164,22 @@ export default function Footer() {
               <h5 className="text-sm font-semibold mb-3 text-sage">Service Areas</h5>
               <div className="flex flex-wrap gap-2">
                 {serviceAreas.map((area) => (
-                  <span 
-                    key={area}
-                    className="text-xs px-2 py-1 bg-sage/10 rounded text-cream/70 border border-sage/20"
-                  >
-                    {area}
-                  </span>
+                  area.href ? (
+                    <Link
+                      key={area.name}
+                      href={area.href}
+                      className="text-xs px-2 py-1 bg-sage/10 rounded text-cream/70 border border-sage/20 hover:bg-sage/20 hover:text-cream transition-all duration-300"
+                    >
+                      {area.name}
+                    </Link>
+                  ) : (
+                    <span
+                      key={area.name}
+                      className="text-xs px-2 py-1 bg-sage/10 rounded text-cream/70 border border-sage/20"
+                    >
+                      {area.name}
+                    </span>
+                  )
                 ))}
               </div>
             </div>
