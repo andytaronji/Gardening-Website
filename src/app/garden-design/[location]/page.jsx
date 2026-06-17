@@ -99,7 +99,7 @@ export default async function GardenDesignLocationPage({ params }) {
                 <Link
                   key={slug}
                   href={`/garden-design/${slug}`}
-                  className="px-5 py-2.5 bg-white rounded-full border border-sage/20 text-forest-green font-medium text-sm hover:bg-sage/10 hover:border-sage/40 transition-all duration-300"
+                  className="px-5 py-2.5 bg-white rounded-[4px] border border-sage/20 text-forest-green font-medium text-sm hover:bg-sage/10 hover:border-sage/40 transition-all duration-300"
                 >
                   Garden Design in {data.city}
                 </Link>

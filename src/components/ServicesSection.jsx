@@ -8,7 +8,7 @@ import { getPortfolioImage } from '../utils/imageUtils';
 
 export default function ServicesSection() {
   return (
-    <section className="py-16 bg-cream">
+    <section className="py-20 bg-paper">
       <div className="container mx-auto px-4">
         <LazyMotionDiv
           initial={{ opacity: 0, y: 20 }}
@@ -17,8 +17,9 @@ export default function ServicesSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl font-bold text-forest-green mb-4">Our Services in Marietta & the Metro Atlanta Area</h2>
-          <p className="text-lg text-forest-green max-w-2xl mx-auto">
+          <p className="eyebrow mb-4">What We Do</p>
+          <h2 className="text-4xl text-forest-green mb-4">Our Services in Marietta &amp; the Metro Atlanta Area</h2>
+          <p className="text-lg text-ink/75 max-w-2xl mx-auto">
             We offer comprehensive high-end gardening services throughout Marietta and Metro Atlanta, including Alpharetta, Woodstock, and Vinings to help you create and maintain your perfect outdoor space.
           </p>
         </LazyMotionDiv>
@@ -30,7 +31,7 @@ export default function ServicesSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="bg-white rounded-lg shadow-lg overflow-hidden"
+            className="card-flat overflow-hidden"
           >
             <div className="relative h-80 overflow-hidden group">
               <a 
@@ -60,7 +61,8 @@ export default function ServicesSection() {
               </p>
               <Link
                 href="/garden-design"
-                className="inline-block bg-charcoal text-cream px-6 py-2 rounded-full font-semibold hover:opacity-90 transition-all duration-300"
+                aria-label="Learn more about our high-end garden design services"
+                className="inline-block bg-forest text-cloud text-sm font-semibold px-6 py-2.5 rounded-[4px] hover:bg-moss transition-all duration-300"
               >
                 Learn More
               </Link>
@@ -73,7 +75,7 @@ export default function ServicesSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="bg-white rounded-lg shadow-lg overflow-hidden"
+            className="card-flat overflow-hidden"
           >
             <div className="relative h-80 overflow-hidden group">
               <a 
@@ -101,7 +103,8 @@ export default function ServicesSection() {
               </p>
               <Link
                 href="/groundskeeping"
-                className="inline-block bg-charcoal text-cream px-6 py-2 rounded-full font-semibold hover:opacity-90 transition-all duration-300"
+                aria-label="Learn more about our estate groundskeeping services"
+                className="inline-block bg-forest text-cloud text-sm font-semibold px-6 py-2.5 rounded-[4px] hover:bg-moss transition-all duration-300"
               >
                 Learn More
               </Link>
@@ -114,7 +117,7 @@ export default function ServicesSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="bg-white rounded-lg shadow-lg overflow-hidden"
+            className="card-flat overflow-hidden"
           >
             <div className="relative h-80 overflow-hidden group">
               <a 
@@ -142,7 +145,8 @@ export default function ServicesSection() {
               </p>
               <Link
                 href="/quarterly-cleanups"
-                className="inline-block bg-charcoal text-cream px-6 py-2 rounded-full font-semibold hover:opacity-90 transition-all duration-300"
+                aria-label="Learn more about our seasonal garden cleanup services"
+                className="inline-block bg-forest text-cloud text-sm font-semibold px-6 py-2.5 rounded-[4px] hover:bg-moss transition-all duration-300"
               >
                 Learn More
               </Link>

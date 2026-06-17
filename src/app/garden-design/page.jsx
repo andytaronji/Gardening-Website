@@ -32,7 +32,7 @@ export default function GardenDesignPage() {
                 <Link
                   key={slug}
                   href={`/garden-design/${slug}`}
-                  className="group block bg-white rounded-2xl border border-sage/15 p-6 shadow-sm hover:shadow-lg hover:border-sage/40 transition-all duration-300"
+                  className="group block bg-cloud rounded-[6px] border border-mist p-6 hover:border-moss/40 transition-all duration-300"
                 >
                   <h3 className="text-xl font-semibold text-charcoal mb-2 group-hover:text-forest-green transition-colors">
                     Garden Design in {data.city}

@@ -24,13 +24,16 @@ export default function ContactClient() {
   const [recaptchaLoaded, setRecaptchaLoaded] = useState(false);
 
   const serviceTypes = [
-    { value: '', label: 'Select a service (optional)' },
+    { value: '', label: 'Select a service' },
     { value: 'garden-design', label: 'Garden Design' },
     { value: 'groundskeeping', label: 'Groundskeeping' },
     { value: 'quarterly-cleanups', label: 'Quarterly Cleanups' },
-    { value: 'consultation', label: 'Consultation' },
-    { value: 'other', label: 'Other' }
+    { value: 'property-enhancement', label: 'Property Enhancement' },
+    { value: 'vegetable-garden', label: 'Vegetable Garden' },
+    { value: 'permaculture-lawns', label: 'Permaculture Lawns' }
   ];
+
+  const serviceAreas = ['East Cobb', 'Marietta', 'Roswell', 'Alpharetta', 'Sandy Springs', 'Milton', 'Buckhead', 'Atlanta', 'Vinings'];
 
   // Load reCAPTCHA v3 script
   useEffect(() => {
@@ -160,45 +163,106 @@ export default function ContactClient() {
     }
   };
 
-  return (
-    <div className="min-h-screen bg-cream">
-      <div className="container mx-auto px-4 py-16 max-w-3xl">
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <h1 className="text-4xl font-medium text-forest-green mb-4">Contact Gardening Thyme</h1>
-          <p className="text-lg text-forest-green/80 max-w-2xl mx-auto leading-relaxed">
-            Whether you're dreaming of a vibrant garden or need expert maintenance, we're here to help your outdoor space thrive.
-          </p>
-        </motion.div>
+  // Shared field styles — Hanken 15px, mist border, 4px radius, moss focus ring.
+  const fieldBase =
+    'w-full font-sans text-[15px] text-ink bg-cloud border border-mist rounded-[4px] px-[14px] py-[13px] outline-none transition-[border-color,box-shadow] duration-150 placeholder:text-[#9b988b] focus:border-moss focus:shadow-[0_0_0_3px_rgba(90,110,76,0.12)] disabled:opacity-70';
+  const labelText =
+    'font-sans text-[11px] font-semibold tracking-[0.12em] uppercase text-moss';
 
-        <motion.div
+  return (
+    <div className="min-h-screen bg-paper">
+      {/* ============ HERO ============ */}
+      <motion.header
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="max-w-[760px] mx-auto px-8 pt-20 pb-14 text-center"
+      >
+        <p className="eyebrow mb-[22px]">Get In Touch</p>
+        <h1 className="font-serif font-medium text-ink text-[2.5rem] md:text-[3.75rem] leading-[1.02] tracking-[-0.015em]">
+          Let&apos;s design your <span className="italic">garden</span>.
+        </h1>
+        <p className="font-sans font-light text-[17px] leading-[1.75] text-[#3a3c33] max-w-[520px] mx-auto mt-[26px]">
+          Whether you&apos;re dreaming of a vibrant garden or need expert maintenance, we&apos;re here to help your outdoor space thrive.
+        </p>
+      </motion.header>
+
+      {/* ============ CONTACT SPLIT ============ */}
+      <main className="max-w-[1100px] mx-auto px-8 pb-24 grid grid-cols-1 md:grid-cols-[0.82fr_1.18fr] gap-6 items-stretch">
+
+        {/* Info panel — Forest anchor surface */}
+        <motion.aside
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="bg-white rounded-2xl shadow-sm p-8 md:p-12"
+          className="bg-forest text-cloud rounded-[6px] p-[42px] md:p-12 flex flex-col justify-between gap-10"
         >
+          <div>
+            <div className="font-serif text-[30px] leading-[1.08] text-cloud">Reach out anytime.</div>
+            <p className="font-sans font-light text-[14px] leading-[1.7] text-[#AEBCA0] mt-4">
+              We typically respond within one business day. Prefer to talk it through? Give us a call.
+            </p>
+          </div>
+
+          <div className="flex flex-col gap-[26px]">
+            <div>
+              <div className="font-sans text-[10.5px] font-semibold tracking-[0.2em] uppercase text-[#AEBCA0] mb-[9px]">Email</div>
+              <a href="mailto:services@gardeningthyme.com" className="text-[15.5px] text-cloud hover:text-sage-tint transition-colors">services@gardeningthyme.com</a>
+            </div>
+            <div>
+              <div className="font-sans text-[10.5px] font-semibold tracking-[0.2em] uppercase text-[#AEBCA0] mb-[9px]">Phone</div>
+              <a href="tel:+14048617744" className="text-[15.5px] text-cloud hover:text-sage-tint transition-colors">(404) 861-7744</a>
+            </div>
+            <div>
+              <div className="font-sans text-[10.5px] font-semibold tracking-[0.2em] uppercase text-[#AEBCA0] mb-[9px]">Hours</div>
+              <div className="text-[15.5px] text-cloud">Mon &ndash; Fri &middot; 9am &ndash; 5pm</div>
+            </div>
+          </div>
+
+          <div>
+            <div className="font-sans text-[10.5px] font-semibold tracking-[0.2em] uppercase text-[#AEBCA0] mb-[14px]">Service Areas</div>
+            <div className="flex flex-wrap gap-2">
+              {serviceAreas.map((area) => (
+                <span key={area} className="text-[12.5px] text-cloud px-[13px] py-[7px] rounded-full border border-[rgba(174,188,160,0.45)]">
+                  {area}
+                </span>
+              ))}
+            </div>
+          </div>
+        </motion.aside>
+
+        {/* Form card — Cloud surface, no shadow */}
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="bg-cloud border border-mist rounded-[6px] p-[42px] md:p-12"
+        >
+          <p className="font-sans text-[11px] font-semibold tracking-[0.2em] uppercase text-moss mb-2">Send a message</p>
+          <h2 className="font-serif font-medium text-[30px] leading-[1.05] tracking-[-0.01em] text-ink mb-[18px]">
+            Tell us about your project
+          </h2>
+
           {status.showStatus && status.message && (
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
-              className={`mb-8 px-4 py-3 rounded-lg text-sm font-medium ${
-                status.isError 
-                  ? 'bg-red-50 text-red-800 border border-red-100' 
-                  : 'bg-cream text-charcoal border border-sage'
+              role="status"
+              aria-live="polite"
+              className={`mb-6 px-4 py-3 rounded-[4px] text-sm font-medium ${
+                status.isError
+                  ? 'bg-red-50 text-red-800 border border-red-100'
+                  : 'bg-sage-tint text-forest border border-[#A9B596]'
               }`}
             >
               {status.message}
             </motion.div>
           )}
 
-          <form onSubmit={handleSubmit} className="space-y-8">
+          <form onSubmit={handleSubmit} className="grid grid-cols-1 sm:grid-cols-2 gap-[22px]">
             {/* Honeypot field */}
-            <div 
-              style={{ position: 'absolute', left: '-9999px', opacity: 0, pointerEvents: 'none' }} 
+            <div
+              style={{ position: 'absolute', left: '-9999px', opacity: 0, pointerEvents: 'none' }}
               aria-hidden="true"
               suppressHydrationWarning
             >
@@ -214,132 +278,89 @@ export default function ContactClient() {
               />
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }} className="relative">
-                <input 
-                  type="text" id="name" name="name" value={formData.name} onChange={handleChange}
-                  className="peer w-full px-4 pt-8 pb-3 text-base border-b border-forest-green/40 bg-transparent focus:outline-none focus:border-forest-green transition-colors placeholder-transparent text-forest-green"
-                  placeholder="Name" required disabled={isSubmitting}
-                />
-                <label htmlFor="name" className="absolute top-2 left-4 text-xs text-forest-green/70 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-6 peer-focus:top-2 peer-focus:text-xs">
-                  Name
-                </label>
-              </motion.div>
-              
-              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }} className="relative">
-                <input 
-                  type="email" id="email" name="email" value={formData.email} onChange={handleChange}
-                  className="peer w-full px-4 pt-8 pb-3 text-base border-b border-forest-green/40 bg-transparent focus:outline-none focus:border-forest-green transition-colors placeholder-transparent text-forest-green"
-                  placeholder="Email" required disabled={isSubmitting}
-                />
-                <label htmlFor="email" className="absolute top-2 left-4 text-xs text-forest-green/70 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-6 peer-focus:top-2 peer-focus:text-xs">
-                  Email
-                </label>
-              </motion.div>
-            </div>
+            <label className="flex flex-col gap-2">
+              <span className={labelText}>Name</span>
+              <input
+                type="text" id="name" name="name" value={formData.name} onChange={handleChange}
+                className={fieldBase} placeholder="Jane Appleseed" required disabled={isSubmitting}
+              />
+            </label>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.35 }} className="relative">
-                <input 
-                  type="tel" id="phone" name="phone" value={formData.phone} onChange={handleChange}
-                  className="peer w-full px-4 pt-8 pb-3 text-base border-b border-forest-green/40 bg-transparent focus:outline-none focus:border-forest-green transition-colors placeholder-transparent text-forest-green"
-                  placeholder="Phone (optional)" disabled={isSubmitting}
-                />
-                <label htmlFor="phone" className="absolute top-2 left-4 text-xs text-forest-green/70 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-6 peer-focus:top-2 peer-focus:text-xs">
-                  Phone (optional)
-                </label>
-              </motion.div>
-              
-              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4 }} className="relative">
+            <label className="flex flex-col gap-2">
+              <span className={labelText}>Email</span>
+              <input
+                type="email" id="email" name="email" value={formData.email} onChange={handleChange}
+                className={fieldBase} placeholder="jane@email.com" required disabled={isSubmitting}
+              />
+            </label>
+
+            <label className="flex flex-col gap-2">
+              <span className={labelText}>Phone <span className="text-[#9b988b] font-medium tracking-normal">&middot; optional</span></span>
+              <input
+                type="tel" id="phone" name="phone" value={formData.phone} onChange={handleChange}
+                className={fieldBase} placeholder="(404) 000-0000" disabled={isSubmitting}
+              />
+            </label>
+
+            <label className="flex flex-col gap-2">
+              <span className={labelText}>Service Type <span className="text-[#9b988b] font-medium tracking-normal">&middot; optional</span></span>
+              <div className="relative">
                 <select
                   id="serviceType" name="serviceType" value={formData.serviceType} onChange={handleChange}
-                  className="peer w-full px-4 pt-8 pb-3 text-base border-b border-forest-green/40 bg-transparent focus:outline-none focus:border-forest-green transition-colors appearance-none text-forest-green"
+                  className={`${fieldBase} appearance-none pr-10 cursor-pointer`}
                   disabled={isSubmitting}
                 >
                   {serviceTypes.map((service) => (
                     <option key={service.value} value={service.value}>{service.label}</option>
                   ))}
                 </select>
-                <label htmlFor="serviceType" className="absolute top-2 left-4 text-xs text-forest-green/70">
-                  Service Type
-                </label>
-                <div className="absolute right-4 top-1/2 transform -translate-y-1/2 pointer-events-none">
-                  <svg className="w-5 h-5 text-forest-green/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
-                  </svg>
-                </div>
-              </motion.div>
-            </div>
-            
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.45 }} className="relative">
-              <input 
-                type="text" id="subject" name="subject" value={formData.subject} onChange={handleChange}
-                className="peer w-full px-4 pt-8 pb-3 text-base border-b border-forest-green/40 bg-transparent focus:outline-none focus:border-forest-green transition-colors placeholder-transparent text-forest-green"
-                placeholder="Subject" required disabled={isSubmitting}
-              />
-              <label htmlFor="subject" className="absolute top-2 left-4 text-xs text-forest-green/70 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-6 peer-focus:top-2 peer-focus:text-xs">
-                Subject
-              </label>
-            </motion.div>
-            
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }} className="relative">
-              <textarea 
-                id="message" name="message" value={formData.message} onChange={handleChange}
-                rows="4"
-                className="peer w-full px-4 pt-8 pb-3 text-base border-b border-forest-green/40 bg-transparent focus:outline-none focus:border-forest-green transition-colors placeholder-transparent resize-none text-forest-green"
-                placeholder="Message" required disabled={isSubmitting}
-              ></textarea>
-              <label htmlFor="message" className="absolute top-2 left-4 text-xs text-forest-green/70 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-6 peer-focus:top-2 peer-focus:text-xs">
-                Message
-              </label>
-            </motion.div>
-            
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }} className="pt-4">
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="w-full bg-charcoal text-cream font-medium py-3 px-8 rounded-full hover:opacity-90 transition-all duration-300 text-base disabled:opacity-70 disabled:cursor-not-allowed"
-              >
-                {isSubmitting ? 'Sending...' : 'Send Message'}
-              </button>
-              
-              <p className="text-xs text-forest-green/60 text-center mt-4">
-                This site is protected by reCAPTCHA and the Google{' '}
-                <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-sage hover:underline">
-                  Privacy Policy
-                </a>{' '}
-                and{' '}
-                <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer" className="text-sage hover:underline">
-                  Terms of Service
-                </a>{' '}
-                apply.
-              </p>
-            </motion.div>
-          </form>
-        </motion.div>
+                <svg className="w-3 h-3 text-moss absolute right-[14px] top-1/2 -translate-y-1/2 pointer-events-none" viewBox="0 0 12 12" fill="none">
+                  <path d="M2 4l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </div>
+            </label>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-12 text-center"
-        >
-          <div className="space-y-2 text-forest-green/70">
-            <p className="text-sm">
-              <a href="mailto:services@gardeningthyme.com" className="hover:text-sage transition-colors">
-                services@gardeningthyme.com
-              </a>
+            <label className="flex flex-col gap-2 sm:col-span-2">
+              <span className={labelText}>Subject</span>
+              <input
+                type="text" id="subject" name="subject" value={formData.subject} onChange={handleChange}
+                className={fieldBase} placeholder="What can we help with?" required disabled={isSubmitting}
+              />
+            </label>
+
+            <label className="flex flex-col gap-2 sm:col-span-2">
+              <span className={labelText}>Message</span>
+              <textarea
+                id="message" name="message" value={formData.message} onChange={handleChange}
+                rows="5"
+                className={`${fieldBase} leading-[1.6] resize-y`}
+                placeholder="Tell us about your space, your goals, and your timeline&hellip;"
+                required disabled={isSubmitting}
+              ></textarea>
+            </label>
+
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="sm:col-span-2 mt-1 font-sans text-[14px] font-semibold tracking-[0.02em] text-cloud bg-forest border-0 rounded-[4px] px-6 py-[17px] transition-colors duration-150 hover:bg-[#243523] disabled:opacity-70 disabled:cursor-not-allowed"
+            >
+              {isSubmitting ? 'Sending…' : 'Send Message'}
+            </button>
+
+            <p className="sm:col-span-2 font-sans text-[12px] leading-[1.6] text-[#9b988b] text-center mt-1.5">
+              This site is protected by reCAPTCHA and the Google{' '}
+              <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-moss underline">
+                Privacy Policy
+              </a>{' '}
+              and{' '}
+              <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer" className="text-moss underline">
+                Terms of Service
+              </a>{' '}
+              apply.
             </p>
-            <p className="text-sm">
-              <a href="tel:+14048617744" className="hover:text-sage transition-colors">
-                404-861-7744
-              </a>
-            </p>
-            <p className="text-sm">Marietta, Roswell, Alpharetta, Woodstock, Smyrna / Vinings</p>
-            <p className="text-sm">Mon - Fri: 9am - 5pm</p>
-          </div>
-        </motion.div>
-      </div>
+          </form>
+        </motion.section>
+      </main>
     </div>
   );
 }

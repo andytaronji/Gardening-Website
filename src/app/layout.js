@@ -1,32 +1,27 @@
 import './globals.css';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
-import Preload from '../components/Preload';
 import OptimizedAnalytics from '../components/OptimizedAnalytics';
 import CookieConsent from '../components/CookieConsent';
 import { Analytics } from "@vercel/analytics/next";
-import { Raleway, Playfair_Display, Parisienne } from 'next/font/google';
+import { Bodoni_Moda, Hanken_Grotesk } from 'next/font/google';
 import { metadata as siteMetadata } from './metadata';
 import { localBusinessSchema, organizationSchema, websiteSchema } from './schema';
 
-// Optimize fonts with next/font
-const raleway = Raleway({
+// Optimize fonts with next/font — Brand Identity System v1.0
+// Bodoni Moda = display/headings (high-contrast Didone, editorial & premium).
+// Hanken Grotesk = body/interface (clean, legible grotesque).
+const bodoni = Bodoni_Moda({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-raleway',
+  style: ['normal', 'italic'],
+  variable: '--font-bodoni',
 });
 
-const playfair = Playfair_Display({
+const hanken = Hanken_Grotesk({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-playfair',
-});
-
-const parisienne = Parisienne({
-  weight: '400',
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-parisienne',
+  variable: '--font-hanken',
 });
 
 export const metadata = siteMetadata;
@@ -66,7 +61,7 @@ export default function RootLayout({ children }) {
         {/* Google Ads gtag (AW-17486011088) + GTM are loaded once, non-blocking,
             in <OptimizedAnalytics />. Don't re-add the tag here — it double-loads. */}
       </head>
-      <body className={`${raleway.variable} ${playfair.variable} ${parisienne.variable}`}>
+      <body className={`${bodoni.variable} ${hanken.variable}`}>
         {/* Google Tag Manager (noscript) */}
         <noscript
           dangerouslySetInnerHTML={{
@@ -76,7 +71,6 @@ export default function RootLayout({ children }) {
             `
           }}
         />
-        <Preload />
         <Navigation />
         <main>{children}</main>
         <Footer />

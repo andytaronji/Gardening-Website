@@ -41,7 +41,7 @@ export default function Navigation() {
                 priority={false}
               />
             </div>
-            <span className="font-['Parisienne'] text-2xl text-cream hover:opacity-80 transition-all duration-300">
+            <span className="brand-wordmark text-2xl text-cream hover:opacity-80 transition-all duration-300">
               Gardening Thyme
             </span>
           </Link>
@@ -106,7 +106,7 @@ export default function Navigation() {
               
               {/* Dropdown Menu */}
               <div className="absolute top-full left-0 mt-2 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2">
-                <div className="bg-cream rounded-xl shadow-2xl overflow-hidden border border-sage/20">
+                <div className="bg-cloud rounded-[4px] shadow-lg overflow-hidden border border-mist">
                   <div className="py-2">
                     {services.map((service, index) => (
                       <Link 
@@ -170,9 +170,9 @@ export default function Navigation() {
             </Link>
 
             {/* Contact Button */}
-            <Link 
-              href="/contact" 
-              className="ml-4 px-6 py-2.5 bg-charcoal text-cream rounded-full font-semibold text-sm tracking-wide transition-all duration-300 hover:opacity-90 hover:shadow-lg hover:scale-105"
+            <Link
+              href="/contact"
+              className="ml-4 px-6 py-2.5 bg-forest text-cloud rounded-[4px] font-semibold text-sm tracking-wide transition-all duration-300 hover:bg-moss"
             >
               Contact
             </Link>
@@ -280,9 +280,9 @@ export default function Navigation() {
             </Link>
 
             <div className="px-6 pt-4 pb-2">
-              <Link 
-                href="/contact" 
-                className="block w-full py-3 px-6 bg-charcoal text-cream text-center rounded-full font-semibold transition-all duration-300 hover:opacity-90 hover:shadow-lg"
+              <Link
+                href="/contact"
+                className="block w-full py-3 px-6 bg-forest text-cloud text-center rounded-[4px] font-semibold transition-all duration-300 hover:bg-moss"
                 onClick={() => setIsOpen(false)}
               >
                 Contact Us

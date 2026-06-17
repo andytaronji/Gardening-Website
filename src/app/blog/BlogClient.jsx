@@ -49,7 +49,7 @@ export default function BlogClient() {
         >
           <Link
             href="/contact"
-            className="inline-block bg-charcoal text-cream font-semibold px-8 py-4 rounded-full hover:opacity-90 transition-all duration-300"
+            className="inline-block bg-forest text-cloud font-semibold px-8 py-4 rounded-[4px] hover:bg-moss transition-all duration-300"
           >
             Reach out today to learn about our Gardening Lessons!
           </Link>

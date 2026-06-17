@@ -26,7 +26,7 @@ export default function QuarterlyCleanupClient() {
             initial={{ y: -30 }}
             animate={{ y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-lg"
+            className="relative aspect-[4/3] rounded-[4px] overflow-hidden border border-mist"
           >
             <Image
               src="https://res.cloudinary.com/di4phdven/image/upload/q_auto:eco,f_auto,w_1200/v1747170894/Quarterly_Cleanup_pwdlis.jpg"
@@ -92,7 +92,7 @@ export default function QuarterlyCleanupClient() {
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="bg-white rounded-2xl p-8 md:p-12 mb-20 shadow-sm"
+          className="bg-cloud rounded-[6px] p-8 md:p-12 mb-20 border border-mist"
         >
           <h2 className="text-3xl font-serif text-charcoal mb-8 text-center">Seasonal Services</h2>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -161,7 +161,7 @@ export default function QuarterlyCleanupClient() {
           transition={{ duration: 0.6, delay: 0.8 }}
           className="max-w-4xl mx-auto"
         >
-          <div className="bg-charcoal p-8 rounded-2xl shadow-md text-center">
+          <div className="bg-forest p-8 rounded-[6px] text-center">
             <h2 className="text-3xl font-semibold text-cream mb-4">Ready to Schedule Your Cleanup?</h2>
             <p className="text-lg text-cream/80 mb-6 max-w-3xl mx-auto">
               Contact us to schedule your seasonal garden cleanup and keep your property looking its best year-round.
@@ -169,7 +169,7 @@ export default function QuarterlyCleanupClient() {
             <div className="flex justify-center">
               <Link
                 href="/contact"
-                className="bg-cream text-charcoal font-semibold py-3 px-8 rounded-full hover:opacity-90 transition-all duration-300 hover:shadow-lg"
+                className="bg-cloud text-forest font-semibold py-3 px-8 rounded-[4px] hover:bg-sage-tint transition-all duration-300"
               >
                 Schedule a Consultation
               </Link>

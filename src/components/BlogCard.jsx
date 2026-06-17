@@ -15,7 +15,7 @@ export default function BlogCard({ post, priority = false }) {
   return (
     <Link href={`/blog/${post.slug}`} className="block">
       <LazyMotionDiv 
-        className="bg-white rounded-xl shadow-sm overflow-hidden transform transition duration-300 hover:shadow-lg hover:-translate-y-1 cursor-pointer border border-sage/10"
+        className="bg-cloud rounded-[6px] overflow-hidden transition duration-300 hover:-translate-y-1 cursor-pointer border border-mist"
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
       >

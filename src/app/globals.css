@@ -2,65 +2,204 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Color Palette for Gardening Thyme - Exact Implementation */
+/* ============================================================
+   Gardening Thyme — Visual Identity System v1.0
+   Quiet luxury, grown in Georgia soil.
+   Two greens, five neutrals. Low chroma, high contrast.
+   ============================================================ */
 :root {
-  /* Exact colors from the palette image */
-  --charcoal: #252827;        /* H2, H3, and Body Text */
-  --sage: #909c98;            /* Navbar and Accents */
-  --forest-green: #314528;    /* H1 Text Color */
-  --cream: #efebe2;           /* BG Color */
+  /* greens */
+  --gt-forest: #2C3F2E;   /* primary, nav, footer, CTA */
+  --gt-moss:   #5A6E4C;   /* eyebrows, links, hover */
+  --gt-sage:   #D7DDC9;   /* tints, chips, image mats */
+  /* neutrals */
+  --gt-ink:    #1C1D18;   /* body text */
+  --gt-stone:  #7C7A6E;   /* captions, muted */
+  --gt-mist:   #E3DFD5;   /* borders */
+  --gt-paper:  #EDEAE2;   /* page canvas */
+  --gt-cloud:  #FCFBF7;   /* cards, surfaces */
+  /* type */
+  --gt-display: var(--font-bodoni), Georgia, serif;
+  --gt-sans:    var(--font-hanken), system-ui, sans-serif;
+  --gt-radius:  4px;
+  --gt-eyebrow: .22em;    /* tracking */
+
+  /* Legacy variable names kept as aliases (referenced by older CSS) */
+  --charcoal: var(--gt-ink);
+  --sage: #9BA98C;
+  --forest-green: var(--gt-forest);
+  --cream: var(--gt-paper);
 }
 
-/* Site-Wide Background */
+/* Site-Wide Background — paper canvas, ink body, Hanken Grotesk */
 body {
-  background-color: var(--cream);
-  color: var(--forest-green);
-  font-family: var(--font-raleway), sans-serif;
+  background-color: var(--gt-paper);
+  color: var(--gt-ink);
+  font-family: var(--gt-sans);
   line-height: 1.7;
-  letter-spacing: 0.01em;
+  letter-spacing: 0;
 }
 
-/* Component-Specific Overrides */
+/* Editorial headings — Bodoni Moda, tight leading, slight negative tracking.
+   Applied at the element level so every heading picks up the display voice,
+   even where a `font-serif` class isn't set. */
+h1, h2, h3 {
+  font-family: var(--gt-display);
+  font-weight: 500;
+  letter-spacing: -.01em;
+  line-height: 1.08;
+}
+
+/* ============================================================
+   Component utilities
+   ============================================================ */
+@layer components {
+  /* Eyebrow — uppercase, wide tracking, moss. Pairs above a Bodoni headline. */
+  .eyebrow {
+    font-family: var(--gt-sans);
+    font-size: 0.75rem;       /* 12px */
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: var(--gt-eyebrow);
+    text-transform: uppercase;
+    color: var(--gt-moss);
+  }
+
+  /* Primary button — filled forest. 4px radius, no pill, no drop shadow. */
+  .btn-primary {
+    display: inline-block;
+    font-family: var(--gt-sans);
+    font-weight: 600;
+    font-size: 0.875rem;      /* 14px */
+    letter-spacing: .01em;
+    background-color: var(--gt-forest);
+    color: var(--gt-cloud);
+    border: 1px solid var(--gt-forest);
+    border-radius: var(--gt-radius);
+    padding: 14px 26px;
+    transition: background-color .25s ease, color .25s ease;
+  }
+  .btn-primary:hover { background-color: #233322; }
+
+  /* Ghost button — outline, forest text. The quieter, secondary action. */
+  .btn-ghost {
+    display: inline-block;
+    font-family: var(--gt-sans);
+    font-weight: 600;
+    font-size: 0.875rem;
+    letter-spacing: .01em;
+    background-color: transparent;
+    color: var(--gt-forest);
+    border: 1px solid var(--gt-forest);
+    border-radius: var(--gt-radius);
+    padding: 14px 26px;
+    transition: background-color .25s ease, color .25s ease;
+  }
+  .btn-ghost:hover { background-color: var(--gt-sage); color: var(--gt-forest); }
+
+  /* Brand wordmark — Bodoni, the architectural signature voice. */
+  .brand-wordmark {
+    font-family: var(--gt-display);
+    font-weight: 500;
+    letter-spacing: .01em;
+  }
+
+  /* Flat card — cloud surface, 1px mist hairline, no drop shadow. */
+  .card-flat {
+    background-color: var(--gt-cloud);
+    border: 1px solid var(--gt-mist);
+    border-radius: var(--gt-radius);
+  }
+}
+
+/* ============================================================
+   Surfaces
+   ============================================================ */
+/* Top navigation — ink bar */
 .navigation {
-  background-color: var(--charcoal);
-  color: var(--cream);
+  background-color: var(--gt-ink);
+  color: var(--gt-cloud);
 }
 
 .hero-section {
-  background-color: var(--cream);
+  background-color: var(--gt-paper);
 }
 
+/* Footer — anchor surface, forest green. Hairline top keeps it distinct when
+   it follows another forest band (e.g. the CTA) instead of merging into one. */
 .footer {
-  background-color: var(--charcoal);
-  color: var(--cream);
+  background-color: var(--gt-forest);
+  color: var(--gt-cloud);
+  border-top: 1px solid rgba(215, 221, 201, 0.18); /* sage-tint @ 18% */
 }
 
-/* Custom Scrollbar - Using Palette Colors */
+/* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 12px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--cream);
+  background: var(--gt-paper);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--sage);
+  background: var(--gt-moss);
   border-radius: 6px;
-  border: 2px solid var(--cream);
+  border: 2px solid var(--gt-paper);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--forest-green);
+  background: var(--gt-forest);
 }
 
-/* Selection Styling - Using Palette Colors */
+/* Selection Styling */
 ::selection {
-  background: var(--sage);
-  color: var(--cream);
+  background: var(--gt-sage);
+  color: var(--gt-forest);
 }
 
 ::-moz-selection {
-  background: var(--sage);
-  color: var(--cream);
+  background: var(--gt-sage);
+  color: var(--gt-forest);
+}
+
+/* ============================================================
+   Portfolio lightbox — shared-element FLIP + caption reveal.
+   Everything here is used ONLY by the portfolio lightbox, which
+   mounts on click. None of it runs on initial page load, so it
+   adds no LCP/CLS cost. Keyframes namespaced gt* to avoid clashes.
+   ============================================================ */
+@keyframes gtFade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes gtRise { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
+@keyframes gtKen  { from { transform: scale(1.14); } to { transform: scale(1.02); } }
+@keyframes gtLine { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+/* Backdrop: cheap solid scrim on phones, blurred forest glass on ≥768px. */
+.gt-backdrop { background: rgba(15, 17, 11, 0.92); }
+@media (min-width: 768px) {
+  .gt-backdrop {
+    background: rgba(15, 17, 11, 0.66);
+    -webkit-backdrop-filter: blur(12px) saturate(1.05);
+    backdrop-filter: blur(12px) saturate(1.05);
+  }
+}
+
+/* Caption panel: slides up from below on phones, fades in on ≥768px.
+   While hidden it keeps its layout box (visibility/opacity, not display)
+   so the flying image's "to" rect stays the correct 58%/62%. */
+.gt-panel { transition: transform 0.48s cubic-bezier(.16, 1, .3, 1), opacity 0.45s ease; }
+.gt-panel[data-show="false"] { opacity: 0; visibility: hidden; transform: translateY(100%); }
+.gt-panel[data-show="true"]  { opacity: 1; visibility: visible; transform: translateY(0); }
+@media (min-width: 768px) {
+  /* Side-by-side plate: never slide horizontally — fade only. */
+  .gt-panel[data-show="false"] { transform: none; }
+  .gt-panel[data-show="true"]  { transform: none; }
+}
+
+/* Respect reduced-motion: no ken-burns drift, no rise/line stagger, no slide.
+   The JS also skips the FLIP and crossfades instead. */
+@media (prefers-reduced-motion: reduce) {
+  .gt-ken { animation: none !important; transform: none !important; }
+  .gt-rise, .gt-line { animation: none !important; opacity: 1 !important; transform: none !important; }
+  .gt-panel { transition: none !important; }
 }

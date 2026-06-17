@@ -24,7 +24,7 @@ const nextConfig = {
   images: {
     domains: ['localhost', 'vercel.app', 'gardeningthyme.com', 'res.cloudinary.com'],
     formats: ['image/avif', 'image/webp'],
-    qualities: [60, 70, 75, 80, 85, 90],
+    qualities: [60, 70, 72, 75, 80, 85, 90],
     unoptimized: process.env.NODE_ENV === 'development',
     // Allow images from any domain in production for Vercel deployment
     remotePatterns: [

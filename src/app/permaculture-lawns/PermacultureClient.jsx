@@ -144,7 +144,7 @@ export default function PermacultureClient() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="bg-white rounded-xl shadow-sm p-8 border border-sage/10"
+                className="bg-cloud rounded-[6px] p-8 border border-mist"
               >
                 <h3 className="text-2xl font-bold text-charcoal mb-6">No-Mow Lawn</h3>
                 <ul className="space-y-3 text-forest-green">
@@ -189,7 +189,7 @@ export default function PermacultureClient() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className="bg-white rounded-xl shadow-sm p-8 border border-sage/10"
+                className="bg-cloud rounded-[6px] p-8 border border-mist"
               >
                 <h3 className="text-2xl font-bold text-charcoal mb-4">Garden Beds</h3>
                 <p className="text-sm text-forest-green/70 mb-6">For Weed Suppression – Mulch Alternative</p>
@@ -256,7 +256,7 @@ export default function PermacultureClient() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.6 }}
-                className="bg-white rounded-xl shadow-sm p-8 border border-sage/10"
+                className="bg-cloud rounded-[6px] p-8 border border-mist"
               >
                 <h3 className="text-2xl font-bold text-charcoal mb-6">Vegetable Garden</h3>
                 <ul className="space-y-3 text-forest-green">
@@ -313,7 +313,7 @@ export default function PermacultureClient() {
             transition={{ duration: 0.6 }}
             className="max-w-4xl mx-auto"
           >
-            <div className="bg-charcoal p-8 rounded-2xl shadow-md text-center">
+            <div className="bg-forest p-8 rounded-[6px] text-center">
               <h2 className="text-3xl font-semibold text-cream mb-4">
                 Choose Gardening Thyme for Your Ground Cover Installation!
               </h2>
@@ -323,7 +323,7 @@ export default function PermacultureClient() {
               <div className="flex justify-center">
                 <Link
                   href="/contact"
-                  className="bg-cream text-charcoal font-semibold py-3 px-8 rounded-full hover:opacity-90 transition-all duration-300 hover:shadow-lg"
+                  className="bg-cloud text-forest font-semibold py-3 px-8 rounded-[4px] hover:bg-sage-tint transition-all duration-300"
                 >
                   Get Started Today
                 </Link>

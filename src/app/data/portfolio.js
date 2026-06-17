@@ -4,7 +4,7 @@ export const portfolioItems = [
     title: "Beautiful Peony Bloom",
     category: "Seasonal Gardening",
     description: "A stunning peony bloom showcasing the beauty and elegance that seasonal flowering plants bring to a well-maintained garden.",
-    image: "https://res.cloudinary.com/di4phdven/image/upload/v1780844456/IMG_2848_fdkhgh.jpg",
+    image: "https://res.cloudinary.com/di4phdven/image/upload/f_auto,q_auto,w_1200/v1780844456/IMG_2848_fdkhgh.jpg",
     location: "Georgia"
   },
   {
@@ -12,7 +12,7 @@ export const portfolioItems = [
     title: "Petunias and Calibrachoa",
     category: "Garden Maintenance",
     description: "A vibrant display of petunias and calibrachoa, expertly planted and maintained for a season-long burst of color.",
-    image: "https://res.cloudinary.com/di4phdven/image/upload/v1780844457/IMG_2873_pqrltd.jpg",
+    image: "https://res.cloudinary.com/di4phdven/image/upload/f_auto,q_auto,w_1200/v1780844457/IMG_2873_pqrltd.jpg",
     location: "Georgia"
   },
   {
@@ -20,7 +20,7 @@ export const portfolioItems = [
     title: "Seasonal Garden Bed Cleanup",
     category: "Garden Maintenance",
     description: "Thorough seasonal garden bed cleanup to refresh borders, remove spent material, and prepare beds for new growth.",
-    image: "https://res.cloudinary.com/di4phdven/image/upload/v1780844457/IMG_2226_xyle8i.jpg",
+    image: "https://res.cloudinary.com/di4phdven/image/upload/f_auto,q_auto,w_1200/v1780844457/IMG_2226_xyle8i.jpg",
     location: "Georgia"
   },
   {
@@ -28,7 +28,7 @@ export const portfolioItems = [
     title: "Climbing Rose on Trellis",
     category: "Garden Design",
     description: "A beautifully trained climbing rose guided along a custom trellis, adding vertical interest and classic charm to the landscape.",
-    image: "https://res.cloudinary.com/di4phdven/image/upload/v1780844457/IMG_2501_chrdoh.jpg",
+    image: "https://res.cloudinary.com/di4phdven/image/upload/f_auto,q_auto,w_1200/v1780844457/IMG_2501_chrdoh.jpg",
     location: "Georgia"
   },
   {
@@ -36,7 +36,7 @@ export const portfolioItems = [
     title: "Rhododendron and Native Deciduous Azalea",
     category: "Ecological Gardening",
     description: "A stunning combination of rhododendron and native deciduous azalea, supporting local pollinators and showcasing the best of Georgia's native flora.",
-    image: "https://res.cloudinary.com/di4phdven/image/upload/v1780844459/IMG_2844_inu6tn.jpg",
+    image: "https://res.cloudinary.com/di4phdven/image/upload/f_auto,q_auto,w_1200/v1780844459/IMG_2844_inu6tn.jpg",
     location: "Georgia"
   },
   {
@@ -44,7 +44,7 @@ export const portfolioItems = [
     title: "Woodland Garden Bed with Native Plantings",
     category: "Ecological Gardening",
     description: "A beautiful woodland garden bed designed with native plantings to create a naturalistic, low-maintenance landscape that supports local wildlife.",
-    image: "https://res.cloudinary.com/di4phdven/image/upload/v1780844460/IMG_2476_peuyps.jpg",
+    image: "https://res.cloudinary.com/di4phdven/image/upload/f_auto,q_auto,w_1200/v1780844460/IMG_2476_peuyps.jpg",
     location: "Georgia"
   },
   {
@@ -52,7 +52,7 @@ export const portfolioItems = [
     title: "Raised Beds",
     category: "Vegetable Gardening",
     description: "Custom raised beds built and installed to give vegetables and herbs the ideal growing environment with excellent drainage and soil quality.",
-    image: "https://res.cloudinary.com/di4phdven/image/upload/v1780844591/79459911783__FF5BCF2A-6049-4E2B-9C26-6C2533E4EC24_iqcbtb.jpg",
+    image: "https://res.cloudinary.com/di4phdven/image/upload/f_auto,q_auto,w_1200/v1780844591/79459911783__FF5BCF2A-6049-4E2B-9C26-6C2533E4EC24_iqcbtb.jpg",
     location: "Georgia"
   },
   {
@@ -60,7 +60,7 @@ export const portfolioItems = [
     title: "Enclosed Cedar Raised Bed Garden",
     category: "Vegetable Gardening",
     description: "An enclosed cedar raised bed garden featuring slate chip rock and deer-resistant fencing to protect your vegetable garden year-round.",
-    image: "https://res.cloudinary.com/di4phdven/image/upload/v1780844592/IMG_1641_r8tvqc.jpg",
+    image: "https://res.cloudinary.com/di4phdven/image/upload/f_auto,q_auto,w_1200/v1780844592/IMG_1641_r8tvqc.jpg",
     location: "Georgia"
   },
   {
@@ -68,7 +68,7 @@ export const portfolioItems = [
     title: "Complete Cedar Raised Bed with Drip Irrigation",
     category: "Irrigation Systems",
     description: "A complete cedar raised bed enclosed structure paired with a professionally installed drip irrigation system for effortless vegetable gardening.",
-    image: "https://res.cloudinary.com/di4phdven/image/upload/v1780844592/IMG_1642_ud70bh.jpg",
+    image: "https://res.cloudinary.com/di4phdven/image/upload/f_auto,q_auto,w_1200/v1780844592/IMG_1642_ud70bh.jpg",
     location: "Georgia"
   },
   {
@@ -76,7 +76,7 @@ export const portfolioItems = [
     title: "Landscape Tarp beneath Cedar Raised Beds",
     category: "Vegetable Gardening",
     description: "Landscape tarp installed beneath cedar raised beds to suppress weeds and prepare a clean foundation for vegetable planting.",
-    image: "https://res.cloudinary.com/di4phdven/image/upload/v1780844592/79459913633__ABE3F771-D65F-4507-B9A6-FCFA9F58712D_ltajke.jpg",
+    image: "https://res.cloudinary.com/di4phdven/image/upload/f_auto,q_auto,w_1200/v1780844592/79459913633__ABE3F771-D65F-4507-B9A6-FCFA9F58712D_ltajke.jpg",
     location: "Georgia"
   },
   {

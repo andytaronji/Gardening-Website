@@ -11,18 +11,19 @@ export default function FeaturedProjectSection() {
       whileInView="visible"
       viewport={{ once: true, amount: 0.1 }}
       variants={fadeInUpVariants}
-      className="py-20 bg-cream"
+      className="py-20 bg-paper"
     >
       <div className="container mx-auto px-4">
-        <LazyMotionH2 
-          className="text-4xl font-bold text-center text-forest-green mb-12"
+        <p className="eyebrow text-center mb-4">Selected Work</p>
+        <LazyMotionH2
+          className="text-4xl text-center text-forest-green mb-12"
           variants={fadeInUpVariants}
         >
           Featured Project
         </LazyMotionH2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <LazyMotionDiv 
-            className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-xl"
+          <LazyMotionDiv
+            className="relative aspect-[4/3] rounded-[4px] overflow-hidden border border-mist"
             variants={fadeInUpVariants}
           >
             <Image 
@@ -42,10 +43,10 @@ export default function FeaturedProjectSection() {
               Streams made from colorful river rock add a beautiful touch to your yard and can be built around pollinating flowers to attract butterflies, hummingbirds, bees, and also support local ecosystems!
             </p>
             <div className="flex flex-wrap gap-3">
-              <span className="bg-sage/20 text-forest-green px-3 py-1 rounded-full text-sm font-medium border border-sage/30">Sustainable Design</span>
-              <span className="bg-sage/20 text-forest-green px-3 py-1 rounded-full text-sm font-medium border border-sage/30">Native Plants</span>
-              <span className="bg-sage/20 text-forest-green px-3 py-1 rounded-full text-sm font-medium border border-sage/30">Natural Stream</span>
-              <span className="bg-sage/20 text-forest-green px-3 py-1 rounded-full text-sm font-medium border border-sage/30">Low Maintenance</span>
+              <span className="bg-sage-tint text-forest px-3 py-1 rounded-[4px] text-sm font-medium">Sustainable Design</span>
+              <span className="bg-sage-tint text-forest px-3 py-1 rounded-[4px] text-sm font-medium">Native Plants</span>
+              <span className="bg-sage-tint text-forest px-3 py-1 rounded-[4px] text-sm font-medium">Natural Stream</span>
+              <span className="bg-sage-tint text-forest px-3 py-1 rounded-[4px] text-sm font-medium">Low Maintenance</span>
             </div>
           </LazyMotionDiv>
         </div>

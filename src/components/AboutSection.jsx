@@ -19,24 +19,25 @@ export default function AboutSection() {
       whileInView="visible"
       viewport={{ once: true, amount: 0.1 }}
       variants={variants}
-      className="py-20 bg-cream"
+      className="py-20 bg-paper"
     >
       <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.h2 
-            className="text-4xl font-bold text-forest-green mb-6"
+        <div className="max-w-3xl mx-auto text-center">
+          <motion.p className="eyebrow mb-4" variants={variants}>The Brand</motion.p>
+          <motion.h2
+            className="text-4xl text-forest-green mb-6"
             variants={variants}
           >
             About Gardening Thyme
           </motion.h2>
-          <motion.p 
-            className="text-xl text-forest-green mb-8 leading-relaxed"
+          <motion.p
+            className="text-xl text-ink/80 mb-8 leading-relaxed"
             variants={variants}
           >
             At Gardening Thyme, we believe that a well-designed garden is more than just plants and flowers—it's a sanctuary, a place of beauty and tranquility that enhances your life and property. Our team of passionate garden designers combines horticultural expertise with artistic vision to create outdoor spaces that reflect your personal style and meet your practical needs.
           </motion.p>
-          <motion.p 
-            className="text-xl text-forest-green leading-relaxed"
+          <motion.p
+            className="text-xl text-ink/80 leading-relaxed"
             variants={variants}
           >
             Whether you're looking to transform a small urban balcony or design a sprawling estate garden, we approach each project with the same dedication to quality, sustainability, and timeless design. We take the time to understand your vision and bring it to life with meticulous attention to detail.

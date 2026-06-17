@@ -52,9 +52,9 @@ export default function Footer() {
                 alt="Gardening Thyme Logo" 
                 width={45} 
                 height={45} 
-                className="rounded-full ring-2 ring-sage/30"
+                className="rounded-full ring-2 ring-sage-tint/30"
               />
-              <h3 className="text-2xl font-['Parisienne']">Gardening Thyme</h3>
+              <h3 className="text-2xl brand-wordmark text-cloud">Gardening Thyme</h3>
             </div>
             <p className="text-cream/80 mb-6 leading-relaxed">
               Creating stunning outdoor sanctuaries with premium garden design and maintenance services throughout the greater Atlanta area.
@@ -62,10 +62,10 @@ export default function Footer() {
             
             {/* Trust Badges */}
             <div className="flex flex-wrap gap-3">
-              <span className="px-3 py-1 bg-sage/20 rounded-full text-xs font-medium border border-sage/30">
+              <span className="px-3 py-1 bg-sage-tint/20 rounded-full text-xs font-medium border border-sage-tint/30">
                 Licensed & Insured
               </span>
-              <span className="px-3 py-1 bg-sage/20 rounded-full text-xs font-medium border border-sage/30">
+              <span className="px-3 py-1 bg-sage-tint/20 rounded-full text-xs font-medium border border-sage-tint/30">
                 Eco-Friendly
               </span>
             </div>
@@ -73,7 +73,7 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h4 className="text-lg font-semibold mb-6 text-sage">Our Services</h4>
+            <h4 className="text-lg font-semibold mb-6 text-sage-tint">Our Services</h4>
             <ul className="space-y-3">
               {services.map((service) => (
                 <li key={service.name}>
@@ -81,7 +81,7 @@ export default function Footer() {
                     href={service.href} 
                     className="text-cream/80 hover:text-cream transition-all duration-300 flex items-center group"
                   >
-                    <svg className="w-4 h-4 mr-2 text-sage group-hover:translate-x-1 transition-transform duration-300" fill="currentColor" viewBox="0 0 20 20">
+                    <svg className="w-4 h-4 mr-2 text-sage-tint group-hover:translate-x-1 transition-transform duration-300" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
                     </svg>
                     {service.name}
@@ -93,7 +93,7 @@ export default function Footer() {
 
           {/* Company Links */}
           <div>
-            <h4 className="text-lg font-semibold mb-6 text-sage">Company</h4>
+            <h4 className="text-lg font-semibold mb-6 text-sage-tint">Company</h4>
             <ul className="space-y-3 mb-8">
               {company.map((item) => (
                 <li key={item.name}>
@@ -101,7 +101,7 @@ export default function Footer() {
                     href={item.href} 
                     className="text-cream/80 hover:text-cream transition-all duration-300 flex items-center group"
                   >
-                    <svg className="w-4 h-4 mr-2 text-sage group-hover:translate-x-1 transition-transform duration-300" fill="currentColor" viewBox="0 0 20 20">
+                    <svg className="w-4 h-4 mr-2 text-sage-tint group-hover:translate-x-1 transition-transform duration-300" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
                     </svg>
                     {item.name}
@@ -110,12 +110,12 @@ export default function Footer() {
               ))}
             </ul>
 
-            <h4 className="text-lg font-semibold mb-4 text-sage">Legal</h4>
+            <h4 className="text-lg font-semibold mb-4 text-sage-tint">Legal</h4>
             <Link 
               href="/privacy-policy" 
               className="text-cream/80 hover:text-cream transition-all duration-300 flex items-center group"
             >
-              <svg className="w-4 h-4 mr-2 text-sage group-hover:translate-x-1 transition-transform duration-300" fill="currentColor" viewBox="0 0 20 20">
+              <svg className="w-4 h-4 mr-2 text-sage-tint group-hover:translate-x-1 transition-transform duration-300" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
               </svg>
               Privacy Policy
@@ -124,7 +124,7 @@ export default function Footer() {
 
           {/* Contact & Service Areas */}
           <div>
-            <h4 className="text-lg font-semibold mb-6 text-sage">Get In Touch</h4>
+            <h4 className="text-lg font-semibold mb-6 text-sage-tint">Get In Touch</h4>
             
             {/* Contact Info */}
             <div className="space-y-4 mb-8">
@@ -132,13 +132,13 @@ export default function Footer() {
                 href="tel:+14048617744" 
                 className="flex items-center text-cream/80 hover:text-cream transition-all duration-300 group"
               >
-                <div className="w-10 h-10 rounded-full bg-sage/20 flex items-center justify-center mr-3 group-hover:bg-sage/30 transition-all duration-300">
-                  <svg className="w-5 h-5 text-sage" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-10 h-10 rounded-full bg-sage-tint/20 flex items-center justify-center mr-3 group-hover:bg-sage-tint/30 transition-all duration-300">
+                  <svg className="w-5 h-5 text-sage-tint" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
                 </div>
                 <div>
-                  <div className="text-xs text-sage">Call us</div>
+                  <div className="text-xs text-sage-tint">Call us</div>
                   <div className="font-semibold text-cream">(404) 861-7744</div>
                 </div>
               </a>
@@ -147,13 +147,13 @@ export default function Footer() {
                 href="mailto:services@gardeningthyme.com" 
                 className="flex items-center text-cream/80 hover:text-cream transition-all duration-300 group"
               >
-                <div className="w-10 h-10 rounded-full bg-sage/20 flex items-center justify-center mr-3 group-hover:bg-sage/30 transition-all duration-300">
-                  <svg className="w-5 h-5 text-sage" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-10 h-10 rounded-full bg-sage-tint/20 flex items-center justify-center mr-3 group-hover:bg-sage-tint/30 transition-all duration-300">
+                  <svg className="w-5 h-5 text-sage-tint" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                 </div>
                 <div>
-                  <div className="text-xs text-sage">Email us</div>
+                  <div className="text-xs text-sage-tint">Email us</div>
                   <div className="font-semibold text-sm text-cream">services@gardeningthyme.com</div>
                 </div>
               </a>
@@ -161,21 +161,21 @@ export default function Footer() {
 
             {/* Service Areas */}
             <div>
-              <h5 className="text-sm font-semibold mb-3 text-sage">Service Areas</h5>
+              <h5 className="text-sm font-semibold mb-3 text-sage-tint">Service Areas</h5>
               <div className="flex flex-wrap gap-2">
                 {serviceAreas.map((area) => (
                   area.href ? (
                     <Link
                       key={area.name}
                       href={area.href}
-                      className="text-xs px-2 py-1 bg-sage/10 rounded text-cream/70 border border-sage/20 hover:bg-sage/20 hover:text-cream transition-all duration-300"
+                      className="text-xs px-2 py-1 bg-sage-tint/10 rounded text-cream/70 border border-sage-tint/20 hover:bg-sage-tint/20 hover:text-cream transition-all duration-300"
                     >
                       {area.name}
                     </Link>
                   ) : (
                     <span
                       key={area.name}
-                      className="text-xs px-2 py-1 bg-sage/10 rounded text-cream/70 border border-sage/20"
+                      className="text-xs px-2 py-1 bg-sage-tint/10 rounded text-cream/70 border border-sage-tint/20"
                     >
                       {area.name}
                     </span>
@@ -187,7 +187,7 @@ export default function Footer() {
         </div>
 
         {/* Divider */}
-        <div className="border-t border-sage/20"></div>
+        <div className="border-t border-sage-tint/20"></div>
 
         {/* Bottom Footer */}
         <div className="py-8 flex flex-col md:flex-row justify-between items-center gap-4">
@@ -203,7 +203,7 @@ export default function Footer() {
             {/* Back to Top Button */}
             <button
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              className="group flex items-center gap-2 px-4 py-2 bg-sage/20 hover:bg-sage/30 rounded-full transition-all duration-300 text-sm font-medium"
+              className="group flex items-center gap-2 px-4 py-2 bg-sage-tint/20 hover:bg-sage-tint/30 rounded-full transition-all duration-300 text-sm font-medium"
               aria-label="Back to top"
             >
               <span>Back to Top</span>

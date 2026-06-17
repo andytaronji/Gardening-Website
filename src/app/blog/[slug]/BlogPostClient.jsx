@@ -36,7 +36,7 @@ export default function BlogPostClient() {
           </Link>
         </div>
 
-        <article className="max-w-4xl mx-auto bg-white rounded-2xl shadow-sm overflow-hidden border border-sage/10">
+        <article className="max-w-4xl mx-auto bg-cloud rounded-[6px] overflow-hidden border border-mist">
           {/* Featured Image */}
           <div className="relative h-[400px] w-full">
             <Image
@@ -70,7 +70,7 @@ export default function BlogPostClient() {
               {post.tags.map((tag, index) => (
                 <span
                   key={index}
-                  className="bg-cream text-charcoal text-xs px-3 py-1 rounded-full border border-sage/20"
+                  className="bg-cream text-charcoal text-xs px-3 py-1 rounded-[4px] border border-sage/20"
                 >
                   {tag}
                 </span>
@@ -88,7 +88,7 @@ export default function BlogPostClient() {
         <div className="mt-12 text-center">
           <Link
             href="/contact"
-            className="inline-block bg-charcoal text-cream font-semibold px-8 py-4 rounded-full hover:opacity-90 transition-all duration-300 hover:shadow-lg"
+            className="inline-block bg-forest text-cloud font-semibold px-8 py-4 rounded-[4px] hover:bg-moss transition-all duration-300"
           >
             Reach out today to learn about our Gardening Lessons!
           </Link>

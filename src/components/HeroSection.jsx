@@ -85,27 +85,29 @@ export default function HeroSection() {
             transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
             className="w-full lg:w-[48%] text-center lg:text-left order-2 lg:order-1"
           >
-            <h1 className="mb-6 leading-tight font-serif font-bold text-forest-green text-5xl lg:text-6xl xl:text-7xl">
+            <p className="eyebrow mb-4">Garden Design · Metro Atlanta</p>
+
+            <h1 className="mb-6 font-serif text-forest-green text-5xl lg:text-6xl xl:text-7xl">
               Garden Designs, Property Cleanups,<br /> and Garden Maintenance
             </h1>
-            
-            <p className="text-forest-green text-lg md:text-xl lg:text-2xl mb-8 leading-relaxed font-light">
+
+            <p className="text-ink/80 text-lg md:text-xl mb-8 leading-relaxed">
               High-end garden design and maintenance services in Marietta, Alpharetta, Vinings, and more. Specializing in pollinator gardens and unique designs for your perfect outdoor sanctuary.
             </p>
 
-            {/* CTA Buttons */}
+            {/* CTA Buttons — primary (filled forest) + ghost (outline) */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Link 
-                href="/portfolio" 
-                className="px-8 py-3 bg-charcoal text-cream rounded-full text-lg font-semibold hover:opacity-90 transition-all duration-300 text-center shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+              <Link
+                href="/portfolio"
+                className="btn-primary text-center"
               >
                 View Portfolio
               </Link>
-              <Link 
-                href="/contact" 
-                className="px-8 py-3 bg-charcoal text-cream rounded-full text-lg font-semibold hover:opacity-90 transition-all duration-300 text-center shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+              <Link
+                href="/contact"
+                className="btn-ghost text-center"
               >
-                Contact Us!
+                Contact Us
               </Link>
             </div>
           </LazyMotionDiv>
@@ -122,7 +124,7 @@ export default function HeroSection() {
           >
             <div className="relative">
               {/* Main image container */}
-              <div className="relative w-full aspect-[4/3] overflow-hidden shadow-xl">
+              <div className="relative w-full aspect-[4/3] overflow-hidden rounded-[4px]">
                 {images.map((image, index) => {
                   // Only mount the active slide and its immediate neighbours so we
                   // don't download all 6 hero images at once (which starves the LCP
