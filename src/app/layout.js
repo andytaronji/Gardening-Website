@@ -30,6 +30,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+        {/* Hero photos come from Cloudinary: open the connection early */}
+        <link rel="preconnect" href="https://res.cloudinary.com" />
         <link 
           rel="icon" 
           href="https://res.cloudinary.com/di4phdven/image/upload/q_auto:best,f_auto,w_192/v1747232934/Gardening_Thyme_LLC_Logo_hkdlsk.jpg" 

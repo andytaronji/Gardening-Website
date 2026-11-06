@@ -61,10 +61,9 @@ export default function ServicesSection() {
               </p>
               <Link
                 href="/garden-design"
-                aria-label="Learn more about our high-end garden design services"
                 className="inline-block bg-forest text-cloud text-sm font-semibold px-6 py-2.5 rounded-[4px] hover:bg-moss transition-all duration-300"
               >
-                Learn More
+                Explore Garden Design
               </Link>
             </div>
           </LazyMotionDiv>
@@ -103,10 +102,9 @@ export default function ServicesSection() {
               </p>
               <Link
                 href="/groundskeeping"
-                aria-label="Learn more about our estate groundskeeping services"
                 className="inline-block bg-forest text-cloud text-sm font-semibold px-6 py-2.5 rounded-[4px] hover:bg-moss transition-all duration-300"
               >
-                Learn More
+                Explore Groundskeeping
               </Link>
             </div>
           </LazyMotionDiv>
@@ -145,10 +143,9 @@ export default function ServicesSection() {
               </p>
               <Link
                 href="/quarterly-cleanups"
-                aria-label="Learn more about our seasonal garden cleanup services"
                 className="inline-block bg-forest text-cloud text-sm font-semibold px-6 py-2.5 rounded-[4px] hover:bg-moss transition-all duration-300"
               >
-                Learn More
+                Explore Seasonal Cleanups
               </Link>
             </div>
           </LazyMotionDiv>

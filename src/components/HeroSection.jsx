@@ -5,6 +5,12 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { LazyMotionDiv } from '../utils/lazyMotion';
 
+// Serve hero photos straight from Cloudinary's CDN at the size each device needs,
+// instead of routing them through Vercel's image optimizer (which re-fetched and
+// re-encoded them on first view and pushed mobile LCP past 8 s).
+const cloudinaryLoader = ({ src, width, quality }) =>
+  src.replace(/q_auto:good,f_auto,w_\d+/, `q_auto:${quality && quality < 70 ? 'eco' : 'good'},f_auto,w_${width}`);
+
 const images = [
   {
     src: "https://res.cloudinary.com/di4phdven/image/upload/q_auto:good,f_auto,w_1200,c_fill,g_auto/v1768063570/IMG_1284_yy9onk.jpg",
@@ -145,6 +151,7 @@ export default function HeroSection() {
                     >
                       {isNeighbour && (
                         <Image
+                          loader={cloudinaryLoader}
                           src={image.src}
                           alt={image.alt}
                           fill

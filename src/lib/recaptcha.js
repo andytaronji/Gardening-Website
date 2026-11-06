@@ -52,5 +52,5 @@ export function sendLeadConversion({ email, phone }, sendTo = 'AW-17486011088/eF
   if (Object.keys(userData).length) window.gtag('set', 'user_data', userData);
   window.gtag('event', 'conversion', { send_to: sendTo });
   // GA4 lead event (marked as a key event in Analytics)
-  window.gtag('event', 'generate_lead', { page_path: window.location.pathname });
+  window.gtag('event', 'generate_lead', { send_to: 'G-FCZX3SHM6C', page_path: window.location.pathname });
 }

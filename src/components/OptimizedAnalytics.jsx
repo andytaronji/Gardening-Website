@@ -38,7 +38,7 @@ export default function OptimizedAnalytics() {
             // Phone link taps -> GA4 event "phone_click" (Ads call tracking counts the calls themselves)
             document.addEventListener('click', function (e) {
               var a = e.target && e.target.closest ? e.target.closest('a[href^="tel:"]') : null;
-              if (a) gtag('event', 'phone_click', { link_url: a.getAttribute('href'), page_path: location.pathname });
+              if (a) gtag('event', 'phone_click', { send_to: 'G-FCZX3SHM6C', link_url: a.getAttribute('href'), page_path: location.pathname });
             }, true);
             // Website call conversion: swaps (404) 861-7744 for a Google forwarding number for ad visitors
             gtag('config', 'AW-17486011088/2oRjCImFsPMcENC1_ZFB', { 'phone_conversion_number': '(404) 861-7744' });
