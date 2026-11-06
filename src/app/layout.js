@@ -58,19 +58,12 @@ export default function RootLayout({ children }) {
             __html: JSON.stringify(websiteSchema)
           }}
         />
-        {/* Google Ads gtag (AW-17486011088) + GTM are loaded once, non-blocking,
+        {/* Google Ads gtag (AW-17486011088) is loaded once, non-blocking,
             in <OptimizedAnalytics />. Don't re-add the tag here — it double-loads. */}
       </head>
       <body className={`${bodoni.variable} ${hanken.variable}`}>
-        {/* Google Tag Manager (noscript) */}
-        <noscript
-          dangerouslySetInnerHTML={{
-            __html: `
-              <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WN7LXHF8"
-              height="0" width="0" style="display:none;visibility:hidden"></iframe>
-            `
-          }}
-        />
+        {/* Google Tag Manager removed Nov 2026: container GTM-WN7LXHF8 only held tags for another advertiser's
+            Google Ads account (AW-11312192738), not ours. Our tag lives in <OptimizedAnalytics />. */}
         <Navigation />
         <main>{children}</main>
         <Footer />

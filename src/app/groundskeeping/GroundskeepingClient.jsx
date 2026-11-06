@@ -40,7 +40,7 @@ export default function GroundskeepingClient() {
           </LazyMotionDiv>
 
           <LazyMotionDiv
-            initial={{ opacity: 0, y: -30 }}
+            initial={false}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
             className="space-y-6"
@@ -53,7 +53,7 @@ export default function GroundskeepingClient() {
             </p>
             <ul className="space-y-4">
               <LazyMotionDiv
-                initial={{ opacity: 0, y: -20 }}
+                initial={false}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.6 }}
                 className="flex items-center space-x-3 text-forest-green"
@@ -64,7 +64,7 @@ export default function GroundskeepingClient() {
                 <span>Regular fertilization</span>
               </LazyMotionDiv>
               <LazyMotionDiv
-                initial={{ opacity: 0, y: -20 }}
+                initial={false}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.7 }}
                 className="flex items-center space-x-3 text-forest-green"
@@ -75,7 +75,7 @@ export default function GroundskeepingClient() {
                 <span>Plant health monitoring and care</span>
               </LazyMotionDiv>
               <LazyMotionDiv
-                initial={{ opacity: 0, y: -20 }}
+                initial={false}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.8 }}
                 className="flex items-center space-x-3 text-forest-green"
@@ -90,7 +90,7 @@ export default function GroundskeepingClient() {
         </div>
 
         <LazyMotionDiv
-          initial={{ opacity: 0, y: -30 }}
+          initial={false}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
           className="bg-cloud rounded-[6px] p-8 md:p-12 mb-20 border border-mist"
@@ -98,7 +98,7 @@ export default function GroundskeepingClient() {
           <h2 className="text-3xl font-serif text-charcoal mb-8 text-center">Our Services</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <LazyMotionDiv
-              initial={{ opacity: 0, y: -20 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.8 }}
               className="text-center"
@@ -112,7 +112,7 @@ export default function GroundskeepingClient() {
               <p className="text-forest-green/70">Scheduled deweeding and pruning to keep your garden beds looking fresh</p>
             </LazyMotionDiv>
             <LazyMotionDiv
-              initial={{ opacity: 0, y: -20 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.9 }}
               className="text-center"
@@ -126,7 +126,7 @@ export default function GroundskeepingClient() {
               <p className="text-forest-green/70">Regular monitoring and treatment of plants to prevent diseases</p>
             </LazyMotionDiv>
             <LazyMotionDiv
-              initial={{ opacity: 0, y: -20 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 1.0 }}
               className="text-center"
@@ -145,7 +145,7 @@ export default function GroundskeepingClient() {
         {/* Location-specific sections */}
         <div className="mb-20">
           <LazyMotionDiv 
-            initial={{ opacity: 0, y: -30 }}
+            initial={false}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
             className="text-3xl font-serif text-charcoal mb-12 text-center"
@@ -155,7 +155,7 @@ export default function GroundskeepingClient() {
 
           {/* Alpharetta Section */}
           <LazyMotionDiv 
-            initial={{ opacity: 0, y: -30 }}
+            initial={false}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.7 }}
             className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-16"
@@ -197,7 +197,7 @@ export default function GroundskeepingClient() {
 
           {/* Milton Section */}
           <LazyMotionDiv 
-            initial={{ opacity: 0, y: -30 }}
+            initial={false}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.8 }}
             className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-16"
@@ -239,7 +239,7 @@ export default function GroundskeepingClient() {
 
           {/* Vinings Section */}
           <LazyMotionDiv 
-            initial={{ opacity: 0, y: -30 }}
+            initial={false}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.9 }}
             className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center"
@@ -281,7 +281,7 @@ export default function GroundskeepingClient() {
 
         {/* Testimonials Section */}
         <LazyMotionDiv
-          initial={{ opacity: 0, y: -30 }}
+          initial={false}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 1.0 }}
           className="bg-cloud rounded-[6px] p-8 md:p-12 mb-20 border border-mist"
@@ -326,7 +326,7 @@ export default function GroundskeepingClient() {
         </LazyMotionDiv>
 
         <LazyMotionDiv
-          initial={{ opacity: 0, y: -30 }}
+          initial={false}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 1.1 }}
           className="max-w-4xl mx-auto"

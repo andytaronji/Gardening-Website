@@ -1,171 +1,78 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import Script from 'next/script';
+
+// Cookie banner wired to Google Consent Mode v2.
+// - The default consent state is set in OptimizedAnalytics (before any Google tag runs):
+//   granted for new US visitors, denied if this visitor previously clicked "Decline".
+// - Clicking a button here updates Google's consent state immediately and remembers the choice.
+// The previous Cookiebot script never initialised (no valid Cookiebot account), so it was removed.
+
+const STORAGE_KEY = 'cookieConsent';
+
+function updateConsent(granted) {
+  if (typeof window === 'undefined') return;
+  window.dataLayer = window.dataLayer || [];
+  // eslint-disable-next-line prefer-rest-params
+  function gtag() { window.dataLayer.push(arguments); }
+  const v = granted ? 'granted' : 'denied';
+  gtag('consent', 'update', {
+    ad_storage: v,
+    ad_user_data: v,
+    ad_personalization: v,
+    analytics_storage: v,
+  });
+}
 
 export default function CookieConsent() {
   const [showBanner, setShowBanner] = useState(false);
 
   useEffect(() => {
-    // Check if user has already consented
-    const hasConsented = localStorage.getItem('cookieConsent');
-    if (!hasConsented) {
-      setShowBanner(true);
+    try {
+      if (!localStorage.getItem(STORAGE_KEY)) setShowBanner(true);
+    } catch (e) {
+      // Storage blocked (private mode etc.): don't nag on every page.
     }
   }, []);
 
-  const handleAccept = () => {
-    localStorage.setItem('cookieConsent', 'true');
+  const choose = (granted) => {
+    try { localStorage.setItem(STORAGE_KEY, granted ? 'true' : 'declined'); } catch (e) { /* ignore */ }
+    updateConsent(granted);
     setShowBanner(false);
-    // Reload Cookiebot to accept all cookies
-    if (typeof window !== 'undefined' && window.Cookiebot) {
-      window.Cookiebot.submitCustomConsent(true, true, true);
-    }
-  };
-
-  const handleDecline = () => {
-    localStorage.setItem('cookieConsent', 'declined');
-    setShowBanner(false);
-    // Reload Cookiebot to decline non-essential cookies
-    if (typeof window !== 'undefined' && window.Cookiebot) {
-      window.Cookiebot.submitCustomConsent(false, false, false);
-    }
   };
 
   if (!showBanner) return null;
 
   return (
-    <>
-      <Script
-        id="Cookiebot"
-        src="https://consent.cookiebot.com/uc.js"
-        data-cbid="f4b4b0a6-7e47-4f8d-8a25-ee6e7e7f0f98"
-        data-blockingmode="auto"
-        type="text/javascript"
-        strategy="beforeInteractive"
-      />
-      
-      <div 
-        className="cookie-consent-banner"
-        style={{
-          position: 'fixed',
-          bottom: 0,
-          left: 0,
-          right: 0,
-          backgroundColor: '#1a1a1a',
-          color: '#fff',
-          zIndex: 9999,
-          boxShadow: '0 -2px 10px rgba(0,0,0,0.1)'
-        }}
-      >
-        <div className="cookie-consent-content">
-          <p className="cookie-consent-text">
-            We use cookies to enhance your browsing experience, serve personalized content, and analyze our traffic. 
-            By clicking "Accept All", you consent to our use of cookies.{' '}
-            <a 
-              href="/privacy-policy" 
-              className="cookie-consent-link"
-              target="_blank" 
-              rel="noopener noreferrer"
-            >
-              Learn more
-            </a>
-          </p>
-          <div className="cookie-consent-buttons">
-            <button
-              onClick={handleAccept}
-              className="cookie-consent-button cookie-consent-accept"
-            >
-              Accept All
-            </button>
-            <button
-              onClick={handleDecline}
-              className="cookie-consent-button cookie-consent-decline"
-            >
-              Decline
-            </button>
-          </div>
+    <div
+      role="region"
+      aria-label="Cookie preferences"
+      className="cookie-consent-banner fixed bottom-0 inset-x-0 z-[9999] bg-forest text-cloud border-t border-[rgba(174,188,160,0.35)]"
+    >
+      <div className="max-w-[1100px] mx-auto px-4 sm:px-8 py-3 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6">
+        <p className="font-sans text-[13px] leading-[1.5] text-[#DDE3D2] flex-1 m-0">
+          We use cookies to measure our ads and improve the site.{' '}
+          <a href="/privacy-policy" className="underline text-cloud hover:text-sage-tint">
+            Read our privacy policy
+          </a>
+        </p>
+        <div className="flex gap-2 shrink-0">
+          <button
+            type="button"
+            onClick={() => choose(true)}
+            className="font-sans text-[13px] font-semibold text-forest bg-cloud rounded-[4px] px-5 py-2 hover:bg-sage-tint transition-colors"
+          >
+            Accept
+          </button>
+          <button
+            type="button"
+            onClick={() => choose(false)}
+            className="font-sans text-[13px] font-semibold text-cloud border border-[rgba(174,188,160,0.6)] rounded-[4px] px-5 py-2 hover:bg-[#243523] transition-colors"
+          >
+            Decline
+          </button>
         </div>
       </div>
-
-      <style jsx>{`
-        .cookie-consent-content {
-          padding: 16px 32px;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          gap: 24px;
-        }
-
-        .cookie-consent-text {
-          flex: 1;
-          margin: 0;
-          fontSize: 14px;
-          lineHeight: 1.5;
-        }
-
-        .cookie-consent-link {
-          color: #3b82f6;
-          textDecoration: underline;
-        }
-
-        .cookie-consent-link:hover {
-          color: #60a5fa;
-        }
-
-        .cookie-consent-buttons {
-          display: flex;
-          gap: 12px;
-          flex-shrink: 0;
-        }
-
-        .cookie-consent-button {
-          padding: 10px 24px;
-          border: none;
-          borderRadius: 4px;
-          fontSize: 14px;
-          fontWeight: 600;
-          cursor: pointer;
-          transition: all 0.2s;
-          whiteSpace: nowrap;
-        }
-
-        .cookie-consent-accept {
-          backgroundColor: #10b981;
-          color: white;
-        }
-
-        .cookie-consent-accept:hover {
-          backgroundColor: #059669;
-        }
-
-        .cookie-consent-decline {
-          backgroundColor: #6b7280;
-          color: white;
-        }
-
-        .cookie-consent-decline:hover {
-          backgroundColor: #4b5563;
-        }
-
-        /* Responsive styles - CSS media queries instead of JS detection */
-        @media (max-width: 768px) {
-          .cookie-consent-content {
-            flex-direction: column;
-            align-items: stretch;
-            padding: 12px 16px;
-            gap: 12px;
-          }
-
-          .cookie-consent-text {
-            text-align: center;
-          }
-
-          .cookie-consent-buttons {
-            align-self: center;
-          }
-        }
-      `}</style>
-    </>
+    </div>
   );
 }

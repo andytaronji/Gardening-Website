@@ -68,6 +68,7 @@ export const localBusinessSchema = {
     "Groundskeeping",
     "Garden Maintenance", 
     "Quarterly Cleanups",
+    "Leaf Removal",
     "Property Enhancement",
     "Vegetable Garden Consultation",
     "Drip Irrigation Installation",
@@ -99,6 +100,15 @@ export const localBusinessSchema = {
           "@type": "Service", 
           "name": "Quarterly Garden Cleanups",
           "description": "Seasonal garden cleanup and maintenance services"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Leaf Removal",
+          "description": "Fall leaf removal and leaf cleanups for lawns and garden beds",
+          "url": "https://www.gardeningthyme.com/leaf-removal"
         }
       },
       {

@@ -1,6 +1,7 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { loadRecaptcha, getRecaptchaToken, sendLeadConversion } from '@/lib/recaptcha';
 import { motion } from 'framer-motion';
 
 export default function ContactClient() {
@@ -21,7 +22,6 @@ export default function ContactClient() {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [recaptchaLoaded, setRecaptchaLoaded] = useState(false);
 
   const serviceTypes = [
     { value: '', label: 'Select a service' },
@@ -35,34 +35,6 @@ export default function ContactClient() {
 
   const serviceAreas = ['East Cobb', 'Marietta', 'Roswell', 'Alpharetta', 'Sandy Springs', 'Milton', 'Buckhead', 'Atlanta', 'Vinings'];
 
-  // Load reCAPTCHA v3 script
-  useEffect(() => {
-    const loadRecaptcha = () => {
-      if (typeof window === 'undefined' || !process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY) {
-        return;
-      }
-
-      // Check if already loaded
-      if (window.grecaptcha) {
-        setRecaptchaLoaded(true);
-        return;
-      }
-
-      const script = document.createElement('script');
-      script.src = `https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`;
-      script.async = true;
-      script.defer = true;
-      script.onload = () => {
-        setRecaptchaLoaded(true);
-      };
-      script.onerror = () => {
-        console.warn('reCAPTCHA failed to load');
-      };
-      document.head.appendChild(script);
-    };
-
-    loadRecaptcha();
-  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -106,22 +78,6 @@ export default function ContactClient() {
     return true;
   };
 
-  const getRecaptchaToken = async () => {
-    if (!recaptchaLoaded || !window.grecaptcha || !process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY) {
-      console.warn('reCAPTCHA not available, submitting without token');
-      return null;
-    }
-    try {
-      const token = await window.grecaptcha.execute(process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY, { 
-        action: 'contact_form_submit' 
-      });
-      return token;
-    } catch (error) {
-      console.error('Error getting reCAPTCHA token:', error);
-      return null;
-    }
-  };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validateForm()) return;
@@ -130,7 +86,7 @@ export default function ContactClient() {
     setStatus({ isError: false, message: 'Sending message...', showStatus: true });
 
     try {
-      const recaptchaToken = await getRecaptchaToken();
+      const recaptchaToken = await getRecaptchaToken('contact_form_submit');
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -146,9 +102,8 @@ export default function ContactClient() {
         showStatus: true
       });
       
-      if (typeof window !== 'undefined' && window.gtag) {
-        window.gtag('event', 'conversion', {'send_to': 'AW-17486011088/eF1sCMyUicAcENC1_ZFB'});
-      }
+      // Google Ads "Website Contact Form" conversion (with enhanced conversions data)
+      sendLeadConversion({ email: formData.email, phone: formData.phone });
       
       setFormData({ name: '', email: '', phone: '', serviceType: '', subject: '', message: '', honeypot: '' });
     } catch (error) {
@@ -173,7 +128,7 @@ export default function ContactClient() {
     <div className="min-h-screen bg-paper">
       {/* ============ HERO ============ */}
       <motion.header
-        initial={{ opacity: 0, y: -20 }}
+        initial={false}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         className="max-w-[760px] mx-auto px-8 pt-20 pb-14 text-center"
@@ -192,7 +147,7 @@ export default function ContactClient() {
 
         {/* Info panel — Forest anchor surface */}
         <motion.aside
-          initial={{ opacity: 0, y: 20 }}
+          initial={false}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           className="bg-forest text-cloud rounded-[6px] p-[42px] md:p-12 flex flex-col justify-between gap-10"
@@ -233,7 +188,7 @@ export default function ContactClient() {
 
         {/* Form card — Cloud surface, no shadow */}
         <motion.section
-          initial={{ opacity: 0, y: 20 }}
+          initial={false}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
           className="bg-cloud border border-mist rounded-[6px] p-[42px] md:p-12"
@@ -245,7 +200,7 @@ export default function ContactClient() {
 
           {status.showStatus && status.message && (
             <motion.div
-              initial={{ opacity: 0, y: -10 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               role="status"
               aria-live="polite"
@@ -259,7 +214,7 @@ export default function ContactClient() {
             </motion.div>
           )}
 
-          <form onSubmit={handleSubmit} className="grid grid-cols-1 sm:grid-cols-2 gap-[22px]">
+          <form onSubmit={handleSubmit} onFocusCapture={() => loadRecaptcha()} className="grid grid-cols-1 sm:grid-cols-2 gap-[22px]">
             {/* Honeypot field */}
             <div
               style={{ position: 'absolute', left: '-9999px', opacity: 0, pointerEvents: 'none' }}
@@ -295,7 +250,7 @@ export default function ContactClient() {
             </label>
 
             <label className="flex flex-col gap-2">
-              <span className={labelText}>Phone <span className="text-[#9b988b] font-medium tracking-normal">&middot; optional</span></span>
+              <span className={labelText}>Phone <span className="text-[#6B695E] font-medium tracking-normal">&middot; optional</span></span>
               <input
                 type="tel" id="phone" name="phone" value={formData.phone} onChange={handleChange}
                 className={fieldBase} placeholder="(404) 000-0000" disabled={isSubmitting}
@@ -303,7 +258,7 @@ export default function ContactClient() {
             </label>
 
             <label className="flex flex-col gap-2">
-              <span className={labelText}>Service Type <span className="text-[#9b988b] font-medium tracking-normal">&middot; optional</span></span>
+              <span className={labelText}>Service Type <span className="text-[#6B695E] font-medium tracking-normal">&middot; optional</span></span>
               <div className="relative">
                 <select
                   id="serviceType" name="serviceType" value={formData.serviceType} onChange={handleChange}
@@ -347,7 +302,7 @@ export default function ContactClient() {
               {isSubmitting ? 'Sending…' : 'Send Message'}
             </button>
 
-            <p className="sm:col-span-2 font-sans text-[12px] leading-[1.6] text-[#9b988b] text-center mt-1.5">
+            <p className="sm:col-span-2 font-sans text-[12px] leading-[1.6] text-[#6B695E] text-center mt-1.5">
               This site is protected by reCAPTCHA and the Google{' '}
               <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-moss underline">
                 Privacy Policy

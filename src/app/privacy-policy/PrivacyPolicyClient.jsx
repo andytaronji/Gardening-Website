@@ -8,7 +8,7 @@ export default function PrivacyPolicyClient() {
     <div className="min-h-screen bg-cream">
       <div className="container mx-auto px-4 py-16">
         <motion.div
-          initial={{ opacity: 0, y: -50 }}
+          initial={false}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="max-w-4xl mx-auto"

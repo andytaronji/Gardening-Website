@@ -11,7 +11,7 @@ export default function PermacultureClient() {
       <section className="bg-cream py-16">
         <div className="container mx-auto px-4">
           <LazyMotionDiv
-            initial={{ opacity: 0, y: -50 }}
+            initial={false}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="text-center max-w-4xl mx-auto"

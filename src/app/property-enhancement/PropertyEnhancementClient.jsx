@@ -40,7 +40,7 @@ export default function PropertyEnhancementClient() {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, y: -30 }}
+            initial={false}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
             className="space-y-6"
@@ -52,7 +52,7 @@ export default function PropertyEnhancementClient() {
             </p>
             <ul className="space-y-4">
               <motion.li
-                initial={{ opacity: 0, y: -20 }}
+                initial={false}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.6 }}
                 className="flex items-center space-x-3 text-forest-green"
@@ -63,7 +63,7 @@ export default function PropertyEnhancementClient() {
                 <span>Custom garden redesigns and installations</span>
               </motion.li>
               <motion.li
-                initial={{ opacity: 0, y: -20 }}
+                initial={false}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.7 }}
                 className="flex items-center space-x-3 text-forest-green"
@@ -74,7 +74,7 @@ export default function PropertyEnhancementClient() {
                 <span>Drip irrigation and other irrigation needs</span>
               </motion.li>
               <motion.li
-                initial={{ opacity: 0, y: -20 }}
+                initial={false}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.8 }}
                 className="flex items-center space-x-3 text-forest-green"
@@ -89,7 +89,7 @@ export default function PropertyEnhancementClient() {
         </div>
 
         <motion.div
-          initial={{ opacity: 0, y: -30 }}
+          initial={false}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
           className="bg-cloud rounded-[6px] p-8 md:p-12 mb-20 border border-mist"
@@ -97,7 +97,7 @@ export default function PropertyEnhancementClient() {
           <h2 className="text-3xl font-serif text-charcoal mb-8 text-center">Enhancement Services</h2>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <motion.div
-              initial={{ opacity: 0, y: -20 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.8 }}
               className="text-center"
@@ -111,7 +111,7 @@ export default function PropertyEnhancementClient() {
               <p className="text-forest-green/70">Overlooked areas need cleanups too</p>
             </motion.div>
             <motion.div
-              initial={{ opacity: 0, y: -20 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.9 }}
               className="text-center"
@@ -125,7 +125,7 @@ export default function PropertyEnhancementClient() {
               <p className="text-forest-green/70">Homes, driveways, and more</p>
             </motion.div>
             <motion.div
-              initial={{ opacity: 0, y: -20 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 1.0 }}
               className="text-center"
@@ -139,7 +139,7 @@ export default function PropertyEnhancementClient() {
               <p className="text-forest-green/70">Inside and out</p>
             </motion.div>
             <motion.div
-              initial={{ opacity: 0, y: -20 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 1.1 }}
               className="text-center"
@@ -156,7 +156,7 @@ export default function PropertyEnhancementClient() {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: -30 }}
+          initial={false}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.8 }}
           className="max-w-4xl mx-auto"

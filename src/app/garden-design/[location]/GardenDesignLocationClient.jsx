@@ -44,7 +44,7 @@ export default function GardenDesignLocationClient({ locationData }) {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, y: -30 }}
+            initial={false}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
             className="space-y-6"
@@ -57,7 +57,7 @@ export default function GardenDesignLocationClient({ locationData }) {
             </p>
             <ul className="space-y-4">
               <motion.li
-                initial={{ opacity: 0, y: -20 }}
+                initial={false}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.6 }}
                 className="flex items-center space-x-3 text-forest-green"
@@ -68,7 +68,7 @@ export default function GardenDesignLocationClient({ locationData }) {
                 <span>Personalized consultation and site analysis for {city} properties</span>
               </motion.li>
               <motion.li
-                initial={{ opacity: 0, y: -20 }}
+                initial={false}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.7 }}
                 className="flex items-center space-x-3 text-forest-green"
@@ -79,7 +79,7 @@ export default function GardenDesignLocationClient({ locationData }) {
                 <span>Custom high-end garden design plans and 2D visualizations</span>
               </motion.li>
               <motion.li
-                initial={{ opacity: 0, y: -20 }}
+                initial={false}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.8 }}
                 className="flex items-center space-x-3 text-forest-green"
@@ -95,7 +95,7 @@ export default function GardenDesignLocationClient({ locationData }) {
 
         {/* Location-Specific Information */}
         <motion.div
-          initial={{ opacity: 0, y: -30 }}
+          initial={false}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5 }}
           className="bg-cloud rounded-[6px] p-8 md:p-12 mb-20 border border-mist"
@@ -122,7 +122,7 @@ export default function GardenDesignLocationClient({ locationData }) {
 
         {/* Why Choose Us Section */}
         <motion.div
-          initial={{ opacity: 0, y: -30 }}
+          initial={false}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
           className="bg-cloud rounded-[6px] p-8 md:p-12 mb-20 border border-mist"
@@ -132,7 +132,7 @@ export default function GardenDesignLocationClient({ locationData }) {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <motion.div
-              initial={{ opacity: 0, y: -20 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.8 }}
               className="text-center"
@@ -146,7 +146,7 @@ export default function GardenDesignLocationClient({ locationData }) {
               <p className="text-forest-green/70">Professional designers with years of experience creating high-end garden landscapes throughout {city} and Georgia</p>
             </motion.div>
             <motion.div
-              initial={{ opacity: 0, y: -20 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.9 }}
               className="text-center"
@@ -160,7 +160,7 @@ export default function GardenDesignLocationClient({ locationData }) {
               <p className="text-forest-green/70">Eco-friendly garden solutions that conserve water and support {city}'s native pollinators and ecosystems</p>
             </motion.div>
             <motion.div
-              initial={{ opacity: 0, y: -20 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 1.0 }}
               className="text-center"
@@ -178,7 +178,7 @@ export default function GardenDesignLocationClient({ locationData }) {
 
         {/* CTA Section */}
         <motion.div
-          initial={{ opacity: 0, y: -30 }}
+          initial={false}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.8 }}
           className="max-w-4xl mx-auto"
