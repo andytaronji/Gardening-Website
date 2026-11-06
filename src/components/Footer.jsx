@@ -11,6 +11,7 @@ export default function Footer() {
     { name: 'Garden Design', href: '/garden-design' },
     { name: 'Groundskeeping', href: '/groundskeeping' },
     { name: 'Quarterly Cleanups', href: '/quarterly-cleanups' },
+    { name: 'Leaf Removal', href: '/leaf-removal' },
     { name: 'Property Enhancement', href: '/property-enhancement' },
     { name: 'Vegetable Garden', href: '/vegetable-garden' },
     { name: 'Permaculture Lawns', href: '/permaculture-lawns' }

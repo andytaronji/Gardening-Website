@@ -13,6 +13,7 @@ export default function Navigation() {
   const services = [
     { name: 'Groundskeeping', href: '/groundskeeping' },
     { name: 'Quarterly Cleanups', href: '/quarterly-cleanups' },
+    { name: 'Leaf Removal', href: '/leaf-removal' },
     { name: 'Vegetable Garden', href: '/vegetable-garden' },
     { name: 'Property Enhancement', href: '/property-enhancement' }
   ];
@@ -210,7 +211,7 @@ export default function Navigation() {
               <button 
                 onClick={() => setIsServicesOpen(!isServicesOpen)}
                 className={`flex items-center justify-between w-full py-3 px-6 font-medium border-l-4 transition-all duration-300 text-cream ${
-                  isActive('/groundskeeping') || isActive('/quarterly-cleanups') || isActive('/vegetable-garden') || isActive('/property-enhancement')
+                  isActive('/groundskeeping') || isActive('/quarterly-cleanups') || isActive('/leaf-removal') || isActive('/vegetable-garden') || isActive('/property-enhancement')
                     ? 'border-cream font-bold' 
                     : 'border-transparent hover:border-cream/50'
                 }`}
