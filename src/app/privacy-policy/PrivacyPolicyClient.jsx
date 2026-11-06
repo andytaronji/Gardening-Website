@@ -16,7 +16,7 @@ export default function PrivacyPolicyClient() {
           <h1 className="text-4xl font-playfair text-forest-green mb-8 text-center">Privacy Policy</h1>
 
           <div className="prose prose-lg max-w-none">
-            <p className="text-forest-green/70">Last Updated: May 14, 2025</p>
+            <p className="text-forest-green/70">Last Updated: November 6, 2026</p>
 
             <h2 className="text-2xl font-semibold text-forest-green mt-8 mb-4">Introduction</h2>
             <p className="text-forest-green">
@@ -88,6 +88,62 @@ export default function PrivacyPolicyClient() {
               <li><strong>Business Transfers:</strong> We may share or transfer your information in connection with, or during negotiations of, any merger, sale of company assets, financing, or acquisition of all or a portion of our business.</li>
               <li><strong>With Your Consent:</strong> We may disclose your personal information for any other purpose with your consent.</li>
             </ul>
+
+            <h2 className="text-2xl font-semibold text-forest-green mt-8 mb-4">Google User Data and the Gardening Thyme Ads Reporting Tool</h2>
+            <p className="text-forest-green">
+              Gardening Thyme LLC operates an internal tool,{' '}
+              <a href="/ads-reporting" className="text-sage hover:text-forest-green transition-colors">Gardening Thyme Ads Reporting</a>,
+              that connects to our own Google Ads account through the Google Ads API. This section describes how that tool
+              handles Google user data. It applies only to the Google accounts of our own staff who authorize the tool; it
+              does not involve data from website visitors or customers.
+            </p>
+            <ul className="list-disc pl-6 mb-6 text-forest-green">
+              <li>
+                <strong>What the tool accesses:</strong> When a staff member authorizes the tool, it requests the Google Ads
+                scope (https://www.googleapis.com/auth/adwords). Through it the tool reads advertising performance reports,
+                keyword research data from Google Ads Keyword Planner, and campaign settings for the Gardening Thyme LLC
+                Google Ads account. It may also create or edit campaigns, ad groups, keywords and ads in that account when a
+                staff member runs that step and reviews the result.
+              </li>
+              <li>
+                <strong>How we use it:</strong> We use this data only to measure and plan our own advertising: to see which
+                searches, days, hours, devices and cities produce calls and form submissions, to research keywords and bid
+                estimates for our services and service areas, and to draft and manage our own campaigns. We do not use it
+                to build profiles of individuals, for advertising to anyone other than through our own Google Ads account,
+                or for any purpose unrelated to our business.
+              </li>
+              <li>
+                <strong>How we store it:</strong> Reports and summaries derived from this data are stored in Google Workspace
+                files (Google Sheets, Docs and Drive) owned by Gardening Thyme LLC and accessible only to our staff, and in
+                temporary processing environments that are cleared when the work is done. Access credentials are stored
+                privately and are never published or shared.
+              </li>
+              <li>
+                <strong>How we share it:</strong> We do not sell this data and do not share it with third parties. It may be
+                processed by service providers we use to run the tool, such as cloud computing and AI services, solely to
+                produce our reports, and only under terms that prohibit any other use. We do not transfer Google user data
+                to data brokers, advertising networks or other businesses.
+              </li>
+              <li>
+                <strong>Human access and AI:</strong> Only Gardening Thyme LLC staff read this data. We do not use Google user
+                data obtained through the tool to develop, improve or train artificial intelligence or machine learning
+                models, other than personalized use within our own account.
+              </li>
+              <li>
+                <strong>Retention and deletion:</strong> Derived reports are kept for as long as they are useful for planning
+                our advertising and deleted when they are not. A staff member can revoke the tool's access at any time at{' '}
+                <a href="https://myaccount.google.com/permissions" className="text-sage hover:text-forest-green transition-colors" rel="noopener noreferrer" target="_blank">myaccount.google.com/permissions</a>,
+                after which the tool can no longer read or change account data.
+              </li>
+              <li>
+                <strong>Limited use:</strong> Our use and transfer of information received from Google APIs adheres to the{' '}
+                <a href="https://developers.google.com/terms/api-services-user-data-policy" className="text-sage hover:text-forest-green transition-colors" rel="noopener noreferrer" target="_blank">Google API Services User Data Policy</a>,
+                including the Limited Use requirements.
+              </li>
+            </ul>
+            <p className="text-forest-green">
+              Questions about this section can be sent to the contact details in the "Contact Us" section below.
+            </p>
 
             <h2 className="text-2xl font-semibold text-forest-green mt-8 mb-4">Data Security</h2>
             <p className="text-forest-green">
