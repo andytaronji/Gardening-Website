@@ -35,6 +35,8 @@ export default function OptimizedAnalytics() {
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'AW-17486011088');
+            // Website call conversion: swaps (404) 861-7744 for a Google forwarding number for ad visitors
+            gtag('config', 'AW-17486011088/2oRjCImFsPMcENC1_ZFB', { 'phone_conversion_number': '(404) 861-7744' });
           `
         }}
       />

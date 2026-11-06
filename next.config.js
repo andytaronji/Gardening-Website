@@ -16,7 +16,9 @@ const scriptSrc = [
   "https://consent.cookiebot.com",
   "https://consentcdn.cookiebot.com",
   "https://www.google.com",
-  "https://www.gstatic.com"
+  "https://www.gstatic.com",
+  // Google Ads call tracking (website call conversions / number swap)
+  "https://www.googleadservices.com"
 ].join(' ');
 
 const nextConfig = {
