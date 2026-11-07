@@ -52,7 +52,7 @@ export default function CookieConsent() {
       <div className="max-w-[1100px] mx-auto px-4 sm:px-8 py-3 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6">
         <p className="font-sans text-[13px] leading-[1.5] text-[#DDE3D2] flex-1 m-0">
           We use cookies to measure our ads and improve the site.{' '}
-          <a href="/privacy-policy" className="underline text-cloud hover:text-sage-tint">
+          <a href="/privacy-policy#cookies" className="underline text-cloud hover:text-sage-tint">
             Read our privacy policy
           </a>
         </p>

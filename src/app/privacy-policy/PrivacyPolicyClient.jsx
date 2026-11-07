@@ -13,10 +13,10 @@ export default function PrivacyPolicyClient() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="max-w-4xl mx-auto"
         >
-          <h1 className="text-4xl font-playfair text-forest-green mb-8 text-center">Privacy Policy</h1>
+          <h1 className="text-4xl font-serif text-forest-green mb-8 text-center">Privacy Policy</h1>
 
           <div className="prose prose-lg max-w-none">
-            <p className="text-forest-green/70">Last Updated: November 6, 2026</p>
+            <p className="text-forest-green/80">Last Updated: November 6, 2026</p>
 
             <h2 className="text-2xl font-semibold text-forest-green mt-8 mb-4">Introduction</h2>
             <p className="text-forest-green">
@@ -65,6 +65,49 @@ export default function PrivacyPolicyClient() {
               information anonymously and reports website trends without identifying individual visitors.
             </p>
 
+            <h2 id="cookies" className="text-2xl font-semibold text-forest-green mt-8 mb-4 scroll-mt-24">Cookies, Google Analytics and Google Ads</h2>
+            <p className="text-forest-green">
+              We advertise on Google and use Google tools to measure which ads and pages lead to inquiries. These tools use
+              cookies and similar technologies:
+            </p>
+            <ul className="list-disc pl-6 mb-6 text-forest-green">
+              <li>
+                <strong>Google Analytics:</strong> records pages viewed, how you arrived at our site, general location (city
+                level), device and browser, and actions such as submitting a form or tapping our phone number. We use it in
+                aggregate to understand and improve the site.
+              </li>
+              <li>
+                <strong>Google Ads conversion tracking:</strong> tells us when a visit that started from one of our ads
+                leads to a form submission or call. If you arrive from a Google ad, the phone number shown on our site may
+                be replaced with a Google forwarding number so the call can be counted; Google reports the call&apos;s start
+                time, duration and caller area code to us.
+              </li>
+              <li>
+                <strong>Enhanced conversions:</strong> when you submit a form, your email address and phone number are
+                hashed (converted into a scrambled code) in your browser and sent to Google, which uses them only to match
+                the inquiry to an ad click. Google does not use this to identify you to us.
+              </li>
+              <li>
+                <strong>Advertising audiences:</strong> Google may use information about visits to our site to show our ads
+                to people who have visited before, and to measure our ads.
+              </li>
+              <li>
+                <strong>Google reCAPTCHA:</strong> protects our forms from spam when you start filling one in. Its use is
+                subject to the Google{' '}
+                <a href="https://policies.google.com/privacy" className="text-moss underline underline-offset-4 hover:text-forest-green transition-colors" rel="noopener noreferrer" target="_blank">Privacy Policy</a> and{' '}
+                <a href="https://policies.google.com/terms" className="text-moss underline underline-offset-4 hover:text-forest-green transition-colors" rel="noopener noreferrer" target="_blank">Terms of Service</a>.
+              </li>
+            </ul>
+            <p className="text-forest-green">
+              <strong>Your choices:</strong> our cookie banner lets you accept or decline. If you decline, we tell Google
+              not to store advertising or analytics cookies on your device, and only limited, cookieless measurement is
+              sent. You can also manage how Google uses data for ads at{' '}
+              <a href="https://adssettings.google.com" className="text-moss underline underline-offset-4 hover:text-forest-green transition-colors" rel="noopener noreferrer" target="_blank">adssettings.google.com</a>, read{' '}
+              <a href="https://policies.google.com/technologies/partner-sites" className="text-moss underline underline-offset-4 hover:text-forest-green transition-colors" rel="noopener noreferrer" target="_blank">how Google uses information from sites that use its services</a>,
+              or install the{' '}
+              <a href="https://tools.google.com/dlpage/gaoptout" className="text-moss underline underline-offset-4 hover:text-forest-green transition-colors" rel="noopener noreferrer" target="_blank">Google Analytics opt-out browser add-on</a>.
+            </p>
+
             <h2 className="text-2xl font-semibold text-forest-green mt-8 mb-4">How We Use Your Information</h2>
             <p className="text-forest-green">
               We may use the information we collect for various purposes, including to:
@@ -89,10 +132,10 @@ export default function PrivacyPolicyClient() {
               <li><strong>With Your Consent:</strong> We may disclose your personal information for any other purpose with your consent.</li>
             </ul>
 
-            <h2 className="text-2xl font-semibold text-forest-green mt-8 mb-4">Google User Data and the Gardening Thyme Ads Reporting Tool</h2>
+            <h2 id="google-user-data" className="text-2xl font-semibold text-forest-green mt-8 mb-4 scroll-mt-24">Google User Data and the Gardening Thyme Ads Reporting Tool</h2>
             <p className="text-forest-green">
               Gardening Thyme LLC operates an internal tool,{' '}
-              <a href="/ads-reporting" className="text-sage hover:text-forest-green transition-colors">Gardening Thyme Ads Reporting</a>,
+              <a href="/ads-reporting" className="text-moss underline underline-offset-4 hover:text-forest-green transition-colors">Gardening Thyme Ads Reporting</a>,
               that connects to our own Google Ads account through the Google Ads API. This section describes how that tool
               handles Google user data. It applies only to the Google accounts of our own staff who authorize the tool; it
               does not involve data from website visitors or customers.
@@ -113,9 +156,10 @@ export default function PrivacyPolicyClient() {
                 or for any purpose unrelated to our business.
               </li>
               <li>
-                <strong>How we store it:</strong> Reports and summaries derived from this data are stored in Google Workspace
-                files (Google Sheets, Docs and Drive) owned by Gardening Thyme LLC and accessible only to our staff, and in
-                temporary processing environments that are cleared when the work is done. Access credentials are stored
+                <strong>How we store it:</strong> Reports and summaries derived from this data are stored in documents and
+                files in accounts controlled by Gardening Thyme LLC (for example our Google Workspace and our Claude by
+                Anthropic workspace) that are accessible only to our staff, and in temporary processing environments that
+                are cleared when the work is done. Access credentials are stored
                 privately and are never published or shared.
               </li>
               <li>
@@ -132,12 +176,12 @@ export default function PrivacyPolicyClient() {
               <li>
                 <strong>Retention and deletion:</strong> Derived reports are kept for as long as they are useful for planning
                 our advertising and deleted when they are not. A staff member can revoke the tool's access at any time at{' '}
-                <a href="https://myaccount.google.com/permissions" className="text-sage hover:text-forest-green transition-colors" rel="noopener noreferrer" target="_blank">myaccount.google.com/permissions</a>,
+                <a href="https://myaccount.google.com/permissions" className="text-moss underline underline-offset-4 hover:text-forest-green transition-colors" rel="noopener noreferrer" target="_blank">myaccount.google.com/permissions</a>,
                 after which the tool can no longer read or change account data.
               </li>
               <li>
                 <strong>Limited use:</strong> Our use and transfer of information received from Google APIs adheres to the{' '}
-                <a href="https://developers.google.com/terms/api-services-user-data-policy" className="text-sage hover:text-forest-green transition-colors" rel="noopener noreferrer" target="_blank">Google API Services User Data Policy</a>,
+                <a href="https://developers.google.com/terms/api-services-user-data-policy" className="text-moss underline underline-offset-4 hover:text-forest-green transition-colors" rel="noopener noreferrer" target="_blank">Google API Services User Data Policy</a>,
                 including the Limited Use requirements.
               </li>
             </ul>
@@ -186,8 +230,8 @@ export default function PrivacyPolicyClient() {
             </p>
             <p className="mb-6 text-forest-green">
               Gardening Thyme<br />
-              Email: <a href="mailto:services@gardeningthyme.com" className="text-sage hover:text-forest-green transition-colors">services@gardeningthyme.com</a><br />
-              Phone: <a href="tel:+14048617744" className="text-sage hover:text-forest-green transition-colors">(404) 861-7744</a>
+              Email: <a href="mailto:services@gardeningthyme.com" className="text-moss underline underline-offset-4 hover:text-forest-green transition-colors">services@gardeningthyme.com</a><br />
+              Phone: <a href="tel:+14048617744" className="text-moss underline underline-offset-4 hover:text-forest-green transition-colors">(404) 861-7744</a>
             </p>
           </div>
         </motion.div>

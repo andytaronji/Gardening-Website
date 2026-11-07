@@ -4,4 +4,10 @@ export const metadata = {
   alternates: {
     canonical: 'https://www.gardeningthyme.com/ads-reporting',
   },
+  // Public (Google's OAuth reviewers must be able to open it) but kept out of search results,
+  // since the tool is internal. "follow" still lets crawlers reach the privacy policy link.
+  robots: {
+    index: false,
+    follow: true,
+  },
 };
